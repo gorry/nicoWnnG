@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ◇ 全角数字-2 -->
+<keystring>
+<string value="１"/>
+<string value="２"/>
+<string value="３"/>
+<string value="４"/>
+<string value="５"/>
+<string value="６"/>
+<string value="７"/>
+<string value="８"/>
+<string value="９"/>
+<string value="０"/>
+<string value="＋"/>
+<string value="－"/>
+<string value="＊"/>
+<string value="／"/>
+<string value="＝"/>
+<string value="￥"/>
+<string value="＄"/>
+<string value="％"/>
+</keystring>

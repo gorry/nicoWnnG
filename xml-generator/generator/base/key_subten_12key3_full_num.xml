@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (C) 2008,2009  OMRON SOFTWARE Co., Ltd.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android" android:keyWidth="20%p" android:horizontalGap="0dip" android:verticalGap="0dip" android:keyHeight="@dimen/key_mid_height">
+	<Row>
+		<Key android:codes="-1004" android:keyIcon="@drawable/key_12key_usersymbol" android:iconPreview="@drawable/key_12key_usersymbol_b" android:keyEdgeFlags="left" android:keyWidth="24.90%" />
+		<Key android:codes="-215" android:keyIcon="@drawable/key_12key_space_jp" android:iconPreview="@drawable/key_12key_space_jp_b" android:isRepeatable="false" android:keyWidth="24.90%" />
+		<Key android:codes="-240" android:keyLabel="All" android:keyWidth="24.90%" />
+		<Key android:codes="-243" android:keyLabel="Paste" android:keyWidth="24.90%" android:keyEdgeFlags="right" />
+	</Row>
+	<Row>
+		<Key android:codes="-218" android:keyIcon="@drawable/key_12key_left" android:iconPreview="@drawable/key_12key_left_b" android:isRepeatable="false" android:keyEdgeFlags="left" android:keyWidth="33.20%" />
+		<Key android:codes="-216" android:keyIcon="@drawable/key_12key_enter_jp" android:iconPreview="@drawable/key_12key_enter_jp_b" android:horizontalGap="0%" android:keyWidth="33.20%" />
+		<Key android:codes="-217" android:keyIcon="@drawable/key_12key_right" android:iconPreview="@drawable/key_12key_right_b" android:isRepeatable="false" android:keyEdgeFlags="right" android:horizontalGap="0%" android:keyWidth="33.20%" />
+	</Row>
+	<Row>
+		<Key android:codes="-230" android:keyIcon="@drawable/key_12key_mode_full_num" android:iconPreview="@drawable/key_mode_change_b" android:popupKeyboard="@xml/keyboard_popup_12key_jp" android:isRepeatable="false" android:keyEdgeFlags="left" android:keyWidth="33.20%" />
+		<Key android:codes="-214" android:keyIcon="@drawable/key_12key_del" android:iconPreview="@drawable/key_12key_del_b" android:isRepeatable="false" android:horizontalGap="0%" android:keyWidth="33.20%" />
+		<Key android:codes="-222" android:keyIcon="@drawable/key_12key_sym_mushroom" android:iconPreview="@drawable/key_12key_sym_mushroom_b" android:keyEdgeFlags="right" android:keyWidth="33.20%" />
+	</Row>
+</Keyboard>

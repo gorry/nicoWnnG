@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2008,2009  OMRON SOFTWARE Co., Ltd.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+<!-- candidate list -->
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  >
+	<LinearLayout 
+	  android:id="@+id/candview_base0"
+	  android:orientation="vertical"
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:background="@color/candidate_base0"
+	  >
+		<LinearLayout 
+		  android:id="@+id/candidates_head"
+		  android:orientation="horizontal"
+		  android:layout_width="fill_parent" 
+		  android:layout_height="4dip" 
+		  android:background="@color/candidate_head"
+		  >
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/candview_base1"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:baselineAligned="false"
+			android:orientation="horizontal">
+
+			<LinearLayout
+				android:id="@+id/candidates_left"
+				android:layout_width="3dip"
+				android:layout_height="wrap_content"
+				android:background="@color/candidate_base0"
+				android:orientation="vertical"></LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/candview_base2"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:orientation="horizontal">
+
+				<ScrollView
+					android:id="@+id/candview_scroll"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:fadingEdgeLength="0dip"
+					android:scrollbars="vertical">
+
+					<LinearLayout
+						android:id="@+id/candview_base"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:background="@color/candidate_back"
+						android:orientation="vertical">
+
+						<HorizontalScrollView
+							android:id="@+id/candview_hscroll"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:fadingEdge="horizontal"
+							android:fadingEdgeLength="24dip"
+							android:scrollbars="horizontal">
+
+							<LinearLayout
+								android:id="@+id/candidates_1st_view"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:background="@color/candidate_back"
+								android:orientation="vertical" />
+						</HorizontalScrollView>
+
+						<RelativeLayout
+							android:id="@+id/candidates_2nd_view"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:background="@color/candidate_back" />
+					</LinearLayout>
+				</ScrollView>
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/button_fulllist_inner_layout"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center">
+
+				<Button
+					android:id="@+id/button_fulllist"
+					android:layout_width="32sp"
+					android:layout_height="32sp"
+					android:background="@drawable/candidate_listup"
+					tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+			</LinearLayout>
+
+			<!-- 
+			<Button
+			  android:id="@+id/button_fulllist"
+			  android:layout_width="wrap_content" 
+			  android:layout_height="wrap_content"
+			  android:text="@string/button_candidate_fulllist"
+			  android:textSize="20sp"
+			  />
+			-->
+		</LinearLayout>
+	</LinearLayout>
+</FrameLayout>

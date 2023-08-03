@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ◇ 全角カタカナ-1 -->
+<keystring>
+<string value="＠"/>
+<string value="！"/>
+<string value="？"/>
+<string value="（"/>
+<string value="）"/>
+<string value="＜"/>
+<string value="＞"/>
+<string value="…"/>
+<string value="～"/>
+<string value="＃"/>
+<string value="＆"/>
+<string value="ー"/>
+<string value="、"/>
+<string value="："/>
+<string value="；"/>
+<string value="「」"/>
+<string value="『』"/>
+<string value="“”"/>
+</keystring>

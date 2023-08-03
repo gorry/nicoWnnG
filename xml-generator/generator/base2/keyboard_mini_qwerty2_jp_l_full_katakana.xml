@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (C) 2008,2009  OMRON SOFTWARE Co., Ltd.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android" android:keyWidth="%key_width_3%" android:horizontalGap="0dip" android:verticalGap="0dip" android:keyHeight="@dimen/key_mid_height">
+	<Row android:rowEdgeFlags="top">
+		<Key android:codes="-246" android:keyIcon="@drawable/key_qwerty_space" android:iconPreview="@drawable/key_qwerty_space_b" android:keyWidth="%key_width_l1%" android:isRepeatable="false" android:keyEdgeFlags="left" />
+		<Key android:codes="113" android:keyLabel="q" />
+		<Key android:codes="119" android:keyLabel="w" />
+		<Key android:codes="101" android:keyLabel="e" />
+		<Key android:codes="114" android:keyLabel="r" />
+		<Key android:codes="116" android:keyLabel="t" />
+		<Key android:codes="121" android:keyLabel="y" />
+		<Key android:codes="117" android:keyLabel="u" />
+		<Key android:codes="105" android:keyLabel="i" />
+		<Key android:codes="111" android:keyLabel="o" />
+		<Key android:codes="112" android:keyLabel="p" />
+		<Key android:codes="12540" android:keyLabel="@string/key_qwerty_tyouon" local:option="4" />
+		<Key android:codes="-100" android:keyIcon="@drawable/key_qwerty_del" android:iconPreview="@drawable/key_qwerty_del_b" android:keyWidth="%key_width_l4%" android:isRepeatable="false" android:keyEdgeFlags="right" />
+	</Row>
+	<Row>
+		<Key android:codes="-121" android:keyIcon="@drawable/key_qwerty_shift" android:iconPreview="@drawable/key_qwerty_shift_b" android:keyWidth="%key_width_l2%" android:isModifier="true" android:isSticky="true" android:keyEdgeFlags="left" />
+		<Key android:codes="97" android:keyLabel="a" android:horizontalGap="%key_gap_8%" />
+		<Key android:codes="115" android:keyLabel="s" />
+		<Key android:codes="100" android:keyLabel="d" />
+		<Key android:codes="102" android:keyLabel="f" />
+		<Key android:codes="103" android:keyLabel="g" />
+		<Key android:codes="104" android:keyLabel="h" />
+		<Key android:codes="106" android:keyLabel="j" />
+		<Key android:codes="107" android:keyLabel="k" />
+		<Key android:codes="108" android:keyLabel="l" />
+		<Key android:codes="-218" android:keyIcon="@drawable/key_qwerty_left" android:iconPreview="@drawable/key_qwerty_left_b" android:horizontalGap="%key_gap_9%" android:isRepeatable="false" />
+		<Key android:codes="-106" android:keyIcon="@drawable/key_12key_sym_mushroom" android:iconPreview="@drawable/key_12key_sym_mushroom_b" android:keyWidth="%key_width_l3%" local:option="2" />
+		<Key android:codes="-1002" android:keyLabel="@string/key_usersymbol_zen_katakana" android:keyWidth="%key_width_l5%" android:keyEdgeFlags="right" local:option="4" />
+	</Row>
+	<Row>
+		<Key android:codes="-230" android:keyIcon="@drawable/key_qwerty_mode_full_kata" android:iconPreview="@drawable/key_mode_change_b" android:popupKeyboard="@xml/keyboard_popup_nico2_jp" android:isRepeatable="false" android:keyWidth="%key_width_l1%" android:keyEdgeFlags="left" />
+		<Key android:codes="-6" android:keyLabel="@string/key_func_alt" android:isModifier="true" android:isSticky="true" local:option="4" />
+		<Key android:codes="122" android:keyLabel="z" />
+		<Key android:codes="120" android:keyLabel="x" />
+		<Key android:codes="99" android:keyLabel="c" />
+		<Key android:codes="118" android:keyLabel="v" />
+		<Key android:codes="98" android:keyLabel="b" />
+		<Key android:codes="110" android:keyLabel="n" />
+		<Key android:codes="109" android:keyLabel="m" />
+		<Key android:codes="12289" android:keyLabel="@string/key_qwerty_full_touten" />
+		<Key android:codes="12290" android:keyLabel="@string/key_qwerty_full_kuten" />
+		<Key android:codes="-217" android:keyIcon="@drawable/key_qwerty_right" android:iconPreview="@drawable/key_qwerty_right_b" android:isRepeatable="false" />
+		<Key android:codes="-123" android:keyIcon="@drawable/key_qwerty_enter_jp" android:iconPreview="@drawable/key_qwerty_enter_jp_b" android:keyWidth="%key_width_l4%" android:keyEdgeFlags="right" />
+	</Row>
+</Keyboard>

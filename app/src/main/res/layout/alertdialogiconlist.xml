@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="?android:attr/listPreferredItemHeight"
+	android:padding="6dip"
+	>
+	<ImageView
+		android:id="@+id/alertdialogiconlist_icon"
+		android:layout_width="48dip"
+		android:layout_height="48dip"
+		/>
+	<TextView
+		android:id="@+id/alertdialogiconlist_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingLeft="24sp"
+		android:paddingRight="24sp"
+		android:singleLine="false"
+		android:ellipsize="end"
+		android:textSize="24sp" 
+		/>
+</LinearLayout>

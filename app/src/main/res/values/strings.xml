@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2008,2009  OMRON SOFTWARE Co., Ltd.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  -->
+<resources>
+  <!-- common part -->
+  <!-- Engine -->
+  <string name="nicownng_system_dictionary_japanese">/data/data/net.gorry.android.input.nicownng/lib/libWnnJpnDic.so</string>
+  <string name="nicownng_writable_dictionary_japanese">/data/data/net.gorry.android.input.nicownng/writableJAJP.dic</string>
+  <string name="nicownng_system_dictionary_english">/data/data/net.gorry.android.input.nicownng/lib/libWnnEngDic.so</string>
+  <string name="nicownng_writable_dictionary_english">/data/data/net.gorry.android.input.nicownng/writableEN.dic</string>
+
+  <!-- Preferences -->
+  <string name="preference_ime_setting_app">Setting</string>
+  <string name="preference_help">Help</string>
+
+  <string name="preference_symbol">Input Symbol</string>
+  <string name="preference_symbol_addsymbolemoji_title">Add "EMOJI" into Symbol</string>
+  <string name="preference_symbol_addsymbolemoji_summary">Enable select "EMOJI" by [Symbol] key.</string>
+
+  <string name="preference_key_setting_menu">Software Keyboard</string>
+
+  <string name="preference_key_sound_title">Sound on Key Press </string>
+  <string name="preference_key_sound_summary">Enable key click sound. </string>
+  <string name="preference_key_sound_vol_title">Key Sound Volume</string>
+  <string name="preference_key_sound_vol_summary">Volume of key click sound. </string>
+  <string name="preference_key_sound_vol_0">Max</string>
+  <string name="preference_key_sound_vol_1">Medium</string>
+  <string name="preference_key_sound_vol_2">Min</string>
+
+  <string name="preference_key_vibration_title">Vibrate on Key Press </string>
+  <string name="preference_key_vibration_summary">Enable key click vibration. </string>
+
+  <string name="preference_preview_title">Key Preview </string>
+  <string name="preference_preview_summary">Enable key preview. </string>
+
+  <string name="preference_auto_caps_title">Auto Capitalization </string>
+  <string name="preference_auto_caps_summary">Automatically capitalize the 1st char of a sentence in alphabet mode. </string>
+
+	<string name="preference_shiftkey_style_title">[Shift] Key Operation</string>
+	<string name="preference_shiftkey_style_summary">Specify operation when tapping [Shift] Key</string>
+
+	<string name="preference_shiftkey_style_0">[Normal]-[Shift Lock]</string>
+	<string name="preference_shiftkey_style_1">[Normal]-[Shift]</string>
+	<string name="preference_shiftkey_style_2">[Normal]-[Shift]-[Shift Lock]</string>
+
+	<string name="preference_candidate_leftrightkey_title">Select Candidate by [Left/Right] Arrow Key</string>
+	<string name="preference_candidate_leftrightkey_summary">Turn OFF to change the length of Clause by [Left/Right] Arrow Key</string>
+
+  <string name="preference_hidden_softkeyboard_title">Soft Keyboard</string>
+  <string name="preference_hidden_softkeyboard_summary">Auto/Hide/Show Soft Keyboard.</string>
+
+  <string name="preference_hidden_softkeyboard_0">Auto Hide</string>
+  <string name="preference_hidden_softkeyboard_1">Hide</string>
+  <string name="preference_hidden_softkeyboard_2">Show</string>
+  <string name="preference_hidden_softkeyboard_3">Auto Minimize</string>
+
+  <string name="preference_keyboard_skin_title">Keyboard Image</string>
+  <string name="preference_keyboard_skin_summary">Change keyboard image.</string>
+
+  <string name="preference_keyboard_android_default">Standard</string>
+  <string name="preference_keyboard_simple">Simple</string>
+  <string name="preference_keyboard_metal">Metal</string>
+
+  <string name="preference_conversion_menu">Input/Conversion</string>
+
+  <string name="preference_prediction_afterenter_title">Prediction after Conversion</string>
+  <string name="preference_prediction_afterenter_summary">Display next predicted word based on last selected conversion Japanese word</string>
+
+  <string name="preference_prediction_mode2_title">Word Prediction</string>
+  <string name="preference_prediction_mode2_summary">Select predicted mode.</string>
+
+  <string name="preference_prediction_mode2_0">On prediction</string>
+  <string name="preference_prediction_mode2_1">Off prediction</string>
+  <string name="preference_prediction_mode2_2">Henkan prediction</string>
+
+  <string name="preference_correct_spell_title">Typing Error Correction</string>
+  <string name="preference_correct_spell_summary">Display predicted words for correcting typing error in English.</string>
+
+  <string name="preference_input_learning_title">Input Word Learning</string>
+  <string name="preference_input_learning_summary">Learn input words.</string>
+
+  <string name="preference_aboutime_menu"> About IME </string>
+
+  <string name="preference_dictionary_menu"> Dictionary </string>
+  <string name="preference_dictionary_menu_ja"> Japanese User Dictionary </string>
+  <string name="preference_dictionary_menu_en"> English User Dictionary </string>
+  <string name="preference_dictionary_menu_zhcn"> Chinese User Dictionary </string>
+
+  <string name="preference_user_dictionary">User Dictionary</string>
+
+  <string name="preference_user_dictionary_edit_words_title">User Dictionary</string>
+  <string name="preference_user_dictionary_edit_words_summary">List/add/edit/delete words in user dictionary.</string>
+  <string name="preference_user_dictionary_edit_words_summary_ja">List/add/edit/delete words in Japanese user dictionary.</string>
+  <string name="preference_user_dictionary_edit_words_summary_en">List/add/edit/delete words in English user dictionary.</string>
+  <string name="preference_user_dictionary_edit_words_summary_zhcn">List/add/edit/delete words in Chinese user dictionary.</string>
+
+  <string name="preference_user_dictionary_clear_learning_title">Clear Learning Dictionary</string>
+  <string name="preference_user_dictionary_clear_learning_summary">Remove all words from learning dictionary.</string>
+
+  <string name="preference_user_dictionary_clear_user_title">Clear User Dictionary</string>
+  <string name="preference_user_dictionary_clear_user_summary">Remove all words from user dictionary.</string>
+
+	<string name="preference_config_menu">Backup/Restore</string>
+	<string name="preference_config_backup_title">Export Configuration</string>
+	<string name="preference_config_backup_summary">Write All Settings to External-Memory</string>
+	<string name="dialog_config_backup_message">Write All Settings to File in:\n/mnt/sdcard/nicoWnnG/</string>
+	<string name="toast_config_backup_success">Complete writing.</string>
+	<string name="toast_config_backup_failed">Export Configuration Failed.</string>
+
+	<string name="preference_config_restore_title">Import Configuration</string>
+	<string name="preference_config_restore_summary">Restore All Settings from External-Memory</string>
+	<string name="dialog_config_restore_message">Restore All Settings from File in:\n/mnt/sdcard/nicoWnnG/</string>
+	<string name="toast_config_restore_success">Importing Configuration.</string>
+	<string name="toast_config_restore_failed">Import Configuration Failed.</string>
+
+	<string name="preference_use_12key_subten_title">Mini-SoftKey Mode</string>
+	<string name="preference_use_12key_subten_summary">Show Soft-Keyboard without Num-Key for using with Hardware 12-key</string>
+
+	<string name="preference_use_12key_shift_title">Use [Shift] Key</string>
+	<string name="preference_use_12key_shift_summary">Switch Keyboard with [Shift] key</string>
+
+	<string name="preference_use_email_kana_title">Use KANA keyboard in E-mail, URL and Password</string>
+	<string name="preference_use_email_kana_summary">You can change to KANA-mode in the input field recommended Alpha-numeric Character</string>
+
+	<string name="preference_keycode_test_title">Key Code Test</string>
+	<string name="preference_keycode_test_summary">Show the test screen of Hardware Keyboard</string>
+	<string name="dialog_keycode_test_title">Key Code Test</string>
+	<string name="dialog_keycode_test_message">Push Hardware-Key to show Information</string>
+	<string name="preference_input_mode_start_title">Default Input Mode</string>
+	<string name="preference_input_mode_start_summary">Specify Input Mode when showing Keyboard</string>
+	<string name="preference_input_mode_start_0">Hiragana</string>
+	<string name="preference_input_mode_start_1">Alphabet</string>
+	<string name="preference_input_mode_start_2">Number</string>
+	<string name="preference_input_mode_start_3">Not Change</string>
+	<string name="preference_input_mode_next_title">Input Mode Switching Order</string>
+	<string name="preference_input_mode_next_summary">Specify the Order of switching Input Mode when you tap the [あＡ１] key</string>
+	<string name="preference_input_mode_next_0">あ -> Ａ -> １ -> あ</string>
+	<string name="preference_input_mode_next_1">あ -> １ -> Ａ -> あ</string>
+
+	<string name="preference_category_12key_display">Display</string>
+	<string name="preference_category_12key_input">Input</string>
+
+	<string name="preference_use_qwerty_subten_title">Mini-SoftKey Mode</string>
+	<string name="preference_use_qwerty_subten_summary">Show Soft-Keyboard without Num-Key for using with Hardware QWERTY-key</string>
+
+	<string name="preference_category_qwerty_display">Display</string>
+	<string name="preference_category_qwerty_input">Input</string>
+	<string name="nicownng_help_title">Help</string>
+	<string name="nicownng_help_summary">Show Online Help.</string>
+
+	<string name="preference_subten_12key_mode_title">Key-Map of Mini-SoftKey Mode</string>
+	<string name="preference_subten_12key_mode_summary">Select Mini-SoftKey Mapping for using with Hardware 12-key</string>
+	<string name="preference_subten_12key_mode_0">1 column</string>
+	<string name="preference_subten_12key_mode_1">2 columns</string>
+	<string name="preference_subten_12key_mode_2">3 columns</string>
+
+	<string name="preference_subten_qwerty_mode_title">Key-Map of Mini-SoftKey Mode</string>
+	<string name="preference_subten_qwerty_mode_summary">Select Mini-SoftKey Mapping for using with Hardware 12-key</string>
+	<string name="preference_subten_qwerty_mode_0">1 column</string>
+	<string name="preference_subten_qwerty_mode_1">1 column(Landscape)</string>
+	<string name="preference_subten_qwerty_mode_2">2 columns</string>
+
+	<string name="preference_autoforward_toggle_12key_title">Auto-Forward in Toggle Mode</string>
+	<string name="preference_autoforward_toggle_12key_summary">In 12-key Toggle Mode, you can Type the Next Letter Waiting a little after Toggling the Key</string>
+
+	<string name="preference_emoji_type_title">Emoji Input Style</string>
+	<string name="preference_emoji_type_summary">Select Input Style of Emoji. Suitable style for Emoji Input depends on the model. Several models can not input Emoji.</string>
+	<string name="preference_emoji_type_old">Compatible for NTT docomo under OS 4.0</string>
+	<string name="preference_emoji_type_unicode">Unicode</string>
+	<string name="preference_emoji_type_docomo">NTT docomo</string>
+	<string name="preference_emoji_type_softbank">Softbank Mobile</string>
+	<string name="preference_emoji_type_au">au KDDI</string>
+	
+  <!-- Dialog Messages -->
+  <string name="dialog_button_ok">OK</string>
+  <string name="dialog_button_cancel">Cancel</string>
+  <string name="dialog_button_close">Close</string>
+  <string name="dialog_button_clearlog">Clear Log</string>
+  <string name="dialog_button_copylog">Copy Log</string>
+  
+  <string name="dialog_clear_user_dictionary_message">Clear user dictionary?</string>
+  <string name="dialog_clear_learning_dictionary_message">Clear learning dictionary?</string>
+  <string name="dialog_clear_user_dictionary_done">Cleared.</string>
+  <string name="dialog_clear_learning_dictionary_done">Cleared.</string>
+
+  <string name="dialog_title_dic_message_doing">Working</string>
+  <string name="dialog_import_dic_message">Restore Dictionary from SD-Card</string>
+  <string name="dialog_import_dic_message_doing">Restoring Dictionary ...</string>
+  <string name="dialog_import_dic_message_done">Success Restore.</string>
+  <string name="dialog_import_dic_message_failed">Failed Restore.</string>
+  <string name="dialog_export_dic_message">Backup Dictionary to SD-Card</string>
+  <string name="dialog_export_dic_message_doing">Backup Dictionary ...</string>
+  <string name="dialog_export_dic_message_done">Success Backup.</string>
+  <string name="dialog_export_dic_message_failed">Failed Backup.</string>
+  <string name="dialog_import_textdic_message">Import Words from Dictionary-Text-File\n%s</string>
+  <string name="dialog_import_textdic_message_doing">Importing Dictionary-Text-File ...</string>
+  <string name="dialog_import_textdic_message_doing_phase2">Registering to Dictionary...</string>
+  <string name="dialog_import_textdic_message_done">Success Import.</string>
+      <string name="dialog_import_textdic_message_failed">Failed Import.</string>
+  <string name="dialog_importexport_rendir_failed">Failed rename directory.</string>
+
+  <!-- user dictionary -->
+  <string name="user_dictionary_list_words">Registered words</string>
+  <string name="user_dictionary_list_words_en">Registered words in English User Dic</string>
+  <string name="user_dictionary_list_words_ja">Registered words in Japanese User Dic</string>
+  <string name="user_dictionary_list_words_zhcn">Registered words in Chinese User Dic</string>
+  <string name="user_dictionary_edit_words">Edit</string>
+  <string name="user_dictionary_title_read">Reading:</string>
+  <string name="user_dictionary_title_candidate">Word:</string>
+  <string name="user_dictionary_title_read_hint">Reading</string>
+  <string name="user_dictionary_title_candidate_hint">Word</string>
+  <string name="user_dictionary_add">Add</string>
+  <string name="user_dictionary_edit">Edit</string>
+  <string name="user_dictionary_delete">Delete</string>
+  <string name="user_dictionary_delete_confirm">Delete the selected word?</string>
+  <string name="user_dictionary_delete_complete">Deleted.</string>
+  <string name="user_dictionary_delete_fail">Fail to delete it</string>
+  <string name="user_dictionary_words_duplication_message">Already registered.</string>
+  <string name="user_dictionary_over_max_text_size_message">Length of the string exceeds the limit.</string>
+  <string name="user_dictionary_creating_wordlist">Loading</string>
+  <string name="user_dictionary_init">Initialize</string>
+  <string name="user_dictionary_import">Restore</string>
+  <string name="user_dictionary_export">Backup</string>
+  <string name="user_dictionary_import_textdic">Import</string>
+  <string name="user_dictionary_prev_button"> &lt;&lt; </string>
+  <string name="user_dictionary_next_button"> &gt;&gt; </string>
+
+  <!-- NicoWnnG options -->
+  <string name="preference_nicownng_menu">Detailed Keyboard settings</string>
+  <string name="preference_nicownng_menu_summary_ja_portrait">Setting in Portrait mode</string>
+  <string name="preference_nicownng_menu_summary_ja_landscape">Setting in Landscape mode</string>
+  <string name="preference_nicownng_different_pl_title">Separate setting in Portrait and Landscape</string>
+  <string name="preference_nicownng_different_pl_summary">Using a different setting with Portrait and Landscape</string>
+  <string name="preference_nicownng_category_onhardkey">Setting in Only Hardware Keyboard</string>
+  <string name="preference_nicownng_change_onhardkey_title">Change Setting by Connecting Hardware Keyboard</string>
+  <string name="preference_nicownng_change_onhardkey_summary">You can enable the following settings</string>
+  <string name="preference_nicownng_change_kana_12key">Input Kana by 12-keys</string>
+  <string name="preference_nicownng_change_kana_12key_summary_ja">Set default mapping to 12-keys in Kana-mode</string>
+  <string name="preference_nicownng_change_alphanum_12key">Input Alphabet by 12-keys</string>
+  <string name="preference_nicownng_change_alphanum_12key_summary_ja">Set default mapping to 12-keys in Alphabet-mode</string>
+  <string name="preference_nicownng_change_num_12key">Input Number by 12-keys</string>
+  <string name="preference_nicownng_change_num_12key_summary_ja">Set default mapping to 12-keys in Number-mode</string>
+  <string name="preference_nicownng_change_noalpha_qwerty">No Alphabet mode</string>
+  <string name="preference_nicownng_change_noalpha_summary_ja">Skip Alphabet-mode</string>
+  <string name="preference_nicownng_change_nonumber_qwerty">No Number mode</string>
+  <string name="preference_nicownng_change_nonumber_summary_ja">Skip Number-mode</string>
+  <string name="preference_nicownng_change_alphamode">Nico/Bell Alphabet mode</string>
+  <string name="preference_nicownng_change_alphamode_summary_ja">Check, Capitalize Alphabet.</string>
+  <string name="preference_nicownng_is_skip_space">Convert English</string>
+  <string name="preference_nicownng_is_skip_space_summary_ja">Uncheck, skip space.</string>
+  <string name="preference_nicownng_is_flipscreen">No screen 12key</string>
+  <string name="preference_nicownng_is_flipscreen_summary_ja">Check, no display second screen.(not active nico2 mode)</string>
+
+  <string name="preference_nicownng_reload_usersymbol_title">Reload [@!?]-Key Definition</string>
+  <string name="preference_nicownng_reload_usersymbol_summary">Reload User Symbols at Typing [@!?]-Key</string>
+    <string name="dialog_nicownng_reload_usersymbol_message">Reload User Symbols from File in:\n/mnt/sdcard/nicoWnnG/</string>
+    <string name="preference_nicownng_reload_usersymbol_success">Success Reload.</string>
+    <string name="preference_nicownng_reload_usersymbol_failed">Failed Reloading User Symbols.</string>
+  <string name="preference_nicownng_initialize_usersymbol_title">Initialize [@!?]-Key Definition</string>
+  <string name="preference_nicownng_initialize_usersymbol_summary">Initialize User Symbols at Typing [@!?]-Key</string>
+    <string name="dialog_nicownng_initialize_usersymbol_message">Initialize User Symbols from File in:\n/mnt/sdcard/nicoWnnG/</string>
+    <string name="preference_nicownng_initialize_usersymbol_success">Success Initialize.</string>
+    <string name="preference_nicownng_initialize_usersymbol_failed">Failed Initializing User Symbols.</string>
+    <string name="toast_setusersymboldictionary_waitload">Waiting for Loading User Symbols data.</string>
+    <string name="toast_setusersymboldictionary_nodata">No User Symbols data in this Keyboard.</string>
+    <string name="toast_setusersymboldictionary_broken">User Symbols File will be Broken. Please Initialize [@!?]-Key Definition.</string>
+    <string name="toast_setusersymboldictionary_error_overpage">Error: Index Over: UserSymbol Page Number</string>
+    <string name="toast_setusersymboldictionary_error_overmode">Error: Index Over: UserSymbol Mode Number</string>
+
+  <string name="preference_use_zenkaku_to_moji_title">Use Zenkaku-key to Change Character Mode</string>
+  <string name="preference_use_zenkaku_to_moji_summary">You can change the input-mode by Hardware [Zenkaku] key.</string>
+  <string name="preference_wait_mushroom_title">Mushroom Input Wait</string>
+  <string name="preference_wait_mushroom_summary">Select Wait Time of Receiving Word from Mushroom</string>
+    <string name="preference_wait_mushroom_1">1</string>
+    <string name="preference_wait_mushroom_2">2</string>
+    <string name="preference_wait_mushroom_3">3</string>
+    <string name="preference_wait_mushroom_4">4</string>
+    <string name="preference_wait_mushroom_5">5</string>
+  <string name="preference_convert_keymap_type_title">Convert Key Map</string>
+  <string name="preference_convert_keymap_type_summary">Select Hardware Keyboard Mapping Conversion.</string>
+  <string name="preference_convert_keymap_type_0">JIS Key -> JIS Map</string>
+  <string name="preference_convert_keymap_type_1">JIS Key -> US Map</string>
+  <string name="preference_convert_keymap_type_2">US Key -> US Map</string>
+  <string name="preference_convert_keymap_type_3">Through</string>
+
+  <string name="preference_cutpasteaction_byime_title">[Ctrl/Alt]+AXCV Key always Cut&amp;Paste Action</string>
+  <string name="preference_cutpasteaction_byime_summary">Enables Cut&amp;Paste Action by Keyboard, even if there was no support in the OS/Apps</string>
+  <string name="preference_cutpasteaction_byime_0">[Alt]=no, [Ctrl]=no</string>
+  <string name="preference_cutpasteaction_byime_1">[Alt]=yes, [Ctrl]=no</string>
+  <string name="preference_cutpasteaction_byime_2">[Alt]=no, [Ctrl]=yes</string>
+  <string name="preference_cutpasteaction_byime_3">[Alt]=yes, [Ctrl]=yes</string>
+
+  <string name="preference_nicownng_is_flick">Flick Nico mode</string>
+  <string name="preference_nicownng_is_flick_dialog">Select flick mode</string>
+  <string name="preference_nicownng_is_flick_summary_ja">Select flick mode.</string>
+  <string name="toast_2touch_is_not_flickable">[2TOUCH] is not available on Flick.</string>
+  
+  <string name="preference_nicownng_is_nospace">Candidate space</string>
+  <string name="preference_nicownng_is_nospace_summary_ja">Check, make space below candidate line.</string>
+  <string name="preference_nicownng_space_below_keyboard_title">Keyboard space</string>
+  <string name="preference_nicownng_space_below_keyboard_summary">Check, make space below keyboard.</string>
+  <string name="preference_nicownng_hidden_softkeyboard">SoftKeyboard</string>
+  <string name="preference_nicownng_hidden_softkeyboard_summary_ja">Auto/Hide/Show Softkeyboard view.</string>
+  <string name="preference_nicownng_tsu_du_ltu">「つ」(tsu) -&gt;「づ」(du) -&gt; 「っ」(ltu)</string>
+  <string name="preference_nicownng_tsu_du_ltu_summary_ja">Uncheck, 「つ」(tsu) -&gt;「っ」(ltu) -&gt; 「づ」(du)</string>
+  <string name="preference_nicownng_kana12_space_zen">Full-Width SPACE input</string>
+  <string name="preference_nicownng_kana12_space_zen_summary_ja">Type Full-Width SPACE in Full-Width Charactor Input Mode</string>
+  <string name="preference_nicownng_qwerty_space_zen">Full-Width SPACE input</string>
+  <string name="preference_nicownng_qwerty_space_zen_summary_ja">Type Full-Width SPACE in Full-Width Charactor Input Mode</string>
+    <string name="preference_nicownng_12key_english_predict_title">English Prediction</string>
+    <string name="preference_nicownng_12key_english_predict_summary">Show Prediction Word when Typing in Alphabet Input Mode</string>
+    <string name="preference_nicownng_qwerty_english_predict_title">English Prediction</string>
+    <string name="preference_nicownng_qwerty_english_predict_summary">Show Prediction Word when Typing in Alphabet Input Mode</string>
+
+  <string name="preference_flick_none">None flick type.</string>
+  <string name="preference_flick_1stroke">1stroke flick type.</string>
+  <string name="preference_flick_nicostroke">NicoTouch/1stroke type.</string>
+  <string name="preference_nicownng_flick_guide">Show flick-guide</string>
+  <string name="preference_nicownng_flick_guide_summary_ja">Using flick-guide printed Keyboard.</string>
+
+  <string name="preference_nico_candidate_vertical">Vertical candidate order</string>
+  <string name="preference_nico_candidate_vertical_summary_ja">Change the order of candidates</string>
+  <string name="preference_nico_candidate_lines">View candidate</string>
+  <string name="preference_nico_candidate_lines_summary_ja">Select a number of candidate line.</string>
+  <string name="preference_nico_candidate_lines_1">1 line</string>
+  <string name="preference_nico_candidate_lines_2">2 lines</string>
+  <string name="preference_nico_candidate_lines_3">3 lines</string>
+  <string name="preference_nico_candidate_lines_4">4 lines</string>
+  <string name="preference_nico_candidate_lines_5">5 lines</string>
+  <string name="preference_nico_candidate_lines_shrink_title">Shrink candidate line</string>
+  <string name="preference_nico_candidate_lines_shrink_summary">Hide unused candidate line</string>
+  <string name="preference_nico_candidate_show_button_fulllist_title">Show Button full-list of candidates</string>
+  <string name="preference_nico_candidate_show_button_fulllist_summary">Show Button full-list of candidates</string>
+
+  <string name="preference_input_mode_title">Input mode</string>
+  <string name="preference_input_mode_summary">Select input mode: Select Toggle mode to input Kana by QWERTY</string>
+  <string name="preference_input_mode_nico">NicoTouch</string>
+  <string name="preference_input_mode_bell">BellTouch</string>
+  <string name="preference_input_mode_normal">Toggle</string>
+  <string name="preference_input_mode_nico2">Nico2</string>
+  <string name="preference_input_mode_2touch">2Touch</string>
+
+  <string name="preference_flick_sensitivity_title">Flick sensitivity</string>
+  <string name="preference_flick_sensitivity_summary">Flick sensitivity</string>
+  <string name="preference_flick_sensitivity_0">Shortest</string>
+  <string name="preference_flick_sensitivity_1">Short</string>
+  <string name="preference_flick_sensitivity_2">Middle (default)</string>
+  <string name="preference_flick_sensitivity_3">Long</string>
+  <string name="preference_flick_sensitivity_4">Longest</string>
+  <string name="preference_flick_sensitivity_5">Longest+1</string>
+  <string name="preference_flick_sensitivity_6">Longest+2</string>
+  <string name="preference_flick_sensitivity_7">Longest+3</string>
+  <string name="preference_flick_sensitivity_8">Longest+4</string>
+  <string name="preference_flick_sensitivity_9">Longest+5</string>
+
+  <string name="preference_key_height_title">Key Height</string>
+  <string name="preference_key_height_summary">Key Height</string>
+  <string name="preference_key_height_0">Smallest</string>
+  <string name="preference_key_height_1">Small</string>
+  <string name="preference_key_height_2">Middle (default)</string>
+  <string name="preference_key_height_3">Big</string>
+  <string name="preference_key_height_4">Biggest</string>
+  <string name="preference_key_height_5">Biggest+1</string>
+  <string name="preference_key_height_6">Biggest+2</string>
+  <string name="preference_key_height_7">Biggest+3</string>
+  <string name="preference_key_height_8">Biggest+4</string>
+  <string name="preference_key_height_9">Biggest+5</string>
+
+  <string name="preference_candidateview_height_title">Candidate Height</string>
+  <string name="preference_candidateview_height_summary">Candidate Height</string>
+  <string name="preference_candidateview_height_0">Smallest</string>
+  <string name="preference_candidateview_height_1">Small</string>
+  <string name="preference_candidateview_height_2">Middle (default)</string>
+  <string name="preference_candidateview_height_3">Big</string>
+  <string name="preference_candidateview_height_4">Biggest</string>
+  <string name="preference_candidateview_height_5">Biggest+1</string>
+  <string name="preference_candidateview_height_6">Biggest+2</string>
+  <string name="preference_candidateview_height_7">Biggest+3</string>
+  <string name="preference_candidateview_height_8">Biggest+4</string>
+  <string name="preference_candidateview_height_9">Biggest+5</string>
+
+  <string name="preference_candidate_font_size_title">Candidate Font Size</string>
+  <string name="preference_candidate_font_size_summary">Candidate Font Size</string>
+  <string name="preference_candidate_font_size_0">Smallest</string>
+  <string name="preference_candidate_font_size_1">Small</string>
+  <string name="preference_candidate_font_size_2">Middle (default)</string>
+  <string name="preference_candidate_font_size_3">Big</string>
+  <string name="preference_candidate_font_size_4">Biggest</string>
+  <string name="preference_candidate_font_size_5">Biggest+1</string>
+  <string name="preference_candidate_font_size_6">Biggest+2</string>
+  <string name="preference_candidate_font_size_7">Biggest+3</string>
+  <string name="preference_candidate_font_size_8">Biggest+4</string>
+  <string name="preference_candidate_font_size_9">Biggest+5</string>
+
+  <string name="preference_qwerty_kana_mode_title">QWERTY Key Type</string>
+  <string name="preference_qwerty_kana_mode_summary">Input ASCII/Kana in QWERTY</string>
+  <string name="preference_qwerty_kana_mode_0">Roman (Old)</string>
+  <string name="preference_qwerty_kana_mode_1">JIS Kana (Old)</string>
+  <string name="preference_qwerty_kana_mode_2">Japanese Syllabary (Old)</string>
+  <string name="preference_qwerty_kana_mode_3">Roman (mini)</string>
+  <string name="preference_qwerty_kana_mode_4">Roman (default)</string>
+  <string name="preference_qwerty_kana_mode_5">JIS Kana</string>
+  <string name="preference_qwerty_kana_mode_6">Japanese Syllabary</string>
+  <string name="preference_qwerty_kana_mode_7">Roman (mini-landscape)</string>
+  <string name="preference_qwerty_kana_mode_8">Roman (compact)</string>
+
+  <string name="preference_nicownng_category_keyboard">Keyboard</string>
+  <string name="preference_nicownng_category_qwerty">QWERTY key</string>
+  <string name="preference_nicownng_category_12key">12 key</string>
+  <string name="preference_nicownng_category_input">Input</string>
+  <string name="preference_nicownng_category_flick">Flick</string>
+  <string name="preference_nicownng_category_view_key">Key View</string>
+  <string name="preference_nicownng_category_operate_key">Key Operation</string>
+  <string name="preference_nicownng_category_view_candidate">Candidate View</string>
+
+  <string name="preference_can_flick_arrow_key_title">Flick Arrow key</string>
+  <string name="preference_can_flick_arrow_key_summary_ja">You can move the Cursor in each direction by flicking Arrow key</string>
+  <string name="preference_can_flick_mode_key_title">Flick Mode key</string>
+  <string name="preference_can_flick_mode_key_summary_ja">You can change Input mode in a different way by flicking [Mode](あＡ１) key</string>
+
+  <string name="preference_qwerty_matrix_mode">Matrix QWERTY</string>
+  <string name="preference_qwerty_matrix_summary_ja">Slightly larger key top than real QWERTY</string>
+
+  <string name="preference_qwerty_swap_shift_alt">Swap [Shift]/[Alt] Soft Key</string>
+  <string name="preference_qwerty_swap_shift_alt_summary_ja">Swap the position [Shift] and [Alt] Soft keys in Roman (mini/compact) mode</string>
+  <string name="preference_qwerty_swap_minienter">Swap around [Enter] Key</string>
+  <string name="preference_qwerty_swap_minienter_summary_ja">Swap the position around the [Enter] Soft keys in Roman (mini/compact) mode</string>
+
+  <string name="preference_nicownng_fullscreen">Fullscreen</string>
+  <string name="preference_nicownng_fullscreen_summary_ja">The soft keyboard occupy the full screen</string>
+
+   <!-- IME dependency -->
+  <!-- OpenWnn English -->
+  <string name="nicownng_english_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2023.0803.1</string>
+  <string name="nicownng_english">nicoWnnG English</string>
+  <string name="nicownng_english_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnEngDic.so</string>
+  <string name="nicownng_english_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableEN.dic</string>
+  <string name="en_word_separators">.,;:!?</string>
+
+  <!-- OpenWnn Japanese -->
+  <string name="nicownng_japanese_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2023.0803.1</string>
+  <string name="nicownng_japanese">nicoWnnG IME</string>
+  <string name="openwnn_japanese_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnJpnDic.so</string>
+  <string name="nicownng_japanese_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableJAJP.dic</string>
+
+  <!-- Candidate Delete -->
+  <string name="button_candidate_select">Select</string>
+  <string name="button_candidate_delete">Delete learning?</string>
+  <string name="button_candidate_cancel">Close</string>
+
+  <string name="user_dictionary_add_button">Add</string>
+  <string name="user_dictionary_edit_button">Edit</string>
+  <string name="user_dictionary_delete_button">Delete</string>
+  <string name="user_dictionary_export_button">Backup</string>
+  <string name="user_dictionary_import_button">Restore</string>
+  <string name="user_dictionary_init_button">Initialize</string>
+  <string name="user_dictionary_import_textdic_button">Import</string>
+  <string name="user_dictionary_quit_button">Quit</string>
+
+  <string name="dialog_progress_import_title">Restore Dictionary</string>
+  <string name="dialog_progress_import_summary">Copy User-Dictionary from SD-Card ...</string>
+  <string name="dialog_progress_export_title">Backup Dictionary</string>
+  <string name="dialog_progress_export_summary">Copy User-Dictionary to SD-Card ...</string>
+  <string name="dialog_progress_import_textdic_title">Import Dictionary</string>
+  <string name="dialog_progress_import_textdic_summary">Import Words from Dictionary-Text-File ...</string>
+  <string name="selecttxtfileactivity_java_title">- Select TXT-Dictionary File</string>
+      
+
+  <!-- Key top -->
+  <string name="key_left_arrow">↤</string>
+  <string name="key_right_arrow">↦</string>
+  <string name="key_space">スペース</string>
+  <string name="key_space_conv">スペース/変換</string>
+  <string name="key_change_mode">文字</string>
+  <string name="key_convert">変換</string>
+  <string name="key_switch_keyboard">KBD</string>
+
+  <string name="key_12key_A">゛゜ 大小</string>
+  <string name="key_12key_kutoten">、。</string>
+  <string name="key_12key_eisuu_kana">英数カナ</string>
+
+  <string name="key_12key_alphabet_1">.＠ １</string>
+  <string name="key_12key_alphabet_2">ABC ２</string>
+  <string name="key_12key_alphabet_3">DEF ３</string>
+  <string name="key_12key_alphabet_4">GHI ４</string>
+  <string name="key_12key_alphabet_5">JKL ５</string>
+  <string name="key_12key_alphabet_6">MNO ６</string>
+  <string name="key_12key_alphabet_7">PQRS ７</string>
+  <string name="key_12key_alphabet_8">TUV ８</string>
+  <string name="key_12key_alphabet_9">WXYZ ９</string>
+  <string name="key_12key_alphabet_0">- ０</string>
+  <string name="key_12key_alphabet_A">A/a</string>
+
+  <string name="key_12key_katakana_1">ア</string>
+  <string name="key_12key_katakana_2">カ</string>
+  <string name="key_12key_katakana_3">サ</string>
+  <string name="key_12key_katakana_4">タ</string>
+  <string name="key_12key_katakana_5">ナ</string>
+  <string name="key_12key_katakana_6">ハ</string>
+  <string name="key_12key_katakana_7">マ</string>
+  <string name="key_12key_katakana_8">ヤ</string>
+  <string name="key_12key_katakana_9">ラ</string>
+  <string name="key_12key_katakana_0">ワ</string>
+
+  <string name="key_12key_1">あ 1.＠</string>
+  <string name="key_12key_2">か 2 ABC</string>
+  <string name="key_12key_3">さ 3 DEF</string>
+  <string name="key_12key_4">た 4 GHI</string>
+  <string name="key_12key_5">な 5 JKL</string>
+  <string name="key_12key_6">は 6 MNO</string>
+  <string name="key_12key_7">ま 7 PQRS</string>
+  <string name="key_12key_8">や 8 TUV</string>
+  <string name="key_12key_9">ら 9 WXYZ</string>
+  <string name="key_12key_0">わ 0 -</string>
+  <string name="key_12key_pic">PIC</string>
+
+  <string name="key_12key_mode_2touch">2touch</string>
+  <string name="key_12key_mode_bell">Bell</string>
+  <string name="key_12key_mode_nico">Nico</string>
+  <string name="key_12key_mode_nico2">Nico2</string>
+
+  <string name="key_qwerty_tyouon">ー</string>
+  <string name="key_qwerty_full_touten">、</string>
+  <string name="key_qwerty_full_kuten">。</string>
+  <string name="key_qwerty_full_question">？</string>
+  <string name="key_qwerty_full_comma">，</string>
+  <string name="key_qwerty_full_period">．</string>
+  <string name="key_qwerty_full_at_sign">＠</string>
+  <string name="key_qwerty_full_number_sign">＃</string>
+  <string name="key_qwerty_full_percent_sign">％</string>
+  <string name="key_qwerty_full_ampersand">＆</string>
+  <string name="key_qwerty_full_asterrisk">＊</string>
+  <string name="key_qwerty_full_plus_sign">＋</string>
+  <string name="key_qwerty_full_minus_sign">－</string>
+  <string name="key_qwerty_full_equal_sign">＝</string>
+  <string name="key_qwerty_kagi_kakko_left">「</string>
+  <string name="key_qwerty_kagi_kakko_right">」</string>
+  <string name="key_qwerty_full_exclamation_mark">！</string>
+  <string name="key_qwerty_full_left_parenthesis">（</string>
+  <string name="key_qwerty_full_right_parenthesis">）</string>
+  <string name="key_qwerty_full_colon">：</string>
+  <string name="key_qwerty_full_semicolon">；</string>
+  <string name="key_qwerty_full_middot">・</string>
+  <string name="key_qwerty_full_thilde">～</string>
+  <string name="key_qwerty_full_double_quotation_sign">”</string>
+  <string name="key_qwerty_full_plus_minus_sign">±</string>
+  <string name="key_qwerty_full_underscore">＿</string>
+  <string name="key_qwerty_full_left_curly_blacket">｛</string>
+  <string name="key_qwerty_full_right_curly_blacket">｝</string>
+  <string name="key_qwerty_full_vertical_bar">｜</string>
+  <string name="key_qwerty_full_less_than_sign">＜</string>
+  <string name="key_qwerty_full_greater_than_sign">＞</string>
+  <string name="key_qwerty_full_left_single_quote">‘</string>
+  <string name="key_qwerty_full_right_single_quote">’</string>
+  <string name="key_qwerty_full_back_slash">＼</string>
+  <string name="key_qwerty_full_dollar_sign">＄</string>
+  <string name="key_qwerty_full_yen_sign">￥</string>
+  <string name="key_qwerty_full_hat">＾</string>
+  <string name="key_qwerty_full_slash">／</string>
+  <string name="key_qwerty_full_left_square_bracket">［</string>
+  <string name="key_qwerty_full_right_square_bracket">］</string>
+  <string name="key_qwerty_full_space">　</string>
+
+  <string name="key_12key_switch_full_hiragana">あ</string>
+  <string name="key_12key_switch_full_katakana">カ</string>
+  <string name="key_12key_switch_full_alphabet">Ａ</string>
+  <string name="key_12key_switch_full_number">１</string>
+  <string name="key_12key_switch_half_katakana">ｶﾅ</string>
+  <string name="key_12key_switch_half_alphabet">AB</string>
+  <string name="key_12key_switch_half_number">12</string>
+  <string name="key_12key_switch_full_niko">ﾆｺ</string>
+  <string name="key_12key_switch_pinyin">中</string>
+
+  <string name="key_qwerty_half_comma">､</string>
+  <string name="key_qwerty_half_period">｡</string>
+  <string name="key_qwerty_half_tyouon">ｰ</string>
+
+  <string name="key_12key_undo">Undo</string>
+
+  <string name="indicator_caps">CAPS</string>
+  <string name="indicator_alt">ALT</string>
+
+  <string name="key_kana_full_hiragana_a">あ</string>
+  <string name="key_kana_full_hiragana_i">い</string>
+  <string name="key_kana_full_hiragana_u">う</string>
+  <string name="key_kana_full_hiragana_e">え</string>
+  <string name="key_kana_full_hiragana_o">お</string>
+  <string name="key_kana_full_hiragana_ka">か</string>
+  <string name="key_kana_full_hiragana_ki">き</string>
+  <string name="key_kana_full_hiragana_ku">く</string>
+  <string name="key_kana_full_hiragana_ke">け</string>
+  <string name="key_kana_full_hiragana_ko">こ</string>
+  <string name="key_kana_full_hiragana_sa">さ</string>
+  <string name="key_kana_full_hiragana_si">し</string>
+  <string name="key_kana_full_hiragana_su">す</string>
+  <string name="key_kana_full_hiragana_se">せ</string>
+  <string name="key_kana_full_hiragana_so">そ</string>
+  <string name="key_kana_full_hiragana_ta">た</string>
+  <string name="key_kana_full_hiragana_ti">ち</string>
+  <string name="key_kana_full_hiragana_tu">つ</string>
+  <string name="key_kana_full_hiragana_te">て</string>
+  <string name="key_kana_full_hiragana_to">と</string>
+  <string name="key_kana_full_hiragana_na">な</string>
+  <string name="key_kana_full_hiragana_ni">に</string>
+  <string name="key_kana_full_hiragana_nu">ぬ</string>
+  <string name="key_kana_full_hiragana_ne">ね</string>
+  <string name="key_kana_full_hiragana_no">の</string>
+  <string name="key_kana_full_hiragana_ha">は</string>
+  <string name="key_kana_full_hiragana_hi">ひ</string>
+  <string name="key_kana_full_hiragana_hu">ふ</string>
+  <string name="key_kana_full_hiragana_he">へ</string>
+  <string name="key_kana_full_hiragana_ho">ほ</string>
+  <string name="key_kana_full_hiragana_ma">ま</string>
+  <string name="key_kana_full_hiragana_mi">み</string>
+  <string name="key_kana_full_hiragana_mu">む</string>
+  <string name="key_kana_full_hiragana_me">め</string>
+  <string name="key_kana_full_hiragana_mo">も</string>
+  <string name="key_kana_full_hiragana_ya">や</string>
+  <string name="key_kana_full_hiragana_yi">い</string>
+  <string name="key_kana_full_hiragana_yu">ゆ</string>
+  <string name="key_kana_full_hiragana_ye">え</string>
+  <string name="key_kana_full_hiragana_yo">よ</string>
+  <string name="key_kana_full_hiragana_ra">ら</string>
+  <string name="key_kana_full_hiragana_ri">り</string>
+  <string name="key_kana_full_hiragana_ru">る</string>
+  <string name="key_kana_full_hiragana_re">れ</string>
+  <string name="key_kana_full_hiragana_ro">ろ</string>
+  <string name="key_kana_full_hiragana_wa">わ</string>
+  <string name="key_kana_full_hiragana_wi">ゐ</string>
+  <string name="key_kana_full_hiragana_wu">う</string>
+  <string name="key_kana_full_hiragana_we">ゑ</string>
+  <string name="key_kana_full_hiragana_wo">を</string>
+  <string name="key_kana_full_hiragana_n">ん</string>
+  <string name="key_kana_full_hiragana_ga">が</string>
+  <string name="key_kana_full_hiragana_gi">ぎ</string>
+  <string name="key_kana_full_hiragana_gu">ぐ</string>
+  <string name="key_kana_full_hiragana_ge">げ</string>
+  <string name="key_kana_full_hiragana_go">ご</string>
+  <string name="key_kana_full_hiragana_za">ざ</string>
+  <string name="key_kana_full_hiragana_zi">じ</string>
+  <string name="key_kana_full_hiragana_zu">ず</string>
+  <string name="key_kana_full_hiragana_ze">ぜ</string>
+  <string name="key_kana_full_hiragana_zo">ぞ</string>
+  <string name="key_kana_full_hiragana_da">だ</string>
+  <string name="key_kana_full_hiragana_di">ぢ</string>
+  <string name="key_kana_full_hiragana_du">づ</string>
+  <string name="key_kana_full_hiragana_de">で</string>
+  <string name="key_kana_full_hiragana_do">ど</string>
+  <string name="key_kana_full_hiragana_ba">ば</string>
+  <string name="key_kana_full_hiragana_bi">び</string>
+  <string name="key_kana_full_hiragana_bu">ぶ</string>
+  <string name="key_kana_full_hiragana_be">べ</string>
+  <string name="key_kana_full_hiragana_bo">ぼ</string>
+  <string name="key_kana_full_hiragana_pa">ぱ</string>
+  <string name="key_kana_full_hiragana_pi">ぴ</string>
+  <string name="key_kana_full_hiragana_pu">ぷ</string>
+  <string name="key_kana_full_hiragana_pe">ぺ</string>
+  <string name="key_kana_full_hiragana_po">ぽ</string>
+  <string name="key_kana_full_hiragana_la">ぁ</string>
+  <string name="key_kana_full_hiragana_li">ぃ</string>
+  <string name="key_kana_full_hiragana_lu">ぅ</string>
+  <string name="key_kana_full_hiragana_le">ぇ</string>
+  <string name="key_kana_full_hiragana_lo">ぉ</string>
+  <string name="key_kana_full_hiragana_lya">ゃ</string>
+  <string name="key_kana_full_hiragana_lyu">ゅ</string>
+  <string name="key_kana_full_hiragana_lyo">ょ</string>
+  <string name="key_kana_full_hiragana_ltu">っ</string>
+  <string name="key_kana_full_hiragana_lwa">ゎ</string>
+  <string name="key_kana_full_hiragana_dakuten">゛</string>
+  <string name="key_kana_full_hiragana_handakuten">゜</string>
+  <string name="key_kana_full_hiragana_lka">ヵ</string>
+  <string name="key_kana_full_hiragana_lke">ヶ</string>
+  <string name="key_kana_full_hiragana_noma">々</string>
+  <string name="key_kana_full_hiragana_odori">ゝ</string>
+  <string name="key_kana_full_hiragana_odoridaku">ゞ</string>
+  <string name="key_kana_full_hiragana_vu">ヴ</string>
+  <string name="key_kana_full_hiragana_tyouon">ー</string>
+  <string name="key_kana_full_hiragana_middot">・</string>
+  <string name="key_kana_full_hiragana_touten">、</string>
+  <string name="key_kana_full_hiragana_kuten">。</string>
+  <string name="key_kana_full_hiragana_kagi_kakko_left">「</string>
+  <string name="key_kana_full_hiragana_kagi_kakko_right">」</string>
+  <string name="key_kana_full_hiragana_three_dot_leader">…</string>
+  <string name="key_kana_full_hiragana_none">　</string>
+
+  <string name="key_kana_full_katakana_a">ア</string>
+  <string name="key_kana_full_katakana_i">イ</string>
+  <string name="key_kana_full_katakana_u">ウ</string>
+  <string name="key_kana_full_katakana_e">エ</string>
+  <string name="key_kana_full_katakana_o">オ</string>
+  <string name="key_kana_full_katakana_ka">カ</string>
+  <string name="key_kana_full_katakana_ki">キ</string>
+  <string name="key_kana_full_katakana_ku">ク</string>
+  <string name="key_kana_full_katakana_ke">ケ</string>
+  <string name="key_kana_full_katakana_ko">コ</string>
+  <string name="key_kana_full_katakana_sa">サ</string>
+  <string name="key_kana_full_katakana_si">シ</string>
+  <string name="key_kana_full_katakana_su">ス</string>
+  <string name="key_kana_full_katakana_se">セ</string>
+  <string name="key_kana_full_katakana_so">ソ</string>
+  <string name="key_kana_full_katakana_ta">タ</string>
+  <string name="key_kana_full_katakana_ti">チ</string>
+  <string name="key_kana_full_katakana_tu">ツ</string>
+  <string name="key_kana_full_katakana_te">テ</string>
+  <string name="key_kana_full_katakana_to">ト</string>
+  <string name="key_kana_full_katakana_na">ナ</string>
+  <string name="key_kana_full_katakana_ni">ニ</string>
+  <string name="key_kana_full_katakana_nu">ヌ</string>
+  <string name="key_kana_full_katakana_ne">ネ</string>
+  <string name="key_kana_full_katakana_no">ノ</string>
+  <string name="key_kana_full_katakana_ha">ハ</string>
+  <string name="key_kana_full_katakana_hi">ヒ</string>
+  <string name="key_kana_full_katakana_hu">フ</string>
+  <string name="key_kana_full_katakana_he">ヘ</string>
+  <string name="key_kana_full_katakana_ho">ホ</string>
+  <string name="key_kana_full_katakana_ma">マ</string>
+  <string name="key_kana_full_katakana_mi">ミ</string>
+  <string name="key_kana_full_katakana_mu">ム</string>
+  <string name="key_kana_full_katakana_me">メ</string>
+  <string name="key_kana_full_katakana_mo">モ</string>
+  <string name="key_kana_full_katakana_ya">ヤ</string>
+  <string name="key_kana_full_katakana_yi">イ</string>
+  <string name="key_kana_full_katakana_yu">ユ</string>
+  <string name="key_kana_full_katakana_ye">エ</string>
+  <string name="key_kana_full_katakana_yo">ヨ</string>
+  <string name="key_kana_full_katakana_ra">ラ</string>
+  <string name="key_kana_full_katakana_ri">リ</string>
+  <string name="key_kana_full_katakana_ru">ル</string>
+  <string name="key_kana_full_katakana_re">レ</string>
+  <string name="key_kana_full_katakana_ro">ロ</string>
+  <string name="key_kana_full_katakana_wa">ワ</string>
+  <string name="key_kana_full_katakana_wi">ヰ</string>
+  <string name="key_kana_full_katakana_wu">ウ</string>
+  <string name="key_kana_full_katakana_we">ヱ</string>
+  <string name="key_kana_full_katakana_wo">ヲ</string>
+  <string name="key_kana_full_katakana_n">ン</string>
+  <string name="key_kana_full_katakana_ga">ガ</string>
+  <string name="key_kana_full_katakana_gi">ギ</string>
+  <string name="key_kana_full_katakana_gu">グ</string>
+  <string name="key_kana_full_katakana_ge">ゲ</string>
+  <string name="key_kana_full_katakana_go">ゴ</string>
+  <string name="key_kana_full_katakana_za">ザ</string>
+  <string name="key_kana_full_katakana_zi">ジ</string>
+  <string name="key_kana_full_katakana_zu">ズ</string>
+  <string name="key_kana_full_katakana_ze">ゼ</string>
+  <string name="key_kana_full_katakana_zo">ゾ</string>
+  <string name="key_kana_full_katakana_da">ダ</string>
+  <string name="key_kana_full_katakana_di">ヂ</string>
+  <string name="key_kana_full_katakana_du">ヅ</string>
+  <string name="key_kana_full_katakana_de">デ</string>
+  <string name="key_kana_full_katakana_do">ド</string>
+  <string name="key_kana_full_katakana_ba">バ</string>
+  <string name="key_kana_full_katakana_bi">ビ</string>
+  <string name="key_kana_full_katakana_bu">ブ</string>
+  <string name="key_kana_full_katakana_be">ベ</string>
+  <string name="key_kana_full_katakana_bo">ボ</string>
+  <string name="key_kana_full_katakana_pa">パ</string>
+  <string name="key_kana_full_katakana_pi">ピ</string>
+  <string name="key_kana_full_katakana_pu">プ</string>
+  <string name="key_kana_full_katakana_pe">ペ</string>
+  <string name="key_kana_full_katakana_po">ポ</string>
+  <string name="key_kana_full_katakana_la">ァ</string>
+  <string name="key_kana_full_katakana_li">ィ</string>
+  <string name="key_kana_full_katakana_lu">ゥ</string>
+  <string name="key_kana_full_katakana_le">ェ</string>
+  <string name="key_kana_full_katakana_lo">ォ</string>
+  <string name="key_kana_full_katakana_lya">ャ</string>
+  <string name="key_kana_full_katakana_lyu">ュ</string>
+  <string name="key_kana_full_katakana_lyo">ョ</string>
+  <string name="key_kana_full_katakana_ltu">ッ</string>
+  <string name="key_kana_full_katakana_lwa">ヮ</string>
+  <string name="key_kana_full_katakana_dakuten">゛</string>
+  <string name="key_kana_full_katakana_handakuten">゜</string>
+  <string name="key_kana_full_katakana_lka">ヵ</string>
+  <string name="key_kana_full_katakana_lke">ヶ</string>
+  <string name="key_kana_full_katakana_noma">々</string>
+  <string name="key_kana_full_katakana_odori">ゝ</string>
+  <string name="key_kana_full_katakana_odoridaku">ゞ</string>
+  <string name="key_kana_full_katakana_vu">ヴ</string>
+  <string name="key_kana_full_katakana_tyouon">ー</string>
+  <string name="key_kana_full_katakana_middot">・</string>
+  <string name="key_kana_full_katakana_touten">、</string>
+  <string name="key_kana_full_katakana_kuten">。</string>
+  <string name="key_kana_full_katakana_kagi_kakko_left">「</string>
+  <string name="key_kana_full_katakana_kagi_kakko_right">」</string>
+  <string name="key_kana_full_katakana_three_dot_leader">…</string>
+  <string name="key_kana_full_katakana_none">　</string>
+
+  <string name="key_kana_half_katakana_a">ｱ</string>
+  <string name="key_kana_half_katakana_i">ｲ</string>
+  <string name="key_kana_half_katakana_u">ｳ</string>
+  <string name="key_kana_half_katakana_e">ｴ</string>
+  <string name="key_kana_half_katakana_o">ｵ</string>
+  <string name="key_kana_half_katakana_ka">ｶ</string>
+  <string name="key_kana_half_katakana_ki">ｷ</string>
+  <string name="key_kana_half_katakana_ku">ｸ</string>
+  <string name="key_kana_half_katakana_ke">ｹ</string>
+  <string name="key_kana_half_katakana_ko">ｺ</string>
+  <string name="key_kana_half_katakana_sa">ｻ</string>
+  <string name="key_kana_half_katakana_si">ｼ</string>
+  <string name="key_kana_half_katakana_su">ｽ</string>
+  <string name="key_kana_half_katakana_se">ｾ</string>
+  <string name="key_kana_half_katakana_so">ｿ</string>
+  <string name="key_kana_half_katakana_ta">ﾀ</string>
+  <string name="key_kana_half_katakana_ti">ﾁ</string>
+  <string name="key_kana_half_katakana_tu">ﾂ</string>
+  <string name="key_kana_half_katakana_te">ﾃ</string>
+  <string name="key_kana_half_katakana_to">ﾄ</string>
+  <string name="key_kana_half_katakana_na">ﾅ</string>
+  <string name="key_kana_half_katakana_ni">ﾆ</string>
+  <string name="key_kana_half_katakana_nu">ﾇ</string>
+  <string name="key_kana_half_katakana_ne">ﾈ</string>
+  <string name="key_kana_half_katakana_no">ﾉ</string>
+  <string name="key_kana_half_katakana_ha">ﾊ</string>
+  <string name="key_kana_half_katakana_hi">ﾋ</string>
+  <string name="key_kana_half_katakana_hu">ﾌ</string>
+  <string name="key_kana_half_katakana_he">ﾍ</string>
+  <string name="key_kana_half_katakana_ho">ﾎ</string>
+  <string name="key_kana_half_katakana_ma">ﾏ</string>
+  <string name="key_kana_half_katakana_mi">ﾐ</string>
+  <string name="key_kana_half_katakana_mu">ﾑ</string>
+  <string name="key_kana_half_katakana_me">ﾒ</string>
+  <string name="key_kana_half_katakana_mo">ﾓ</string>
+  <string name="key_kana_half_katakana_ya">ﾔ</string>
+  <string name="key_kana_half_katakana_yi">ｲ</string>
+  <string name="key_kana_half_katakana_yu">ﾕ</string>
+  <string name="key_kana_half_katakana_ye">ｴ</string>
+  <string name="key_kana_half_katakana_yo">ﾖ</string>
+  <string name="key_kana_half_katakana_ra">ﾗ</string>
+  <string name="key_kana_half_katakana_ri">ﾘ</string>
+  <string name="key_kana_half_katakana_ru">ﾙ</string>
+  <string name="key_kana_half_katakana_re">ﾚ</string>
+  <string name="key_kana_half_katakana_ro">ﾛ</string>
+  <string name="key_kana_half_katakana_wa">ﾜ</string>
+  <string name="key_kana_half_katakana_wu">ｳ</string>
+  <string name="key_kana_half_katakana_wo">ｦ</string>
+  <string name="key_kana_half_katakana_n">ﾝ</string>
+  <string name="key_kana_half_katakana_la">ｧ</string>
+  <string name="key_kana_half_katakana_li">ｨ</string>
+  <string name="key_kana_half_katakana_lu">ｩ</string>
+  <string name="key_kana_half_katakana_le">ｪ</string>
+  <string name="key_kana_half_katakana_lo">ｫ</string>
+  <string name="key_kana_half_katakana_lya">ｬ</string>
+  <string name="key_kana_half_katakana_lyu">ｭ</string>
+  <string name="key_kana_half_katakana_lyo">ｮ</string>
+  <string name="key_kana_half_katakana_ltu">ｯ</string>
+  <string name="key_kana_half_katakana_dakuten">ﾞ</string>
+  <string name="key_kana_half_katakana_handakuten">ﾟ</string>
+  <string name="key_kana_half_katakana_tyouon">ｰ</string>
+  <string name="key_kana_half_katakana_middot">･</string>
+  <string name="key_kana_half_katakana_touten">､</string>
+  <string name="key_kana_half_katakana_kuten">｡</string>
+  <string name="key_kana_half_katakana_kagi_kakko_left">｢</string>
+  <string name="key_kana_half_katakana_kagi_kakko_right">｣</string>
+  <string name="key_kana_half_katakana_none">　</string>
+
+  <string name="key_usersymbol_phone">---</string>
+  <string name="key_usersymbol_zen_hiragana">\@!?</string>
+  <string name="key_usersymbol_zen_katakana">\@!?</string>
+  <string name="key_usersymbol_zen_alphabet">\@!?</string>
+  <string name="key_usersymbol_zen_number">\@!?</string>
+  <string name="key_usersymbol_han_katakana">\@!?</string>
+  <string name="key_usersymbol_han_alphabet">\@!?</string>
+  <string name="key_usersymbol_han_number">\@!?</string>
+  <string name="key_func_alt">Alt</string>
+  <string name="key_func_all">All</string>
+  <string name="key_func_cut">Cut</string>
+  <string name="key_func_copy">Copy</string>
+  <string name="key_func_paste">Paste</string>
+
+  <!-- Tutorial -->
+  <string name="touch_to_continue">Next »</string>
+  <string name="touch_to_try">Try it on the button below.</string>
+  <string name="touch_to_finish">Try typing and using the keyboard yourself!</string>
+  <string name="tip_to_step1"><b>Like a normal mobile keyboard, tapping ○ three times will result\nin *C*.</b></string>
+  <string name="tip_to_step2_a"><b>For example, let\'s type \"hi.\"\n- Tap ○ twice to get \"h\"</b></string>
+  <string name="tip_to_step2_b"><b>\n- Tap → to advance to the right</b></string>
+  <string name="tip_to_step2_c"><b>\n- Tap ○ three times to get \"i\"</b></string>
+  <string name="tip_to_step2_d"><b>\n- Use touch or ↓ to set the word.</b></string>
+  <string name="tip_to_step3_a"><b>The ■ key switches between Japanese, English, and number input.</b></string>
+  <string name="tip_to_step3_b"><b>We\'ve switched from English to numbers. Next is Japanese.</b></string>
+  <string name="tip_to_step3_c"><b>Let\'s return to English now.</b></string>
+  <string name="tip_to_step4"><b>For other input modes (like full width)\nor a PC style keyboard, hold ■\nfor 3 seconds to show the input menu.</b></string>
+  <string name="tip_to_step5"><b>When you\'re done typing, hit the \"back\" key (←) to close the keyboard.</b></string>
+  <string name="tip_to_step6"><b>This is the end of the tutorial.</b></string>
+
+  <string name="tip_en_to_open_keyboard"><b>The keyboard opens any time you touch a text field.</b></string>
+  <string name="tip_en_to_close_keyboard"><b>Press \"back\" (←) to close the keyboard.</b></string>
+  <string name="tip_en_end_of_tutorial"><b>This is the end of the tutorial.</b></string>
+
+  <string name="key_dic_listup">All</string>
+  <string name="key_dic_listdown">Close</string>
+
+  <string name="js2java_accepted_easy_phone">Select Smartphone Setting.</string>
+  <string name="js2java_accepted_easy_tablet">Select Tablet Setting.</string>
+  <string name="js2java_error_languagesetting">Error [Setup Language Setting].</string>
+  <string name="js2java_error_config">Error [nicoWnnG Configuration].</string>
+
+  <string name="mushroom_error_notfound">Mushroom Plug-in not found.</string>
+  <string name="mushroom_dialog_select_title">Select Mushroom Plug-in</string>
+
+  <!-- main message -->
+  <string name="nicownng_title"><b>about \"nicoWnnG\"</b></string>
+
+  <string name="emoji_license">TypePad 絵文字アイコン画像 by Six Apart Ltd is licensed under a Creative Commons 表示 2.1 日本 License. Permissions beyond the scope of this license may be available at http://start.typepad.jp/typecast/.</string>
+
+	<string name="dialog_usersymbol_edit_title">Edit User Symbol</string>
+	<string name="preference_nicownng_edit_usersymbol_title">Edit [@!?]-Key Definition</string>
+	<string name="preference_nicownng_edit_usersymbol_summary">Edit User Symbols at Typing [@!?]-Key</string>
+	<string name="usersymbol_edit_inputmode">Input Mode</string>
+	<string name="usersymbol_edit_additem">+</string>
+	<string name="usersymbol_edit_delitem">-</string>
+	<string name="usersymbol_edit_upitem">Up</string>
+	<string name="usersymbol_edit_downitem">Down</string>
+	<string name="usersymbol_edit_edititem">Edit</string>
+	<string name="usersymbol_edit_pages">Pages</string>
+	<string name="usersymbol_edit_words">Words</string>
+	<string name="usersymbol_edit_upitem_vertical">U\np</string>
+	<string name="usersymbol_edit_downitem_vertical">D\no\nw\nn</string>
+	<string name="usersymbol_edit_additem_vertical">+</string>
+	<string name="usersymbol_edit_delitem_vertical">-</string>
+
+</resources>
+

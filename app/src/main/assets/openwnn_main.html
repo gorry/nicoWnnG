@@ -1,0 +1,410 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+
+<script type="text/javascript" src="script.js">
+
+</script>
+
+
+
+<title>nicoWnnG IMEの説明と設定</title>
+</head>
+<body onload="onload()">
+
+<H2>
+nicoWnnG IMEの説明と設定
+</H2>
+
+<!--
+-->
+
+<DIV align="right" style="margin: 1em 0 1em 0";>Ver.2014.1204.1</DIV>
+
+<TABLE border="0">
+<TR>
+<TD width="30%" valign="top" class="contents">
+
+<OL>
+<LI><A HREF="#usage">使用方法</A>
+<LI><A HREF="#easy">簡易設定</A>
+<LI><A HREF="#setting">詳細設定</A>
+<LI><A HREF="#license">ライセンス</A>
+</OL>
+
+</TD>
+
+
+
+
+<!--
+-->
+
+<TD valign="top">
+
+<P>「nicoWnnG IME」をご利用いただきありがとうございます。
+
+<P>この画面は、インストール後の初回起動時、またはアプリ一覧から「nicoWnnG」を実行すると表示されます。本画面にて、nicoWnnG IMEの設定を行うことができます。</P>
+
+<P>以下をクリックすると、ヘルプをご覧いただくことができます。</P>
+
+<UL>
+<LI><A HREF="http://GORRY.hauN.org/android/nicownng/help/">http://GORRY.hauN.org/android/nicownng/help/</A>
+</UL>
+
+
+</TD>
+</TR>
+</TABLE>
+
+
+
+
+<!--
+-->
+
+<H3 id="usage" style="">
+■ 使用方法
+</H3>
+
+<P>インストール後、以下の手順で設定を行うと、nicoWnnGで入力できるようになります。</P>
+
+<OL>
+<LI>
+<DIV>インストール終了後、「ホームメニュー」→「設定」→「言語とキーボード」へ移動し、「nicoWnnG IME」のチェックを入れます。</DIV>
+<TABLE align="center">
+<TR>
+<TD>
+<DIV align="center"><TEXTAREA cols="20" rows="4" name="config" onClick="languageSetting()">ここをタッチすると、[言語とキーボードの設定]へ移動します。</TEXTAREA></DIV>
+</TD></TR><TR><TD>
+<DIV align="center">↓</DIV>
+</TD></TR><TR><TD>
+<DIV align="center"><IMG src="language.png"></DIV>
+</TD>
+</TR>
+</TABLE>
+<LI>
+<DIV>以下の入力エリア部分をタップして、テキスト（文字列）が入力可能な状態にします。</DIV>
+<TABLE align="center">
+<TR>
+<TD>
+<DIV align="center"><TEXTAREA cols="24" rows="4" name="input">この中をタップすると、入力方法を選択できます。</TEXTAREA></DIV>
+</TD>
+</TR>
+</TABLE>
+
+<LI>
+<DIV>[入力方法の選択]ダイアログを表示させて、「nicoWnnG IME」を選びます。ダイアログの表示方法は、OSバージョンにより異なります。</DIV>
+
+<TABLE border="1"><TR>
+<TH valign="top">Android<BR>4.x</TH>
+<TD>
+<DIV>文字入力が可能な状態で、画面上端の「通知バー」を下へスライドして、「入力方法の一覧」で「nicoWnnG IME」を選びます。</DIV>
+<DIV align="center"><IMG src="and4ime.png"></DIV>
+</TD>
+</TR><TR>
+<TH valign="top">Android<BR>3.x</TH>
+<TD>
+<DIV>文字入力が可能な状態で、デスクトップ画面右下（時計の隣）のキーボードアイコンをタッチして、「nicoWnnG」を選びます。</DIV>
+<DIV align="center"><IMG src="and3ime.png"></DIV>
+</TD>
+</TR><TR>
+<TH valign="top">Android<BR>2.x/1.x</TH>
+<TD>
+<DIV>入力エリア内を長押しして、表示されたダイアログから「入力方法」を選びます。</DIV>
+<DIV>IMEの一覧が表示されますので、「nicoWnnG IME」を選択してください。</DIV>
+<TABLE align="center"><TR><TD>
+<DIV align="center"><IMG src="input.png"></DIV>
+</TD></TR><TR><TD>
+<DIV align="center">↓</DIV>
+</TD></TR><TR><TD>
+<DIV align="center"><IMG src="selectime.png"></DIV>
+</TD></TR></TABLE>
+</TD>
+</TR></TABLE>
+
+</OL>
+
+
+
+
+<!--
+-->
+
+<H3 id="easy" style="">
+■ 簡易設定
+</H3>
+
+<P>以下のボタンをクリックすると、nicoWnnGの大まかな設定変更を行うことができます。</P>
+<P>詳細な設定変更は、「<A HREF="#setting">詳細設定</A>」で行うことができます。</P>
+
+
+<FORM method="post" name="easy">
+<TABLE align="center" border="1">
+<TR>
+<TH>タイプ</TH>
+<TD colspan="2">
+<label><input type="radio" name="easy_keyboard_type_radio" value="1" checked>スマートフォン</label>
+</TD>
+<TD colspan="2">
+<label><input type="radio" name="easy_keyboard_type_radio" value="2">タブレット</label>
+</TD>
+</TR>
+<TR>
+<TH rowspan="2">縦画面</TH>
+<TD colspan="5">
+<select name="easy_keyboard_portrait_select" onChange="easy_keyboard_portrait_change(this)">
+<option value="1_1">12キー(トグル)
+<option value="1_2">12キー(フリック)
+<option value="1_3">12キー(2タッチ)
+<option value="2_1" selected>ローマ字(default)
+<option value="2_2">ローマ字(コンパクト)
+<option value="2_3">ローマ字(ミニ)
+<option value="2_4">ローマ字(ミニ横)
+<option value="2_5">JISかな
+<option value="2_6">五十音かな
+<option value="2_7">ローマ字(旧)
+<option value="2_8">JISかな(旧)
+<option value="2_9">五十音かな(旧)
+</select>
+</TD>
+</TR>
+<TR>
+<TD colspan="4">
+<IMG name="easy_keyboard_portrait" src="keyboard_12key_toggle.png">
+</TD>
+</TR>
+<TR>
+<TH rowspan="2">横画面</TH>
+<TD colspan="5">
+<select name="easy_keyboard_landscape_select" onChange="easy_keyboard_landscape_change(this)">
+<option value="1_1">12キー(トグル)
+<option value="1_2">12キー(フリック)
+<option value="1_3">12キー(2タッチ)
+<option value="2_1" selected>ローマ字(default)
+<option value="2_2">ローマ字(コンパクト)
+<option value="2_3">ローマ字(ミニ)
+<option value="2_4">ローマ字(ミニ横)
+<option value="2_5">JISかな
+<option value="2_6">五十音かな
+<option value="2_7">ローマ字(旧)
+<option value="2_8">JISかな(旧)
+<option value="2_9">五十音かな(旧)
+</select>
+</TD>
+</TR>
+<TR>
+<TD colspan="4">
+<IMG name="easy_keyboard_landscape" src="keyboard_qwerty_roman_mini.png">
+</TD>
+</TR>
+<TR>
+<TH rowspan="2">サイズ</TH>
+<TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="1">最小</label>
+</TD><TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="2">小さい</label>
+</TD><TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="3" checked>普通</label>
+</TD><TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="4">大きい</label>
+</TD><TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="5">最大</label>
+</TD>
+</TR>
+<TR>
+<TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="6">最大+1</label>
+</TD><TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="7">最大+2</label>
+</TD><TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="8">最大+3</label>
+</TD><TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="9">最大+4</label>
+</TD><TD align="center">
+<label><input type="radio" name="easy_keyboard_size_radio" value="10">最大+5</label>
+</TD>
+</TR>
+<TR>
+<TH>　</TH>
+<TD colspan="5" align="center"><BUTTON type="button" onClick="easy_set()"><NOBR>簡易設定をする</NOBR></BUTTON></TD>
+</TR>
+</TABLE>
+</FORM>
+
+
+
+
+<!--
+-->
+
+<H3 id="setting" style="">
+■ 詳細設定
+</H3>
+
+<P>以下の入力エリアをタッチすると、nicoWnnG IMEの設定画面を開くことができます。</P>
+<P>横画面にしてからタッチすると横画面モード、縦画面にしてからタッチすると縦画面モードの設定を行うことができます。</P>
+
+<DIV align="center"><TEXTAREA cols="20" rows="4" name="setting" onClick="setting()">ここをタッチすると、nicoWnnG IMEの設定画面を開きます。</TEXTAREA></DIV>
+
+<P>nicoWnnG IMEキーボード表示中は、[文字種]キー<IMG src="modekey.png">を長押しして、現れたダイアログで[設定]ボタンをクリックすると、設定画面を開くことができます。</P>
+
+<DIV align="center"><IMG src="modedialog.png"></DIV>
+
+
+
+
+<!--
+-->
+
+<H3 id="license">
+■ ライセンス
+</H3>
+
+<P>nicoWnnG IMEは、オムロン ソフトウェア(株)/hiroshica/後藤 浩昭（GORRY）の著作物です。</P>
+
+<P>nicoWnnG IMEは、「Apache License Version 2.0」で配布されます。このライセンスに基づいての使用・再配布が許可されます。</P>
+<P>「Apache License Version 2.0」のライセンス条文は、以下からお読みいただけます。</P>
+
+<UL class="jump">
+<LI><A HREF="http://www.apache.org/licenses/LICENSE-2.0.txt">http://www.apache.org/licenses/LICENSE-2.0.txt</A>（オリジナル）
+<LI><A HREF="http://sourceforge.jp/projects/opensource/wiki/licenses%2FApache_License_2.0">http://sourceforge.jp/projects/opensource/wiki/licenses%2FApache_License_2.0</A>（日本語参考訳）
+</UL>
+
+
+
+
+<P>nicoWnnG IMEに含まれている絵文字画像は、<A HREF="http://www.typepad.jp/">Six Apart Ltd</A>の著作物</A>です。この絵文字画像は、<A HREF="http://creativecommons.org/licenses/by/2.1/jp/">『クリエイティブ・コモンズ 表示 2.1 日本 ライセンス』</A>に基づいて利用しています。</P>
+
+<UL class="jump">
+<LI><A HREF="http://start.typepad.jp/typecast/">http://start.typepad.jp/typecast/</A>
+</UL>
+
+
+
+
+<P>nicoWnnG IMEは、以下URLを配布先とします。利便性などのためにこれ以外のURLで配布することがありますが、以下が最も正式なものであり、完全な最新のパッケージを得ることができます。</P>
+
+<UL class="jump">
+<LI><A HREF="http://GORRY.hauN.org/android/nicownng/">http://GORRY.hauN.org/android/nicownng/</A>
+</UL>
+
+
+
+
+
+
+<style>
+<!--
+
+h2 {
+	height: 72px;
+	font-size:150%;
+	font-weight:bold
+	margin: 2em 2em 2em 2em;
+	padding: 0.5em 80px 0.5em 0.5em;
+	border-width: 1px 0em 0em 0.5em;
+	border-style: solid;
+	border-color: #006666;
+	background-color: #dfdfbf;
+	clear: both;
+	background-image: url("icon.png");
+	background-repeat: no-repeat;
+	background-position: 99% center;
+}
+
+h3 {
+	font-size:125%;
+	font-weight:bold
+	margin: 2em 2em 2em 2em;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	border-width: 1px 0em 0em 0.5em;
+	border-style: solid;
+	border-color: #006666;
+	background-color: #dfdfbf;
+	clear: both;
+}
+
+h4 {
+	font-size:100%;
+	font-weight:bold
+	margin: 2em 2em 2em 2em;
+	padding: 0.2em 0.2em 0.2em 0.2em;
+	border-width: 1px 0em 0em 0.5em;
+	border-style: solid;
+	border-color: #006666;
+	background-color: #dfdfbf;
+	clear: both;
+}
+
+ol li {
+	margin-top: 0.5em;
+}
+
+ul li {
+	margin-top: 0.5em;
+}
+
+ul.noindent {
+	margin-left: 0;
+	padding-left: 1.5em;
+}
+
+ul.noindent li {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+dl {
+	padding: 1em 0 0 1em;
+}
+
+dt {
+	font-weight:bold;
+	padding-right: 3em;
+	padding-left: 0.2em;
+	border-width: 0em 0em 0em 0.5em;
+	border-style: solid;
+	border-color: #660000;
+	background-color: #eeeedd;
+}
+
+dd {
+	margin-top:0.2em;
+	margin-bottom:1em;
+	margin-left:1em;
+	margin-right:0;
+}
+
+blockquote {
+	margin: 1em;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #006666;
+	background-color: #efcfcf;
+}
+
+textarea {
+	background-color: #ffd;
+}
+
+td.contents {
+	background-color: #dfd;
+}
+
+div.fyi {
+	margin: 0.5em;
+	padding: 0.5em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #000000;
+	background-color: #dfd;
+}
+
+-->
+</style>
+
+</body>
+</html>

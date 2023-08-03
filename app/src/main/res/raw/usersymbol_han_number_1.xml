@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ◇ 半角数字-1 -->
+<keystring>
+<string value="@"/>
+<string value="!"/>
+<string value="?"/>
+<string value="#"/>
+<string value="&amp;"/>
+<string value="/"/>
+<string value=":"/>
+<string value=";"/>
+<string value="()"/>
+<string value="\"/>
+<string value="_"/>
+<string value="|"/>
+<string value="~"/>
+<string value="^"/>
+<string value="&quot;"/>
+<string value="'"/>
+<string value="[]"/>
+<string value="{}"/>
+</keystring>

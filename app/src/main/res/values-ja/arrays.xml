@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright (C) 2008,2009  OMRON SOFTWARE Co., Ltd.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+<resources>
+  <string-array name="preference_subten_12key_mode_entries">
+    <item>@string/preference_subten_12key_mode_0</item>
+    <item>@string/preference_subten_12key_mode_1</item>
+    <item>@string/preference_subten_12key_mode_2</item>
+  </string-array>
+  <string-array name="preference_subten_12key_mode_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+  </string-array>
+
+  <string-array name="preference_subten_qwerty_mode_entries">
+    <item>@string/preference_subten_qwerty_mode_0</item>
+    <item>@string/preference_subten_qwerty_mode_1</item>
+    <item>@string/preference_subten_qwerty_mode_2</item>
+  </string-array>
+  <string-array name="preference_subten_qwerty_mode_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+  </string-array>
+
+  <string-array name="prediction_mode2_entries">
+    <item>@string/preference_prediction_mode2_0</item>
+    <item>@string/preference_prediction_mode2_1</item>
+    <item>@string/preference_prediction_mode2_2</item>
+  </string-array>
+  <string-array name="prediction_mode2_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+  </string-array>
+
+  <string-array name="key_sound_vol_entries">
+    <item>@string/preference_key_sound_vol_0</item>
+    <item>@string/preference_key_sound_vol_1</item>
+    <item>@string/preference_key_sound_vol_2</item>
+  </string-array>
+  <string-array name="key_sound_vol_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+  </string-array>
+
+
+  <string-array name="input_mode_entries">
+    <item>@string/preference_input_mode_nico</item>
+    <item>@string/preference_input_mode_bell</item>
+    <item>@string/preference_input_mode_normal</item>
+    <item>@string/preference_input_mode_nico2</item>
+    <item>@string/preference_input_mode_2touch</item>
+    <!-- <item>@string/preference_input_test</item> -->
+  </string-array>
+  <string-array name="input_mode_values">
+    <item>input_nico</item>
+    <item>input_bell</item>
+    <item>input_normal</item>
+    <item>input_nico2</item>
+    <item>input_2touch</item>
+    <!-- <item>input_test</item> -->
+  </string-array>
+
+  <string-array name="flick_entries">
+    <item>@string/preference_flick_none</item>
+    <item>@string/preference_flick_1stroke</item>
+    <item>@string/preference_flick_nicostroke</item>
+  </string-array>
+  <string-array name="flick_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+  </string-array>
+
+  <string-array name="nico_candidate_lines_entries">
+    <item>@string/preference_nico_candidate_lines_1</item>
+    <item>@string/preference_nico_candidate_lines_2</item>
+    <item>@string/preference_nico_candidate_lines_3</item>
+    <item>@string/preference_nico_candidate_lines_4</item>
+    <item>@string/preference_nico_candidate_lines_5</item>
+  </string-array>
+  <string-array name="nico_candidate_lines_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+  </string-array>
+
+  <string-array name="flick_sensitivity_entries">
+    <item>@string/preference_flick_sensitivity_0</item>
+    <item>@string/preference_flick_sensitivity_1</item>
+    <item>@string/preference_flick_sensitivity_2</item>
+    <item>@string/preference_flick_sensitivity_3</item>
+    <item>@string/preference_flick_sensitivity_4</item>
+    <item>@string/preference_flick_sensitivity_5</item>
+    <item>@string/preference_flick_sensitivity_6</item>
+    <item>@string/preference_flick_sensitivity_7</item>
+    <item>@string/preference_flick_sensitivity_8</item>
+    <item>@string/preference_flick_sensitivity_9</item>
+  </string-array>
+  <string-array name="flick_sensitivity_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+  </string-array>
+
+  <string-array name="key_height_entries">
+    <item>@string/preference_key_height_0</item>
+    <item>@string/preference_key_height_1</item>
+    <item>@string/preference_key_height_2</item>
+    <item>@string/preference_key_height_3</item>
+    <item>@string/preference_key_height_4</item>
+    <item>@string/preference_key_height_5</item>
+    <item>@string/preference_key_height_6</item>
+    <item>@string/preference_key_height_7</item>
+    <item>@string/preference_key_height_8</item>
+    <item>@string/preference_key_height_9</item>
+  </string-array>
+  <string-array name="key_height_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+  </string-array>
+
+  <string-array name="candidateview_height_entries">
+    <item>@string/preference_candidateview_height_0</item>
+    <item>@string/preference_candidateview_height_1</item>
+    <item>@string/preference_candidateview_height_2</item>
+    <item>@string/preference_candidateview_height_3</item>
+    <item>@string/preference_candidateview_height_4</item>
+    <item>@string/preference_candidateview_height_5</item>
+    <item>@string/preference_candidateview_height_6</item>
+    <item>@string/preference_candidateview_height_7</item>
+    <item>@string/preference_candidateview_height_8</item>
+    <item>@string/preference_candidateview_height_9</item>
+  </string-array>
+  <string-array name="candidateview_height_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+  </string-array>
+
+  <string-array name="qwerty_kana_mode_entries">
+    <item>@string/preference_qwerty_kana_mode_4</item>
+    <item>@string/preference_qwerty_kana_mode_8</item>
+    <item>@string/preference_qwerty_kana_mode_3</item>
+    <item>@string/preference_qwerty_kana_mode_7</item>
+    <item>@string/preference_qwerty_kana_mode_5</item>
+    <item>@string/preference_qwerty_kana_mode_6</item>
+    <item>@string/preference_qwerty_kana_mode_0</item>
+    <item>@string/preference_qwerty_kana_mode_1</item>
+    <item>@string/preference_qwerty_kana_mode_2</item>
+  </string-array>
+  <string-array name="qwerty_kana_mode_values">
+    <item>4</item>
+    <item>8</item>
+    <item>3</item>
+    <item>7</item>
+    <item>5</item>
+    <item>6</item>
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+  </string-array>
+
+  <string-array name="candidate_font_size_entries">
+    <item>@string/preference_candidate_font_size_0</item>
+    <item>@string/preference_candidate_font_size_1</item>
+    <item>@string/preference_candidate_font_size_2</item>
+    <item>@string/preference_candidate_font_size_3</item>
+    <item>@string/preference_candidate_font_size_4</item>
+    <item>@string/preference_candidate_font_size_5</item>
+    <item>@string/preference_candidate_font_size_6</item>
+    <item>@string/preference_candidate_font_size_7</item>
+    <item>@string/preference_candidate_font_size_8</item>
+    <item>@string/preference_candidate_font_size_9</item>
+  </string-array>
+  <string-array name="candidate_font_size_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+  </string-array>
+
+
+  <string-array name="hidden_softkeyboard_entries">
+    <item>@string/preference_hidden_softkeyboard_0</item>
+    <item>@string/preference_hidden_softkeyboard_3</item>
+    <item>@string/preference_hidden_softkeyboard_1</item>
+    <item>@string/preference_hidden_softkeyboard_2</item>
+  </string-array>
+  <string-array name="hidden_softkeyboard_values">
+    <item>0</item>
+    <item>3</item>
+    <item>1</item>
+    <item>2</item>
+  </string-array>
+
+
+  <string-array name="shiftkey_style_entries">
+    <item>@string/preference_shiftkey_style_0</item>
+    <item>@string/preference_shiftkey_style_1</item>
+    <item>@string/preference_shiftkey_style_2</item>
+  </string-array>
+  <string-array name="shiftkey_style_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+  </string-array>
+
+
+  <string-array name="keyboard_skin">
+    <item>@string/preference_keyboard_android_default</item>
+    <item>@string/preference_keyboard_simple</item>
+    <item>@string/preference_keyboard_metal</item>
+  </string-array>
+
+  <string name="keyboard_skin_id_default">keyboard_android_default</string>
+
+  <string-array name="keyboard_skin_id">
+    <item>keyboard_android_default</item>
+    <item>keyboard_simple</item>
+    <item>keyboard_metal</item>
+  </string-array>
+
+
+  <string-array name="convert_keymap_type_entries">
+    <item>@string/preference_convert_keymap_type_0</item>
+    <item>@string/preference_convert_keymap_type_1</item>
+    <item>@string/preference_convert_keymap_type_2</item>
+    <item>@string/preference_convert_keymap_type_3</item>
+  </string-array>
+  <string-array name="convert_keymap_type_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+  </string-array>
+
+
+  <string-array name="input_mode_start_entries">
+    <item>@string/preference_input_mode_start_0</item>
+    <item>@string/preference_input_mode_start_1</item>
+    <item>@string/preference_input_mode_start_2</item>
+    <item>@string/preference_input_mode_start_3</item>
+  </string-array>
+  <string-array name="input_mode_start_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+  </string-array>
+
+
+  <string-array name="input_mode_next_entries">
+    <item>@string/preference_input_mode_next_0</item>
+    <item>@string/preference_input_mode_next_1</item>
+  </string-array>
+  <string-array name="input_mode_next_values">
+    <item>0</item>
+    <item>1</item>
+  </string-array>
+
+
+  <string-array name="cutpasteaction_byime_entries">
+    <item>@string/preference_cutpasteaction_byime_0</item>
+    <item>@string/preference_cutpasteaction_byime_1</item>
+    <item>@string/preference_cutpasteaction_byime_2</item>
+    <item>@string/preference_cutpasteaction_byime_3</item>
+  </string-array>
+  <string-array name="cutpasteaction_byime_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+  </string-array>
+
+  <string-array name="emoji_type_entries">
+    <item>@string/preference_emoji_type_docomo</item>
+    <item>@string/preference_emoji_type_softbank</item>
+    <item>@string/preference_emoji_type_au</item>
+    <item>@string/preference_emoji_type_unicode</item>
+    <item>@string/preference_emoji_type_old</item>
+    </string-array>
+  <string-array name="emoji_type_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>0</item>
+  </string-array>
+  
+  <string-array name="wait_mushroom_entries">
+    <item>@string/preference_wait_mushroom_1</item>
+    <item>@string/preference_wait_mushroom_2</item>
+    <item>@string/preference_wait_mushroom_3</item>
+    <item>@string/preference_wait_mushroom_4</item>
+    <item>@string/preference_wait_mushroom_5</item>
+    </string-array>
+  <string-array name="wait_mushroom_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+  </string-array>
+  
+</resources>

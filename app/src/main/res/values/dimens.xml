@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright (C) 2008,2009  OMRON SOFTWARE Co., Ltd.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+<resources>
+  <dimen name="key_height_0">1px</dimen>
+
+  <dimen name="popup_12key_height_0">32px</dimen>
+  <dimen name="popup_12key_height_1">48px</dimen>
+  <dimen name="popup_12key_height_2">64px</dimen>
+  <dimen name="popup_12key_height_3">80px</dimen>
+  <dimen name="popup_12key_height_4">96px</dimen>
+  <dimen name="popup_12key_height_5">112px</dimen>
+  <dimen name="popup_12key_height_6">128px</dimen>
+  <dimen name="popup_12key_height_7">144px</dimen>
+  <dimen name="popup_12key_height_8">160px</dimen>
+  <dimen name="popup_12key_height_9">176px</dimen>
+
+  <dimen name="popup_qwerty_height_0">32px</dimen>
+  <dimen name="popup_qwerty_height_1">48px</dimen>
+  <dimen name="popup_qwerty_height_2">64px</dimen>
+  <dimen name="popup_qwerty_height_3">80px</dimen>
+  <dimen name="popup_qwerty_height_4">96px</dimen>
+  <dimen name="popup_qwerty_height_5">112px</dimen>
+  <dimen name="popup_qwerty_height_6">128px</dimen>
+  <dimen name="popup_qwerty_height_7">144px</dimen>
+  <dimen name="popup_qwerty_height_8">160px</dimen>
+  <dimen name="popup_qwerty_height_9">176px</dimen>
+
+  <dimen name="popup_nico2_height_0">24px</dimen>
+  <dimen name="popup_nico2_height_1">36px</dimen>
+  <dimen name="popup_nico2_height_2">48px</dimen>
+  <dimen name="popup_nico2_height_3">60px</dimen>
+  <dimen name="popup_nico2_height_4">72px</dimen>
+  <dimen name="popup_nico2_height_5">84px</dimen>
+  <dimen name="popup_nico2_height_6">96px</dimen>
+  <dimen name="popup_nico2_height_7">108px</dimen>
+  <dimen name="popup_nico2_height_8">120px</dimen>
+  <dimen name="popup_nico2_height_9">132px</dimen>
+
+  <dimen name="popup_subten_qwerty_height_0">24px</dimen>
+  <dimen name="popup_subten_qwerty_height_1">40px</dimen>
+  <dimen name="popup_subten_qwerty_height_2">56px</dimen>
+  <dimen name="popup_subten_qwerty_height_3">72px</dimen>
+  <dimen name="popup_subten_qwerty_height_4">84px</dimen>
+  <dimen name="popup_subten_qwerty_height_5">96px</dimen>
+  <dimen name="popup_subten_qwerty_height_6">108px</dimen>
+  <dimen name="popup_subten_qwerty_height_7">120px</dimen>
+  <dimen name="popup_subten_qwerty_height_8">132px</dimen>
+  <dimen name="popup_subten_qwerty_height_9">144px</dimen>
+
+  <dimen name="popup_subten_12key_height_0">12px</dimen>
+  <dimen name="popup_subten_12key_height_1">24px</dimen>
+  <dimen name="popup_subten_12key_height_2">36px</dimen>
+  <dimen name="popup_subten_12key_height_3">48px</dimen>
+  <dimen name="popup_subten_12key_height_4">56px</dimen>
+  <dimen name="popup_subten_12key_height_5">64px</dimen>
+  <dimen name="popup_subten_12key_height_6">72px</dimen>
+  <dimen name="popup_subten_12key_height_7">80px</dimen>
+  <dimen name="popup_subten_12key_height_8">88px</dimen>
+  <dimen name="popup_subten_12key_height_9">96px</dimen>
+
+  <dimen name="candidate_font_size">12sp</dimen>
+  <dimen name="candidate_delete_word_size">32dip</dimen>
+  <dimen name="candidate_delete_word_size_landscape">28dip</dimen>
+  <dimen name="bubble_pointer_offset">22dip</dimen>
+
+  <dimen name="max_height_for_fullscreen">2.5in</dimen>
+  <dimen name="key_text_size">0.13in</dimen>
+  <dimen name="key_label_text_size">0.083in</dimen>
+  <dimen name="key_preview_text_size_large">40sp</dimen>
+  <dimen name="key_preview_offset">0.000in</dimen>
+  <dimen name="key_preview_height">80sp</dimen>
+  <dimen name="vertical_correction">-10dip</dimen>
+</resources>

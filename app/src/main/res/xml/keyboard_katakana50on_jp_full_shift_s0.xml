@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (C) 2008,2009  OMRON SOFTWARE Co., Ltd.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android" android:keyWidth="6.5%p" android:horizontalGap="0dip" android:verticalGap="0dip" android:keyHeight="@dimen/key_height_0">
+	<Row android:rowEdgeFlags="top">
+		<Key android:codes="12449" android:keyLabel="@string/key_kana_full_katakana_la" android:keyEdgeFlags="left" android:horizontalGap="0%p" />
+		<Key android:codes="12451" android:keyLabel="@string/key_kana_full_katakana_li" />
+		<Key android:codes="12453" android:keyLabel="@string/key_kana_full_katakana_lu" />
+		<Key android:codes="12455" android:keyLabel="@string/key_kana_full_katakana_le" />
+		<Key android:codes="12457" android:keyLabel="@string/key_kana_full_katakana_lo" />
+		<Key android:codes="12483" android:keyLabel="@string/key_kana_full_katakana_ltu" />
+		<Key android:codes="12532" android:keyLabel="@string/key_kana_full_katakana_vu" />
+		<Key android:codes="12533" android:keyLabel="@string/key_kana_full_katakana_lka" />
+		<Key android:codes="12534" android:keyLabel="@string/key_kana_full_katakana_lke" />
+		<Key android:codes="12445" android:keyLabel="@string/key_kana_full_katakana_odori" />
+		<Key android:codes="12446" android:keyLabel="@string/key_kana_full_katakana_odoridaku" />
+		<Key android:codes="12293" android:keyLabel="@string/key_kana_full_katakana_noma" />
+		<Key android:codes="12539" android:keyLabel="@string/key_kana_full_hiragana_middot"  />
+		<Key android:codes="-232" android:keyIcon="@drawable/key_qwerty_up" android:iconPreview="@drawable/key_qwerty_up_b" android:isRepeatable="false" />
+		<Key android:codes="-233" android:keyIcon="@drawable/key_qwerty_down" android:iconPreview="@drawable/key_qwerty_down_b" android:isRepeatable="false" android:keyEdgeFlags="right" android:horizontalGap="0%" />
+	</Row>
+	<Row>
+		<Key android:codes="12460" android:keyLabel="@string/key_kana_full_katakana_ga" android:keyEdgeFlags="left" android:horizontalGap="3%p" />
+		<Key android:codes="12462" android:keyLabel="@string/key_kana_full_katakana_gi" />
+		<Key android:codes="12464" android:keyLabel="@string/key_kana_full_katakana_gu" />
+		<Key android:codes="12466" android:keyLabel="@string/key_kana_full_katakana_ge" />
+		<Key android:codes="12468" android:keyLabel="@string/key_kana_full_katakana_go" />
+		<Key android:codes="12496" android:keyLabel="@string/key_kana_full_katakana_ba" />
+		<Key android:codes="12499" android:keyLabel="@string/key_kana_full_katakana_bi" />
+		<Key android:codes="12502" android:keyLabel="@string/key_kana_full_katakana_bu" />
+		<Key android:codes="12505" android:keyLabel="@string/key_kana_full_katakana_be" />
+		<Key android:codes="12508" android:keyLabel="@string/key_kana_full_katakana_bo" />
+		<Key android:codes="12515" android:keyLabel="@string/key_kana_full_katakana_lya" />
+		<Key android:codes="12526" android:keyLabel="@string/key_kana_full_katakana_lwa" />
+		<Key android:codes="-100" android:keyIcon="@drawable/key_qwerty_del" android:iconPreview="@drawable/key_qwerty_del_b" android:keyWidth="14.10%p" android:keyEdgeFlags="right" android:isRepeatable="false" />
+	</Row>
+	<Row>
+		<Key android:codes="12470" android:keyLabel="@string/key_kana_full_katakana_za" android:keyEdgeFlags="left" android:horizontalGap="5%p" />
+		<Key android:codes="12472" android:keyLabel="@string/key_kana_full_katakana_zi" />
+		<Key android:codes="12474" android:keyLabel="@string/key_kana_full_katakana_zu" />
+		<Key android:codes="12476" android:keyLabel="@string/key_kana_full_katakana_ze" />
+		<Key android:codes="12478" android:keyLabel="@string/key_kana_full_katakana_zo" />
+		<Key android:codes="12497" android:keyLabel="@string/key_kana_full_katakana_pa" />
+		<Key android:codes="12500" android:keyLabel="@string/key_kana_full_katakana_pi" />
+		<Key android:codes="12503" android:keyLabel="@string/key_kana_full_katakana_pu" />
+		<Key android:codes="12506" android:keyLabel="@string/key_kana_full_katakana_pe" />
+		<Key android:codes="12509" android:keyLabel="@string/key_kana_full_katakana_po" />
+		<Key android:codes="12517" android:keyLabel="@string/key_kana_full_katakana_lyu" />
+		<Key android:codes="65312" android:keyLabel="@string/key_qwerty_full_at_sign" />
+		<Key android:codes="65308" android:keyLabel="@string/key_qwerty_full_less_than_sign" />
+		<Key android:codes="65310" android:keyLabel="@string/key_qwerty_full_greater_than_sign" android:keyEdgeFlags="right" />
+	</Row>
+	<Row>
+		<Key android:codes="12480" android:keyLabel="@string/key_kana_full_katakana_da" android:keyEdgeFlags="left" android:horizontalGap="8%p" />
+		<Key android:codes="12482" android:keyLabel="@string/key_kana_full_katakana_di" />
+		<Key android:codes="12485" android:keyLabel="@string/key_kana_full_katakana_du" />
+		<Key android:codes="12487" android:keyLabel="@string/key_kana_full_katakana_de" />
+		<Key android:codes="12489" android:keyLabel="@string/key_kana_full_katakana_do" />
+		<Key android:codes="65288" android:keyLabel="@string/key_qwerty_full_left_parenthesis" />
+		<Key android:codes="65289" android:keyLabel="@string/key_qwerty_full_right_parenthesis" />
+		<Key android:codes="65295" android:keyLabel="@string/key_qwerty_full_slash" />
+		<Key android:codes="65291" android:keyLabel="@string/key_qwerty_full_plus_sign" />
+		<Key android:codes="65286" android:keyLabel="@string/key_qwerty_full_ampersand" />
+		<Key android:codes="12519" android:keyLabel="@string/key_kana_full_katakana_lyo" />
+		<Key android:codes="65343" android:keyLabel="@string/key_qwerty_full_underscore" />
+		<Key android:codes="-106" android:keyIcon="@drawable/key_qwerty_sym_mushroom" android:iconPreview="@drawable/key_qwerty_sym_mushroom_b" android:keyWidth="13%p" android:keyEdgeFlags="right" />
+	</Row>
+	<Row android:rowEdgeFlags="bottom">
+		<Key android:codes="-1" android:keyIcon="@drawable/key_qwerty_shift" android:iconPreview="@drawable/key_qwerty_shift_b" android:keyWidth="14.10%p" android:isModifier="true" android:isSticky="true" android:keyEdgeFlags="left" android:horizontalGap="1%p" />
+		<Key android:codes="-230" android:keyIcon="@drawable/key_qwerty_mode_full_kata" android:iconPreview="@drawable/key_mode_change_b" android:popupKeyboard="@xml/keyboard_popup_qwerty_jp_0" android:isRepeatable="false" android:keyWidth="14.10%p" />
+		<Key android:codes="-245" android:keyIcon="@drawable/key_qwerty_zen_space" android:iconPreview="@drawable/key_qwerty_zen_space_b" android:keyWidth="35.25%p" android:isRepeatable="false" />
+		<Key android:codes="65281" android:keyLabel="@string/key_qwerty_full_exclamation_mark" />
+		<Key android:codes="65311" android:keyLabel="@string/key_qwerty_full_question" />
+		<Key android:codes="12539" android:keyLabel="@string/key_kana_full_katakana_middot" />
+		<Key android:codes="-101" android:keyIcon="@drawable/key_qwerty_enter_jp" android:iconPreview="@drawable/key_qwerty_enter_jp_b" android:keyWidth="14.10%p" android:keyEdgeFlags="right" />
+	</Row>
+</Keyboard>
