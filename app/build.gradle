@@ -12,8 +12,8 @@ android {
         applicationId "net.gorry.android.input.nicownng"
         minSdkVersion 14
         targetSdk 33
-        versionCode 202308031
-        versionName "2023.0803.1.1305"
+        versionCode 202308032
+        versionName "2023.0803.2.1305"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             ndkBuild {

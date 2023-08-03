@@ -24,7 +24,7 @@
 		android:name="android.permission.WRITE_EXTERNAL_STORAGE"
 		/>
 	<application
-		android:icon="@drawable/icon"
+		android:icon="@mipmap/ic_launcher"
 		android:label="nicoWnnG"
 		>
 
