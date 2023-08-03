@@ -12,8 +12,8 @@ android {
         applicationId "net.gorry.android.input.nicownng"
         minSdkVersion 14
         targetSdk 33
-        versionCode 202306211
-        versionName "2023.0621.1.1305"
+        versionCode 202308031
+        versionName "2023.0803.1.1305"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             ndkBuild {
@@ -27,10 +27,37 @@ android {
 
     buildTypes {
         release {
+            signingConfig null
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            signingConfig null
+            debuggable true
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    apply from: 'signingConfigs.gradle'
+
+    flavorDimensions "server"
+    productFlavors {
+        master {
+            dimension "server"
+            // applicationIdSuffix ".master"
+            signingConfig signingConfigs.master
+        }
+        develop {
+            dimension "server"
+            applicationIdSuffix ".develop"
+            signingConfig signingConfigs.develop
+        }
+    }
+
     externalNativeBuild {
         ndkBuild {
             path file('src/main/jni/Android.mk')
