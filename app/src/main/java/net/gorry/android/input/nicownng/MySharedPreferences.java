@@ -16,9 +16,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.Xml;
+
+import androidx.appcompat.app.AppCompatDelegate;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;

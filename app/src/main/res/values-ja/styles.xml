@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<style name="AppTheme" parent="Theme.AppCompat.DayNight">
+</style>
 <style name="Theme.Transparent" parent="android:Theme">
     <item name="android:windowIsTranslucent">true</item>
     <item name="android:windowBackground">@null</item>
@@ -8,5 +10,5 @@
     <item name="android:backgroundDimEnabled">true</item>
     <item name="android:windowIsFloating">true</item>
     <item name="android:windowFrame">@null</item> 
- </style>
+</style>
 </resources>

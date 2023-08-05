@@ -1,7 +1,15 @@
+Ver.2023.0805.1
+
+・各種設定ファイルの読み書きが正常に動作していないのを修正しました。
+  これに伴い、設定ファイルの保存フォルダが変化します。
+  旧: /mnt/sdcard/nicoWnnG
+  新: /storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG
+
+
 Ver.2023.0803.1
 
 ・Android13で正常動作しないのを修正しました。
-・32bit非対応環境で正常動作しないのを修正しました。
+・32bit非対応環境（Pixel7以降など）で正常動作しないのを修正しました。
 
 
 Ver.2016.0710.1

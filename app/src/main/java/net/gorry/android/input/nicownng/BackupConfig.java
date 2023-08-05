@@ -44,7 +44,7 @@ public class BackupConfig extends DialogPreference {
 			}
 			NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();
 			ConfigBackup p = new ConfigBackup();
-			String path = Environment.getExternalStorageDirectory().toString();
+			String path = wnn.getExternalFilesDir(null).toString();
 			String filename = path + "/" + sFileName;
 
 			try {

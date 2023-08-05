@@ -167,7 +167,8 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 	 *
 	 */
 	private boolean importUserDic(final String wordsFileName, final String learnFileName_sd, final String learnFileName_flash) {
-		final File fileSdCard = getExternalStorageDirectory();
+		NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();
+		final File fileSdCard = wnn.getExternalFilesDir(null);
 		if (null == fileSdCard) {
 			return false;
 		}
@@ -238,10 +239,11 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 	 *
 	 */
 	private boolean exportUserDic(final String wordsFileName, final String learnFileName_flash, final String learnFileName_sd) {
+		NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();
 		mResultString[0] = "true";
 		mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_done);
 
-		final File fileSdCard = getExternalStorageDirectory();
+		final File fileSdCard = wnn.getExternalFilesDir(null);
 		if (null == fileSdCard) {
 			mResultString[0] = "false";
 			mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_failed);
@@ -286,18 +288,6 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 	/*************************************************************************************/
 	/* file load/save                                                                    */
 	/*************************************************************************************/
-	/*
-	 *
-	 */
-	private File getExternalStorageDirectory() {
-		final boolean state = Environment.getExternalStorageState().contains(Environment.MEDIA_MOUNTED);
-		if (false == state) {
-			Log.w("sdcard", "not mount sdcard!!\n");
-			return null;
-		}
-		// Log.d("sdcard", "mount sdcard!!\n");
-		return Environment.getExternalStorageDirectory();
-	}
 	/*
 	 *
 	 */

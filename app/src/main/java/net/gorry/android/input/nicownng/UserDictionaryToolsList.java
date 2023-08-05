@@ -692,7 +692,8 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 				mThis,
 				SelectTxtFileActivity.class
 		);
-		String path = Environment.getExternalStorageDirectory().toString();
+		NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();
+		String path = wnn.getExternalFilesDir(null).toString();
 		final Uri uri = Uri.parse("file://" + path + "/");
 		intent.setData(uri);
 		mThis.startActivityForResult(intent, SELECT_TXT_ACTIVITY);

@@ -325,9 +325,11 @@ public class SymbolList implements WnnEngine {
 			xrp.close();
 		} catch (final XmlPullParserException e) {
 			Log.e("NicoWnnG", "Ill-formatted keybaord resource file");
+			e.printStackTrace();
 			return null;
 		} catch (final IOException e) {
 			Log.e("NicoWnnG", "Unable to read keyboard resource file");
+			e.printStackTrace();
 			return null;
 		}
 
@@ -342,7 +344,7 @@ public class SymbolList implements WnnEngine {
 	private ArrayList<String> getXmlfile(final String filename) {
 		final ArrayList<String> list = new ArrayList<String>();
 
-		final File dir = getExternalStorageDirectory();
+		final File dir = mWnn.getExternalFilesDir("nicoWnnG");
 
 		try {
 			final File fileLoad = new File(dir, filename);
@@ -368,10 +370,13 @@ public class SymbolList implements WnnEngine {
 			fin.close();
 		} catch (final XmlPullParserException e) {
 			Log.e("NicoWnnG", "Ill-formatted keybaord resource file");
+			e.printStackTrace();
 		} catch (final IOException e) {
 			Log.e("NicoWnnG", "Unable to read keyboard resource file");
+			e.printStackTrace();
 		} catch (final Exception e) {
 			Log.e("NicoWnnG", "Unknown error file");
+			e.printStackTrace();
 		}
 		return list;
 	}
@@ -380,7 +385,7 @@ public class SymbolList implements WnnEngine {
 	 *
 	 */
 	private boolean checkUserXmlfile(final String checkname) {
-		final File dir = getExternalStorageDirectory();
+		final File dir = mWnn.getExternalFilesDir("nicoWnnG");
 		if (null == dir) {
 			return false;
 		}
@@ -393,37 +398,11 @@ public class SymbolList implements WnnEngine {
 	/*
 	 *
 	 */
-	static private File getExternalStorageDirectory() {
-		try {
-			final boolean state = Environment.getExternalStorageState().contains(Environment.MEDIA_MOUNTED);
-			if (false == state) {
-				Log.w("sdcard", "not mount sdcard!!\n");
-				return null;
-			}
-			// Log.d("sdcard", "mount sdcard!!\n");
-			Environment.getExternalStorageDirectory();
-			File dir = null;
-			dir = new File(Environment.getExternalStorageDirectory(), "nicoWnnG");
-			if (!dir.exists()) {
-				dir.mkdirs();
-				if (!dir.isDirectory()) {
-					return null;
-				}
-			}
-			return dir;
-        } catch (final Exception e) {
-        	Log.e("NicoWnnG", "Unknown error file");
-        }
-        return null;
-	}
-	/*
-	 *
-	 */
 	static public boolean copyUserSymbolDicFileToExternalStorageDirectory(Context context, boolean force) {
 		InputStream fin = null;
 		FileOutputStream fout = null;
 		try {
-			final File dir = getExternalStorageDirectory();
+			final File dir = context.getExternalFilesDir("nicoWnnG");
 			if (null == dir) {
 				return false;
 			}

@@ -156,12 +156,12 @@
 
     <string name="preference_nicownng_reload_usersymbol_title">[@!?]キー登録再読み込み</string>
     <string name="preference_nicownng_reload_usersymbol_summary">[@!?]キーで入力できるユーザーシンボルを再読込します</string>
-    <string name="dialog_nicownng_reload_usersymbol_message">以下からユーザーシンボルファイルを読み込んで[@!?]キーに登録します\n/mnt/sdcard/nicoWnnG/</string>
+    <string name="dialog_nicownng_reload_usersymbol_message">以下からユーザーシンボルファイルを読み込んで[@!?]キーに登録します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
     <string name="preference_nicownng_reload_usersymbol_success">[@!?]キー登録再読み込みを行いました</string>
     <string name="preference_nicownng_reload_usersymbol_failed">[@!?]キー登録再読み込みに失敗しました</string>
     <string name="preference_nicownng_initialize_usersymbol_title">[@!?]キー登録内容初期化</string>
     <string name="preference_nicownng_initialize_usersymbol_summary">[@!?]キーの登録内容となるユーザーシンボルファイルを初期化します</string>
-    <string name="dialog_nicownng_initialize_usersymbol_message">以下のユーザーシンボルファイルを初期化します\n/mnt/sdcard/nicoWnnG/</string>
+    <string name="dialog_nicownng_initialize_usersymbol_message">以下のユーザーシンボルファイルを初期化します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
     <string name="preference_nicownng_initialize_usersymbol_success">ユーザーシンボルファイルを初期化しました</string>
     <string name="preference_nicownng_initialize_usersymbol_failed">ユーザーシンボルファイルの初期化に失敗しました</string>
     <string name="toast_setusersymboldictionary_waitload">ユーザーシンボルファイルの読み込みに時間がかかっています。しばらくお待ちください</string>
@@ -317,13 +317,13 @@
 	<string name="preference_config_menu">設定の保存と復元</string>
 	<string name="preference_config_backup_title">設定の書き出し</string>
 	<string name="preference_config_backup_summary">各種設定を外部メモリへ書き出します</string>
-	<string name="dialog_config_backup_message">各種設定を以下へ書き出します\n/mnt/sdcard/nicoWnnG/</string>
+	<string name="dialog_config_backup_message">各種設定を以下へ書き出します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
 	<string name="toast_config_backup_success">設定の書き出しが完了しました</string>
 	<string name="toast_config_backup_failed">設定の書き出しに失敗しました</string>
 
 	<string name="preference_config_restore_title">設定の読み込み</string>
 	<string name="preference_config_restore_summary">外部メモリへ書き出した各種設定を読み込んで復元します</string>
-	<string name="dialog_config_restore_message">以下から各種設定ファイルを読み込んで復元します\n/mnt/sdcard/nicoWnnG/</string>
+	<string name="dialog_config_restore_message">以下から各種設定ファイルを読み込んで復元します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
 	<string name="toast_config_restore_success">設定の読み込みが完了しました</string>
 	<string name="toast_config_restore_failed">設定の読み込みに失敗しました</string>
 
@@ -399,13 +399,13 @@
 
         
     <string name="dialog_title_dic_message_doing">作業中</string>
-    <string name="dialog_import_dic_message">SDカードからユーザー辞書を復元します。</string>
-    <string name="dialog_import_dic_message_doing">SDカードからユーザー辞書を復元しています……</string>
+    <string name="dialog_import_dic_message">ファイルからユーザー辞書を復元します。</string>
+    <string name="dialog_import_dic_message_doing">ファイルからユーザー辞書を復元しています……</string>
     <string name="dialog_import_dic_message_done">ユーザー辞書を復元しました。</string>
     <string name="dialog_import_dic_message_failed">ユーザー辞書の復元に失敗しました。</string>
-    <string name="dialog_export_dic_message">ユーザー辞書をSDカードへ保存します。\n保存先は\n\"/sdcard/nicoWnnG\"\nになります</string>
-    <string name="dialog_export_dic_message_doing">ユーザー辞書をSDカードへ保存しています……</string>
-    <string name="dialog_export_dic_message_done">ユーザー辞書をSDカードへ保存しました。</string>
+    <string name="dialog_export_dic_message">ユーザー辞書をファイルへ保存します。\n保存先は\n\"/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/\"\nになります</string>
+    <string name="dialog_export_dic_message_doing">ユーザー辞書をファイルへ保存しています……</string>
+    <string name="dialog_export_dic_message_done">ユーザー辞書をファイルへ保存しました。</string>
     <string name="dialog_export_dic_message_failed">ユーザー辞書の保存に失敗しました。</string>
     <string name="dialog_import_textdic_message">テキスト辞書ファイル\n%s\nを読み込んで単語を追加します。</string>
     <string name="dialog_import_textdic_message_doing">テキスト辞書ファイルを読み込んでいます……</string>
@@ -443,14 +443,14 @@
         
   <!-- IME dependency -->
     <!-- OpenWnn English -->
-    <string name="nicownng_english_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2023.0803.2\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
+    <string name="nicownng_english_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2023.0805.1\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
     <string name="nicownng_english">nicoWnnG English</string>
     <string name="nicownng_english_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnEngDic.so</string>
     <string name="nicownng_english_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableEN.dic</string>
     <string name="en_word_separators">.,;:!?</string>
 
     <!-- OpenWnn Japanese -->
-    <string name="nicownng_japanese_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2023.0803.2\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
+    <string name="nicownng_japanese_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2023.0805.1\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
     <string name="nicownng_japanese">nicoWnnG IME</string>
     <string name="openwnn_japanese_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnJpnDic.so</string>
     <string name="nicownng_japanese_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableJAJP.dic</string>
@@ -470,9 +470,9 @@
   <string name="user_dictionary_quit_button">編集終了</string>
 
   <string name="dialog_progress_import_title">辞書復元</string>
-  <string name="dialog_progress_import_summary">SDカードからユーザー辞書を復元しています...</string>
+  <string name="dialog_progress_import_summary">ファイルからユーザー辞書を復元しています...</string>
   <string name="dialog_progress_export_title">辞書保存</string>
-  <string name="dialog_progress_export_summary">ユーザー辞書をSDカードへ保存しています...</string>
+  <string name="dialog_progress_export_summary">ユーザー辞書をファイルへ保存しています...</string>
   <string name="dialog_progress_import_textdic_title">辞書読込</string>
   <string name="dialog_progress_import_textdic_summary">テキスト辞書ファイルから単語を追加しています...</string>
 

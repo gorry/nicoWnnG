@@ -116,13 +116,13 @@
 	<string name="preference_config_menu">Backup/Restore</string>
 	<string name="preference_config_backup_title">Export Configuration</string>
 	<string name="preference_config_backup_summary">Write All Settings to External-Memory</string>
-	<string name="dialog_config_backup_message">Write All Settings to File in:\n/mnt/sdcard/nicoWnnG/</string>
+	<string name="dialog_config_backup_message">Write All Settings to File in:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
 	<string name="toast_config_backup_success">Complete writing.</string>
 	<string name="toast_config_backup_failed">Export Configuration Failed.</string>
 
 	<string name="preference_config_restore_title">Import Configuration</string>
 	<string name="preference_config_restore_summary">Restore All Settings from External-Memory</string>
-	<string name="dialog_config_restore_message">Restore All Settings from File in:\n/mnt/sdcard/nicoWnnG/</string>
+	<string name="dialog_config_restore_message">Restore All Settings from File in:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
 	<string name="toast_config_restore_success">Importing Configuration.</string>
 	<string name="toast_config_restore_failed">Import Configuration Failed.</string>
 
@@ -197,11 +197,11 @@
   <string name="dialog_clear_learning_dictionary_done">Cleared.</string>
 
   <string name="dialog_title_dic_message_doing">Working</string>
-  <string name="dialog_import_dic_message">Restore Dictionary from SD-Card</string>
+  <string name="dialog_import_dic_message">Restore Dictionary from File</string>
   <string name="dialog_import_dic_message_doing">Restoring Dictionary ...</string>
   <string name="dialog_import_dic_message_done">Success Restore.</string>
   <string name="dialog_import_dic_message_failed">Failed Restore.</string>
-  <string name="dialog_export_dic_message">Backup Dictionary to SD-Card</string>
+  <string name="dialog_export_dic_message">Backup Dictionary to File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
   <string name="dialog_export_dic_message_doing">Backup Dictionary ...</string>
   <string name="dialog_export_dic_message_done">Success Backup.</string>
   <string name="dialog_export_dic_message_failed">Failed Backup.</string>
@@ -266,12 +266,12 @@
 
   <string name="preference_nicownng_reload_usersymbol_title">Reload [@!?]-Key Definition</string>
   <string name="preference_nicownng_reload_usersymbol_summary">Reload User Symbols at Typing [@!?]-Key</string>
-    <string name="dialog_nicownng_reload_usersymbol_message">Reload User Symbols from File in:\n/mnt/sdcard/nicoWnnG/</string>
+    <string name="dialog_nicownng_reload_usersymbol_message">Reload User Symbols from File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
     <string name="preference_nicownng_reload_usersymbol_success">Success Reload.</string>
     <string name="preference_nicownng_reload_usersymbol_failed">Failed Reloading User Symbols.</string>
   <string name="preference_nicownng_initialize_usersymbol_title">Initialize [@!?]-Key Definition</string>
   <string name="preference_nicownng_initialize_usersymbol_summary">Initialize User Symbols at Typing [@!?]-Key</string>
-    <string name="dialog_nicownng_initialize_usersymbol_message">Initialize User Symbols from File in:\n/mnt/sdcard/nicoWnnG/</string>
+    <string name="dialog_nicownng_initialize_usersymbol_message">Initialize User Symbols from File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
     <string name="preference_nicownng_initialize_usersymbol_success">Success Initialize.</string>
     <string name="preference_nicownng_initialize_usersymbol_failed">Failed Initializing User Symbols.</string>
     <string name="toast_setusersymboldictionary_waitload">Waiting for Loading User Symbols data.</string>
@@ -444,14 +444,14 @@
 
    <!-- IME dependency -->
   <!-- OpenWnn English -->
-  <string name="nicownng_english_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2023.0803.2</string>
+  <string name="nicownng_english_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2023.0805.1</string>
   <string name="nicownng_english">nicoWnnG English</string>
   <string name="nicownng_english_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnEngDic.so</string>
   <string name="nicownng_english_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableEN.dic</string>
   <string name="en_word_separators">.,;:!?</string>
 
   <!-- OpenWnn Japanese -->
-  <string name="nicownng_japanese_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2023.0803.2</string>
+  <string name="nicownng_japanese_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2023.0805.1</string>
   <string name="nicownng_japanese">nicoWnnG IME</string>
   <string name="openwnn_japanese_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnJpnDic.so</string>
   <string name="nicownng_japanese_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableJAJP.dic</string>
@@ -471,9 +471,9 @@
   <string name="user_dictionary_quit_button">Quit</string>
 
   <string name="dialog_progress_import_title">Restore Dictionary</string>
-  <string name="dialog_progress_import_summary">Copy User-Dictionary from SD-Card ...</string>
+  <string name="dialog_progress_import_summary">Copy User-Dictionary from File ...</string>
   <string name="dialog_progress_export_title">Backup Dictionary</string>
-  <string name="dialog_progress_export_summary">Copy User-Dictionary to SD-Card ...</string>
+  <string name="dialog_progress_export_summary">Copy User-Dictionary to File ...</string>
   <string name="dialog_progress_import_textdic_title">Import Dictionary</string>
   <string name="dialog_progress_import_textdic_summary">Import Words from Dictionary-Text-File ...</string>
   <string name="selecttxtfileactivity_java_title">- Select TXT-Dictionary File</string>

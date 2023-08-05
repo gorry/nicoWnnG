@@ -1718,7 +1718,7 @@ public class DefaultSoftKeyboard implements InputViewManager, KeyboardView.OnKey
 			if (pref.getBoolean("key_sound", false)) {
 				mSoundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
 				try {
-					String path = Environment.getExternalStorageDirectory().toString();
+					String path = mWnn.getExternalFilesDir(null).toString();
 					path += "/nicoWnnG/type.wav";
 					mSound = mSoundPool.load(path, 1);
 				} catch (final Exception e) {
@@ -1726,7 +1726,7 @@ public class DefaultSoftKeyboard implements InputViewManager, KeyboardView.OnKey
 				}
 				if (mSound == 0) {
 					try {
-						String path = Environment.getExternalStorageDirectory().toString();
+						String path = mWnn.getExternalFilesDir(null).toString();
 						path += "/nicoWnnG/type.ogg";
 						mSound = mSoundPool.load(path, 1);
 					} catch (final Exception e) {

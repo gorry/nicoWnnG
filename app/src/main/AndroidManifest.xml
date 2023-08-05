@@ -26,6 +26,7 @@
 	<application
 		android:icon="@mipmap/ic_launcher"
 		android:label="nicoWnnG"
+		android:theme="@style/AppTheme"
 		>
 
 		<service
@@ -108,16 +109,19 @@
 		<activity
 		    android:name=".SelectTxtFileActivity"
 		    android:label="@string/user_dictionary_import_textdic"
+			android:theme="@android:style/Theme"
 			android:exported="true"
 			/>
 		<activity
 		    android:name="KeyCodeTest"
 		    android:windowSoftInputMode="stateVisible|adjustResize"
+			android:theme="@android:style/Theme"
 			android:exported="true"
 			/>
 		<activity
 		    android:name="UserSymbolEdit"
 			android:configChanges="orientation|keyboardHidden"
+			android:theme="@android:style/Theme"
 			android:exported="true"
 			/>
 				

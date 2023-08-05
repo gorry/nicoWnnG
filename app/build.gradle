@@ -12,8 +12,8 @@ android {
         applicationId "net.gorry.android.input.nicownng"
         minSdkVersion 14
         targetSdk 33
-        versionCode 202308032
-        versionName "2023.0803.2.1305"
+        versionCode 202308051
+        versionName "2023.0805.1.1305"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             ndkBuild {
@@ -53,7 +53,7 @@ android {
         }
         develop {
             dimension "server"
-            applicationIdSuffix ".develop"
+            // applicationIdSuffix ".develop"
             signingConfig signingConfigs.develop
         }
     }

@@ -20,11 +20,15 @@ import android.webkit.WebView;
 import android.widget.Toast;
 import android.os.Build;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 public class NicoWnnGMain extends Activity {
 	@Override public void onCreate(final Bundle saveInstanceState) {
+		AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
 		super.onCreate(saveInstanceState);
 
-        // Log.e("NicoWnnG", "開始");
+		// Log.e("NicoWnnG", "開始");
 		ApplicationInfo appInfo = getApplicationInfo();
         int maskByDebuggable = appInfo.flags & ApplicationInfo.FLAG_DEBUGGABLE;
         boolean isDebug = maskByDebuggable == ApplicationInfo.FLAG_DEBUGGABLE;

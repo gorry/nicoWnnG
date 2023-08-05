@@ -32,6 +32,8 @@ import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 /**
  * The control panel preference class for Japanese IME.
  *
