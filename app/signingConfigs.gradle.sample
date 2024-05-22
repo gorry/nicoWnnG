@@ -1,0 +1,24 @@
+
+// copy to "signingConfigs.gradle" & modify it.
+
+android {
+    signingConfigs {
+        master {
+            storeFile file("../keystore/release.keystore")
+            storePassword "storepass"
+            keyAlias "alias"
+            keyPassword "keypass"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        develop {
+            storeFile file("../keystore/debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+}
+
