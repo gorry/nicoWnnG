@@ -226,22 +226,17 @@ public abstract class UserDictionaryToolsEdit extends Activity implements View.O
 		mEntryButton.setEnabled(false);
 		mCancelButton.setEnabled(false);
 
-		switch (v.getId()) {
-			case R.id.addButton:
-				/* save the word */
-				doSaveAction();
-				break;
-
-			case R.id.cancelButton:
-				/* cancel the edit */
-				doRevertAction();
-				break;
-
-			default:
-				Log.e("NicoWnnG", "onClick: Get Invalid ButtonID. ID=" + v.getId());
-				finish();
-				return;
-		}
+        int id = v.getId();
+		if (false) {
+		} else if (id == R.id.addButton) {
+            doSaveAction();
+        } else if (id == R.id.cancelButton) {
+            doRevertAction();
+        } else {
+            Log.e("NicoWnnG", "onClick: Get Invalid ButtonID. ID=" + v.getId());
+            finish();
+            return;
+        }
 	}
 
 	/**

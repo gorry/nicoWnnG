@@ -3,7 +3,9 @@
  */
 package net.gorry.android.input.nicownng;
 
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 
 import java.io.File;
@@ -11,17 +13,21 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import android.net.Uri;
 import android.os.Build;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.util.Log;
 import android.util.Xml;
 
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.documentfile.provider.DocumentFile;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -39,7 +45,7 @@ public class MySharedPreferences {
 
 	private Context me;
 	private boolean mShared = false;
-	private String mFilename;
+	private Uri mFilename;
 	private SharedPreferences mPref;
 	private SharedPreferences.Editor mEditor;
 	private TreeMap<String, Object> mMap;
@@ -50,29 +56,30 @@ public class MySharedPreferences {
 	 * @param name name
 	 */
 	@SuppressWarnings("unchecked")
-	public MySharedPreferences(Context context, String name) {
+	public MySharedPreferences(Context context, Uri name) {
 		if (I) Log.i(TAG, "MySharedPreferences(): name=[" + name + "]");
 		me = context;
 		if (name == null) {
 			if (I) Log.i(TAG, "MySharedPreferences(): default shared");
-			mFilename = "(default)";
+			mFilename = null;
 			mShared = true;
 			mPref = PreferenceManager.getDefaultSharedPreferences(me);
 			mEditor = mPref.edit();
 			return;
 		}
 		mFilename = name;
-		if (!mFilename.startsWith("/")) {
+		if (mFilename.getScheme() == null) {
 			if (I) Log.i(TAG, "MySharedPreferences(): shared");
 			mShared = true;
-			mPref = me.getSharedPreferences(mFilename, 0);
+			mPref = me.getSharedPreferences(mFilename.toString(), 0);
 			mEditor = mPref.edit();
 			return;
 		}
 		mShared = false;
 		mMap = new TreeMap<String, Object>();
 		try {
-			FileInputStream istream = new FileInputStream(mFilename);
+			ContentResolver cr = me.getContentResolver();
+			final InputStream istream = cr.openInputStream(mFilename);
 			XmlPullParser parser = Xml.newPullParser();
 			parser.setInput(istream, "UTF-8");
 			int event = parser.getEventType();
@@ -95,8 +102,10 @@ public class MySharedPreferences {
 		} catch (org.xmlpull.v1.XmlPullParserException e) {
 			e.printStackTrace();
         } catch (FileNotFoundException e) {
-			// e.printStackTrace();
-        } catch (IOException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
         }
 	}
@@ -334,22 +343,8 @@ public class MySharedPreferences {
 
 			boolean result = false;
 			try {
-				// 親フォルダを作る
-				File file = new File(mFilename);
-				String parentDirPath = file.getParent();
-				file = new File(parentDirPath);
-				if (file.isDirectory()) {
-					if (I) Log.i(TAG, "parent Directory ["+parentDirPath+"] exists");
-				} else {
-					file.mkdirs();
-					if (!file.isDirectory()) {
-						Log.e(TAG, "cannot create Directory ["+parentDirPath+"]");
-						return false;
-					}
-					if (I) Log.i(TAG, "parent Directory ["+parentDirPath+"] created");
-				}
-
-				FileOutputStream ostream = new FileOutputStream(mFilename);
+				ContentResolver cr = me.getContentResolver();
+				OutputStream ostream = cr.openOutputStream(mFilename, "wt");
 				XmlSerializer writer = Xml.newSerializer();
 				writer.setOutput(ostream, "UTF-8");
 				writer.startDocument("UTF-8", true);
@@ -363,6 +358,8 @@ public class MySharedPreferences {
 	        } catch (FileNotFoundException e) {
 				e.printStackTrace();
 	        } catch (IOException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
 				e.printStackTrace();
 	        }
 			

@@ -97,10 +97,8 @@ public class UserSymbolEdit extends Activity implements View.OnClickListener {
 	/** @see android.view.View.OnClickListener */
 	public void onClick(final View v) {
 
-		switch (v.getId()) {
-			case R.id.dialog_button_close:
-				finish();
-				break;
-		}
+        if (v.getId() == R.id.dialog_button_close) {
+            finish();
+        }
 	}
 }

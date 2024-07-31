@@ -21,7 +21,7 @@ import net.gorry.android.input.nicownng.NicoWnnGJAJP;
 import net.gorry.android.input.nicownng.R;
 import net.gorry.android.input.nicownng.WnnWord;
 import android.content.Context;
-import android.preference.DialogPreference;
+import androidx.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.widget.Toast;
 
@@ -54,8 +54,8 @@ public class ClearLearnDictionaryDialogPreferenceJAJP extends DialogPreference {
 		this(context, null);
 	}
 
-	/** @see android.preference.DialogPreference#onDialogClosed */
-	@Override protected void onDialogClosed(final boolean positiveResult) {
+	// @Override
+	public void onDialogClosed(final boolean positiveResult) {
 		if (positiveResult) {
 			/* clear the learning dictionary */
 			final NicoWnnGEvent ev = new NicoWnnGEvent(NicoWnnGEvent.INITIALIZE_LEARNING_DICTIONARY, new WnnWord());

@@ -4,6 +4,7 @@
 package net.gorry.android.input.nicownng;
 
 import android.content.Context;
+import android.net.Uri;
 
 /**
  * @author gorry
@@ -139,7 +140,7 @@ public class ConfigBackup {
 	 * @param filename 書き出し先
 	 * @return 成功ならtrue
 	 */
-	public boolean Backup(Context context, String filename) {
+	public boolean Backup(Context context, Uri filename) {
 		mPrefFrom = new MySharedPreferences(context, null);
 		mPrefTo = new MySharedPreferences(context, filename);
 		mEditor = mPrefTo.edit();
@@ -155,7 +156,7 @@ public class ConfigBackup {
 	 * @param filename 読み込み先
 	 * @return 成功ならtrue
 	 */
-	public boolean Restore(Context context, String filename) {
+	public boolean Restore(Context context, Uri filename) {
 		mPrefFrom = new MySharedPreferences(context, filename);
 		mPrefTo = new MySharedPreferences(context, null);
 		mEditor = mPrefTo.edit();

@@ -19,7 +19,7 @@ package net.gorry.android.input.nicownng.JAJP;
 import net.gorry.android.input.nicownng.*;
 
 import android.content.Context;
-import android.preference.ListPreference;
+import androidx.preference.ListPreference;
 import android.util.AttributeSet;
 
 /**
@@ -38,9 +38,9 @@ public class KeyboardListPreferenceJAJP extends ListPreference {
         this(context, null);
     }
 
-    /** @see android.preference.DialogPreference#onDialogClosed */
-    @Override protected void onDialogClosed(boolean positiveResult) {
-    	super.onDialogClosed(positiveResult);
+    // @Override
+	public void onDialogClosed(boolean positiveResult) {
+    	// super.onDialogClosed(positiveResult);
     	
     	if (positiveResult) {
     		NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();

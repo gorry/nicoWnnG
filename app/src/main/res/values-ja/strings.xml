@@ -317,13 +317,15 @@
 	<string name="preference_config_menu">設定の保存と復元</string>
 	<string name="preference_config_backup_title">設定の書き出し</string>
 	<string name="preference_config_backup_summary">各種設定を外部メモリへ書き出します</string>
-	<string name="dialog_config_backup_message">各種設定を以下へ書き出します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+	<string name="dialog_config_backup_message">各種設定を書き出します。\n次のダイアログで、保存先フォルダを指定してください。\nまだ保存先を作成していない場合は、ルートフォルダに「nicoWnnG」を作成して、それを指定することをおすすめします。</string>
+	<string name="dialog_config_backup_message_api28">各種設定を以下へ書き出します\nDocuments/nicoWnnG/</string>
 	<string name="toast_config_backup_success">設定の書き出しが完了しました</string>
 	<string name="toast_config_backup_failed">設定の書き出しに失敗しました</string>
 
 	<string name="preference_config_restore_title">設定の読み込み</string>
 	<string name="preference_config_restore_summary">外部メモリへ書き出した各種設定を読み込んで復元します</string>
-	<string name="dialog_config_restore_message">以下から各種設定ファイルを読み込んで復元します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+	<string name="dialog_config_restore_message">各種設定ファイルを読み込んで復元します。\n次のダイアログで、読み出し先フォルダを指定してください。</string>
+	<string name="dialog_config_restore_message_api28">以下から各種設定ファイルを読み込んで復元します\nDocuments/nicoWnnG</string>
 	<string name="toast_config_restore_success">設定の読み込みが完了しました</string>
 	<string name="toast_config_restore_failed">設定の読み込みに失敗しました</string>
 
@@ -443,14 +445,14 @@
         
   <!-- IME dependency -->
     <!-- OpenWnn English -->
-    <string name="nicownng_english_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2023.0807.1\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
+    <string name="nicownng_english_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2024.0731.1\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
     <string name="nicownng_english">nicoWnnG English</string>
     <string name="nicownng_english_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnEngDic.so</string>
     <string name="nicownng_english_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableEN.dic</string>
     <string name="en_word_separators">.,;:!?</string>
 
     <!-- OpenWnn Japanese -->
-    <string name="nicownng_japanese_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2023.0807.1\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
+    <string name="nicownng_japanese_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2024.0731.1\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
     <string name="nicownng_japanese">nicoWnnG IME</string>
     <string name="openwnn_japanese_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnJpnDic.so</string>
     <string name="nicownng_japanese_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableJAJP.dic</string>

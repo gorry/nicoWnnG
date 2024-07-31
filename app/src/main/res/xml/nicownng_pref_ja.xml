@@ -15,490 +15,490 @@
    limitations under the License.
   -->
 <PreferenceScreen
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:key="nicownng_pref_ja"
 	>
 	<PreferenceCategory
-		android:title="@string/preference_nicownng_menu"
+		app:title="@string/preference_nicownng_menu"
 		>
 		<PreferenceScreen
-			android:key="nicownng_menu"
-			android:title="@string/preference_nicownng_menu"
-			android:summary="@string/preference_nicownng_menu_summary_ja_portrait"
+			app:key="nicownng_menu"
+			app:title="@string/preference_nicownng_menu"
+			app:summary="@string/preference_nicownng_menu_summary_ja_portrait"
 			>
 			<PreferenceCategory
-				android:title="@string/preference_nicownng_category_keyboard"
+				app:title="@string/preference_nicownng_category_keyboard"
 				>
 				<PreferenceScreen
-					android:title="@string/preference_nicownng_category_qwerty"
+					app:title="@string/preference_nicownng_category_qwerty"
 					>
 					<ListPreference
-						android:key="qwerty_kana_mode3"
-						android:title="@string/preference_qwerty_kana_mode_title"
-						android:summary="@string/preference_qwerty_kana_mode_summary"
-						android:entries="@array/qwerty_kana_mode_entries"
-						android:entryValues="@array/qwerty_kana_mode_values"
-						android:defaultValue="4"
+						app:key="qwerty_kana_mode3"
+						app:title="@string/preference_qwerty_kana_mode_title"
+						app:summary="@string/preference_qwerty_kana_mode_summary"
+						app:entries="@array/qwerty_kana_mode_entries"
+						app:entryValues="@array/qwerty_kana_mode_values"
+						app:defaultValue="4"
 						/>
 					<PreferenceCategory
-						android:title="@string/preference_category_qwerty_display">
+						app:title="@string/preference_category_qwerty_display">
 						<CheckBoxPreference
-							android:key="use_qwerty_subten"
-							android:title="@string/preference_use_qwerty_subten_title"
-							android:summary="@string/preference_use_qwerty_subten_summary"
-							android:defaultValue="false"
+							app:key="use_qwerty_subten"
+							app:title="@string/preference_use_qwerty_subten_title"
+							app:summary="@string/preference_use_qwerty_subten_summary"
+							app:defaultValue="false"
 							/>
 						<ListPreference
-							android:key="subten_qwerty_mode"
-							android:title="@string/preference_subten_qwerty_mode_title"
-							android:summary="@string/preference_subten_qwerty_mode_summary"
-							android:entries="@array/preference_subten_qwerty_mode_entries"
-							android:entryValues="@array/preference_subten_qwerty_mode_values"
-							android:defaultValue="0"
+							app:key="subten_qwerty_mode"
+							app:title="@string/preference_subten_qwerty_mode_title"
+							app:summary="@string/preference_subten_qwerty_mode_summary"
+							app:entries="@array/preference_subten_qwerty_mode_entries"
+							app:entryValues="@array/preference_subten_qwerty_mode_values"
+							app:defaultValue="0"
 							/>
 						<CheckBoxPreference
-							android:key="qwerty_matrix_mode"
-							android:title="@string/preference_qwerty_matrix_mode"
-							android:summary="@string/preference_qwerty_matrix_summary_ja"
-							android:defaultValue="false"
+							app:key="qwerty_matrix_mode"
+							app:title="@string/preference_qwerty_matrix_mode"
+							app:summary="@string/preference_qwerty_matrix_summary_ja"
+							app:defaultValue="false"
 							/>
 						<CheckBoxPreference
-							android:key="qwerty_swap_shift_alt"
-							android:title="@string/preference_qwerty_swap_shift_alt"
-							android:summary="@string/preference_qwerty_swap_shift_alt_summary_ja"
-							android:defaultValue="true"
+							app:key="qwerty_swap_shift_alt"
+							app:title="@string/preference_qwerty_swap_shift_alt"
+							app:summary="@string/preference_qwerty_swap_shift_alt_summary_ja"
+							app:defaultValue="true"
 							/>
 						<CheckBoxPreference
-							android:key="qwerty_swap_minienter"
-							android:title="@string/preference_qwerty_swap_minienter"
-							android:summary="@string/preference_qwerty_swap_minienter_summary_ja"
-							android:defaultValue="false"
+							app:key="qwerty_swap_minienter"
+							app:title="@string/preference_qwerty_swap_minienter"
+							app:summary="@string/preference_qwerty_swap_minienter_summary_ja"
+							app:defaultValue="false"
 							/>
 					</PreferenceCategory>
 					<PreferenceCategory
-						android:title="@string/preference_category_qwerty_input">
+						app:title="@string/preference_category_qwerty_input">
 						<ListPreference
-							android:key="shiftkey_style"
-							android:title="@string/preference_shiftkey_style_title"
-							android:summary="@string/preference_shiftkey_style_summary"
-							android:entries="@array/shiftkey_style_entries"
-							android:entryValues="@array/shiftkey_style_values"
-							android:defaultValue="0"
+							app:key="shiftkey_style"
+							app:title="@string/preference_shiftkey_style_title"
+							app:summary="@string/preference_shiftkey_style_summary"
+							app:entries="@array/shiftkey_style_entries"
+							app:entryValues="@array/shiftkey_style_values"
+							app:defaultValue="0"
 							/>
 						<CheckBoxPreference
-							android:key="english_predict_qwerty"
-							android:title="@string/preference_nicownng_qwerty_english_predict_title"
-							android:summary="@string/preference_nicownng_qwerty_english_predict_summary"
-							android:defaultValue="true"
+							app:key="english_predict_qwerty"
+							app:title="@string/preference_nicownng_qwerty_english_predict_title"
+							app:summary="@string/preference_nicownng_qwerty_english_predict_summary"
+							app:defaultValue="true"
 							/>
 						<CheckBoxPreference
-							android:key="qwerty_space_zen"
-							android:title="@string/preference_nicownng_qwerty_space_zen"
-							android:summary="@string/preference_nicownng_qwerty_space_zen_summary_ja"
-							android:defaultValue="true"
+							app:key="qwerty_space_zen"
+							app:title="@string/preference_nicownng_qwerty_space_zen"
+							app:summary="@string/preference_nicownng_qwerty_space_zen_summary_ja"
+							app:defaultValue="true"
 							/>
 						<CheckBoxPreference
-							android:key="symbol_addsymbolemoji_qwerty"
-							android:title="@string/preference_symbol_addsymbolemoji_title"
-							android:summary="@string/preference_symbol_addsymbolemoji_summary"
-							android:defaultValue="true"
+							app:key="symbol_addsymbolemoji_qwerty"
+							app:title="@string/preference_symbol_addsymbolemoji_title"
+							app:summary="@string/preference_symbol_addsymbolemoji_summary"
+							app:defaultValue="true"
 							/>
 						<ListPreference
-							android:key="convert_keymap_type"
-							android:title="@string/preference_convert_keymap_type_title"
-							android:summary="@string/preference_convert_keymap_type_summary"
-							android:entries="@array/convert_keymap_type_entries"
-							android:entryValues="@array/convert_keymap_type_values"
-							android:defaultValue="0"
+							app:key="convert_keymap_type"
+							app:title="@string/preference_convert_keymap_type_title"
+							app:summary="@string/preference_convert_keymap_type_summary"
+							app:entries="@array/convert_keymap_type_entries"
+							app:entryValues="@array/convert_keymap_type_values"
+							app:defaultValue="0"
 							/>
 						<CheckBoxPreference
-							android:key="use_zenkaku_to_moji"
-							android:title="@string/preference_use_zenkaku_to_moji_title"
-							android:summary="@string/preference_use_zenkaku_to_moji_summary"
-							android:defaultValue="true"
+							app:key="use_zenkaku_to_moji"
+							app:title="@string/preference_use_zenkaku_to_moji_title"
+							app:summary="@string/preference_use_zenkaku_to_moji_summary"
+							app:defaultValue="true"
 							/>
 					</PreferenceCategory>
 				</PreferenceScreen>
 				<PreferenceScreen
-					android:title="@string/preference_nicownng_category_12key"
+					app:title="@string/preference_nicownng_category_12key"
 					>
 					<ListPreference
-						android:key="input_mode"
-						android:title="@string/preference_input_mode_title"
-						android:summary="@string/preference_input_mode_summary"
-						android:entries="@array/input_mode_entries"
-						android:entryValues="@array/input_mode_values"
-						android:defaultValue="input_normal"
+						app:key="input_mode"
+						app:title="@string/preference_input_mode_title"
+						app:summary="@string/preference_input_mode_summary"
+						app:entries="@array/input_mode_entries"
+						app:entryValues="@array/input_mode_values"
+						app:defaultValue="input_normal"
 						/>
 					<PreferenceCategory
-						android:title="@string/preference_nicownng_category_flick">
+						app:title="@string/preference_nicownng_category_flick">
 						<ListPreference
-							android:key="nicoflick_mode"
-							android:title="@string/preference_nicownng_is_flick"
-							android:summary="@string/preference_nicownng_is_flick_summary_ja"
-							android:entries="@array/flick_entries"
-							android:entryValues="@array/flick_values"
-							android:defaultValue="0"
+							app:key="nicoflick_mode"
+							app:title="@string/preference_nicownng_is_flick"
+							app:summary="@string/preference_nicownng_is_flick_summary_ja"
+							app:entries="@array/flick_entries"
+							app:entryValues="@array/flick_values"
+							app:defaultValue="0"
 							/>
 						<ListPreference
-							android:key="flick_sensitivity_mode"
-							android:title="@string/preference_flick_sensitivity_title"
-							android:summary="@string/preference_flick_sensitivity_summary"
-							android:entries="@array/flick_sensitivity_entries"
-							android:entryValues="@array/flick_sensitivity_values"
-							android:defaultValue="2"
+							app:key="flick_sensitivity_mode"
+							app:title="@string/preference_flick_sensitivity_title"
+							app:summary="@string/preference_flick_sensitivity_summary"
+							app:entries="@array/flick_sensitivity_entries"
+							app:entryValues="@array/flick_sensitivity_values"
+							app:defaultValue="2"
 							/>
 						<CheckBoxPreference
-							android:key="flick_guide"
-							android:title="@string/preference_nicownng_flick_guide"
-							android:summary="@string/preference_nicownng_flick_guide_summary_ja"
-							android:defaultValue="true"
+							app:key="flick_guide"
+							app:title="@string/preference_nicownng_flick_guide"
+							app:summary="@string/preference_nicownng_flick_guide_summary_ja"
+							app:defaultValue="true"
 							/>
 					</PreferenceCategory>
 					<PreferenceCategory
-						android:title="@string/preference_category_12key_display">
+						app:title="@string/preference_category_12key_display">
 						<CheckBoxPreference
-							android:key="use_12key_shift"
-							android:title="@string/preference_use_12key_shift_title"
-							android:summary="@string/preference_use_12key_shift_summary"
-							android:defaultValue="true"
+							app:key="use_12key_shift"
+							app:title="@string/preference_use_12key_shift_title"
+							app:summary="@string/preference_use_12key_shift_summary"
+							app:defaultValue="true"
 							/>
 						<CheckBoxPreference
-							android:key="use_12key_subten"
-							android:title="@string/preference_use_12key_subten_title"
-							android:summary="@string/preference_use_12key_subten_summary"
-							android:defaultValue="false"
+							app:key="use_12key_subten"
+							app:title="@string/preference_use_12key_subten_title"
+							app:summary="@string/preference_use_12key_subten_summary"
+							app:defaultValue="false"
 							/>
 						<ListPreference
-							android:key="subten_12key_mode2"
-							android:title="@string/preference_subten_12key_mode_title"
-							android:summary="@string/preference_subten_12key_mode_summary"
-							android:entries="@array/preference_subten_12key_mode_entries"
-							android:entryValues="@array/preference_subten_12key_mode_values"
-							android:defaultValue="0"
+							app:key="subten_12key_mode2"
+							app:title="@string/preference_subten_12key_mode_title"
+							app:summary="@string/preference_subten_12key_mode_summary"
+							app:entries="@array/preference_subten_12key_mode_entries"
+							app:entryValues="@array/preference_subten_12key_mode_values"
+							app:defaultValue="0"
 							/>
 						<CheckBoxPreference
-							android:key="no_flip_screen"
-							android:title="@string/preference_nicownng_is_flipscreen"
-							android:summary="@string/preference_nicownng_is_flipscreen_summary_ja"
-							android:defaultValue="false"
+							app:key="no_flip_screen"
+							app:title="@string/preference_nicownng_is_flipscreen"
+							app:summary="@string/preference_nicownng_is_flipscreen_summary_ja"
+							app:defaultValue="false"
 							/>
 					</PreferenceCategory>
 					<PreferenceCategory
-						android:title="@string/preference_category_12key_input">
+						app:title="@string/preference_category_12key_input">
 						<CheckBoxPreference
-							android:key="change_alphamode"
-							android:title="@string/preference_nicownng_change_alphamode"
-							android:summary="@string/preference_nicownng_change_alphamode_summary_ja"
-							android:defaultValue="false"
+							app:key="change_alphamode"
+							app:title="@string/preference_nicownng_change_alphamode"
+							app:summary="@string/preference_nicownng_change_alphamode_summary_ja"
+							app:defaultValue="false"
 							/>
 						<CheckBoxPreference
-							android:key="english_predict_12key"
-							android:title="@string/preference_nicownng_12key_english_predict_title"
-							android:summary="@string/preference_nicownng_12key_english_predict_summary"
-							android:defaultValue="true"
+							app:key="english_predict_12key"
+							app:title="@string/preference_nicownng_12key_english_predict_title"
+							app:summary="@string/preference_nicownng_12key_english_predict_summary"
+							app:defaultValue="true"
 							/>
 						<CheckBoxPreference
-							android:key="tsu_du_ltu"
-							android:title="@string/preference_nicownng_tsu_du_ltu"
-							android:summary="@string/preference_nicownng_tsu_du_ltu_summary_ja"
-							android:defaultValue="false"
+							app:key="tsu_du_ltu"
+							app:title="@string/preference_nicownng_tsu_du_ltu"
+							app:summary="@string/preference_nicownng_tsu_du_ltu_summary_ja"
+							app:defaultValue="false"
 							/>
 						<CheckBoxPreference
-							android:key="kana12_space_zen"
-							android:title="@string/preference_nicownng_kana12_space_zen"
-							android:summary="@string/preference_nicownng_kana12_space_zen_summary_ja"
-							android:defaultValue="false"
+							app:key="kana12_space_zen"
+							app:title="@string/preference_nicownng_kana12_space_zen"
+							app:summary="@string/preference_nicownng_kana12_space_zen_summary_ja"
+							app:defaultValue="false"
 							/>
 						<CheckBoxPreference
-							android:key="autoforward_toggle_12key"
-							android:title="@string/preference_autoforward_toggle_12key_title"
-							android:summary="@string/preference_autoforward_toggle_12key_summary"
-							android:defaultValue="true"
+							app:key="autoforward_toggle_12key"
+							app:title="@string/preference_autoforward_toggle_12key_title"
+							app:summary="@string/preference_autoforward_toggle_12key_summary"
+							app:defaultValue="true"
 							/>
 						<CheckBoxPreference
-							android:key="symbol_addsymbolemoji_12key"
-							android:title="@string/preference_symbol_addsymbolemoji_title"
-							android:summary="@string/preference_symbol_addsymbolemoji_summary"
-							android:defaultValue="true"
+							app:key="symbol_addsymbolemoji_12key"
+							app:title="@string/preference_symbol_addsymbolemoji_title"
+							app:summary="@string/preference_symbol_addsymbolemoji_summary"
+							app:defaultValue="true"
 							/>
 					</PreferenceCategory>
 				</PreferenceScreen>
 				<PreferenceScreen
-					android:title="@string/preference_nicownng_category_onhardkey"
+					app:title="@string/preference_nicownng_category_onhardkey"
 					>
 					<CheckBoxPreference
-						android:key="change_onhardkey"
-						android:title="@string/preference_nicownng_change_onhardkey_title"
-						android:summary="@string/preference_nicownng_change_onhardkey_summary"
-						android:defaultValue="false"
+						app:key="change_onhardkey"
+						app:title="@string/preference_nicownng_change_onhardkey_title"
+						app:summary="@string/preference_nicownng_change_onhardkey_summary"
+						app:defaultValue="false"
 						/>
 					<CheckBoxPreference
-						android:key="change_kana_12key_onhardkey"
-						android:title="@string/preference_nicownng_change_kana_12key"
-						android:summary="@string/preference_nicownng_change_kana_12key_summary_ja"
-						android:defaultValue="false"
+						app:key="change_kana_12key_onhardkey"
+						app:title="@string/preference_nicownng_change_kana_12key"
+						app:summary="@string/preference_nicownng_change_kana_12key_summary_ja"
+						app:defaultValue="false"
 						/>
 					<CheckBoxPreference
-						android:key="change_noalpha_qwerty_onhardkey"
-						android:title="@string/preference_nicownng_change_noalpha_qwerty"
-						android:summary="@string/preference_nicownng_change_noalpha_summary_ja"
-						android:defaultValue="false"
+						app:key="change_noalpha_qwerty_onhardkey"
+						app:title="@string/preference_nicownng_change_noalpha_qwerty"
+						app:summary="@string/preference_nicownng_change_noalpha_summary_ja"
+						app:defaultValue="false"
 						/>
 					<CheckBoxPreference
-						android:key="change_alphanum_12key_onhardkey"
-						android:title="@string/preference_nicownng_change_alphanum_12key"
-						android:summary="@string/preference_nicownng_change_alphanum_12key_summary_ja"
-						android:defaultValue="false"
+						app:key="change_alphanum_12key_onhardkey"
+						app:title="@string/preference_nicownng_change_alphanum_12key"
+						app:summary="@string/preference_nicownng_change_alphanum_12key_summary_ja"
+						app:defaultValue="false"
 						/>
 					<CheckBoxPreference
-						android:key="change_nonumber_qwerty_onhardkey"
-						android:title="@string/preference_nicownng_change_nonumber_qwerty"
-						android:summary="@string/preference_nicownng_change_nonumber_summary_ja"
-						android:defaultValue="false"
+						app:key="change_nonumber_qwerty_onhardkey"
+						app:title="@string/preference_nicownng_change_nonumber_qwerty"
+						app:summary="@string/preference_nicownng_change_nonumber_summary_ja"
+						app:defaultValue="false"
 						/>
 					<CheckBoxPreference
-						android:key="change_num_12key_onhardkey"
-						android:title="@string/preference_nicownng_change_num_12key"
-						android:summary="@string/preference_nicownng_change_num_12key_summary_ja"
-						android:defaultValue="false"
+						app:key="change_num_12key_onhardkey"
+						app:title="@string/preference_nicownng_change_num_12key"
+						app:summary="@string/preference_nicownng_change_num_12key_summary_ja"
+						app:defaultValue="false"
 						/>
 					<ListPreference
-						android:key="input_mode_start_onhardkey"
-						android:title="@string/preference_input_mode_start_title"
-						android:summary="@string/preference_input_mode_start_summary"
-						android:entries="@array/input_mode_start_entries"
-						android:entryValues="@array/input_mode_start_values"
-						android:defaultValue="0"
+						app:key="input_mode_start_onhardkey"
+						app:title="@string/preference_input_mode_start_title"
+						app:summary="@string/preference_input_mode_start_summary"
+						app:entries="@array/input_mode_start_entries"
+						app:entryValues="@array/input_mode_start_values"
+						app:defaultValue="0"
 						/>
 					<ListPreference
-						android:key="input_mode_next_onhardkey"
-						android:title="@string/preference_input_mode_next_title"
-						android:summary="@string/preference_input_mode_next_summary"
-						android:entries="@array/input_mode_next_entries"
-						android:entryValues="@array/input_mode_next_values"
-						android:defaultValue="0"
+						app:key="input_mode_next_onhardkey"
+						app:title="@string/preference_input_mode_next_title"
+						app:summary="@string/preference_input_mode_next_summary"
+						app:entries="@array/input_mode_next_entries"
+						app:entryValues="@array/input_mode_next_values"
+						app:defaultValue="0"
 						/>
 				</PreferenceScreen>
 				<CheckBoxPreference
-					android:key="change_kana_12key"
-					android:title="@string/preference_nicownng_change_kana_12key"
-					android:summary="@string/preference_nicownng_change_kana_12key_summary_ja"
-					android:defaultValue="false"
+					app:key="change_kana_12key"
+					app:title="@string/preference_nicownng_change_kana_12key"
+					app:summary="@string/preference_nicownng_change_kana_12key_summary_ja"
+					app:defaultValue="false"
 					/>
 				<CheckBoxPreference
-					android:key="change_noalpha_qwerty"
-					android:title="@string/preference_nicownng_change_noalpha_qwerty"
-					android:summary="@string/preference_nicownng_change_noalpha_summary_ja"
-					android:defaultValue="false"
+					app:key="change_noalpha_qwerty"
+					app:title="@string/preference_nicownng_change_noalpha_qwerty"
+					app:summary="@string/preference_nicownng_change_noalpha_summary_ja"
+					app:defaultValue="false"
 					/>
 				<CheckBoxPreference
-					android:key="change_alphanum_12key"
-					android:title="@string/preference_nicownng_change_alphanum_12key"
-					android:summary="@string/preference_nicownng_change_alphanum_12key_summary_ja"
-					android:defaultValue="false"
+					app:key="change_alphanum_12key"
+					app:title="@string/preference_nicownng_change_alphanum_12key"
+					app:summary="@string/preference_nicownng_change_alphanum_12key_summary_ja"
+					app:defaultValue="false"
 					/>
 				<CheckBoxPreference
-					android:key="change_nonumber_qwerty"
-					android:title="@string/preference_nicownng_change_nonumber_qwerty"
-					android:summary="@string/preference_nicownng_change_nonumber_summary_ja"
-					android:defaultValue="false"
+					app:key="change_nonumber_qwerty"
+					app:title="@string/preference_nicownng_change_nonumber_qwerty"
+					app:summary="@string/preference_nicownng_change_nonumber_summary_ja"
+					app:defaultValue="false"
 					/>
 				<CheckBoxPreference
-					android:key="change_num_12key"
-					android:title="@string/preference_nicownng_change_num_12key"
-					android:summary="@string/preference_nicownng_change_num_12key_summary_ja"
-					android:defaultValue="false"
+					app:key="change_num_12key"
+					app:title="@string/preference_nicownng_change_num_12key"
+					app:summary="@string/preference_nicownng_change_num_12key_summary_ja"
+					app:defaultValue="false"
 					/>
 				<ListPreference
-					android:key="input_mode_start"
-					android:title="@string/preference_input_mode_start_title"
-					android:summary="@string/preference_input_mode_start_summary"
-					android:entries="@array/input_mode_start_entries"
-					android:entryValues="@array/input_mode_start_values"
-					android:defaultValue="0"
+					app:key="input_mode_start"
+					app:title="@string/preference_input_mode_start_title"
+					app:summary="@string/preference_input_mode_start_summary"
+					app:entries="@array/input_mode_start_entries"
+					app:entryValues="@array/input_mode_start_values"
+					app:defaultValue="0"
 					/>
 				<ListPreference
-					android:key="input_mode_next"
-					android:title="@string/preference_input_mode_next_title"
-					android:summary="@string/preference_input_mode_next_summary"
-					android:entries="@array/input_mode_next_entries"
-					android:entryValues="@array/input_mode_next_values"
-					android:defaultValue="0"
+					app:key="input_mode_next"
+					app:title="@string/preference_input_mode_next_title"
+					app:summary="@string/preference_input_mode_next_summary"
+					app:entries="@array/input_mode_next_entries"
+					app:entryValues="@array/input_mode_next_values"
+					app:defaultValue="0"
 					/>
 				<CheckBoxPreference
-					android:key="use_email_kana"
-					android:title="@string/preference_use_email_kana_title"
-					android:summary="@string/preference_use_email_kana_summary"
-					android:defaultValue="false"
+					app:key="use_email_kana"
+					app:title="@string/preference_use_email_kana_title"
+					app:summary="@string/preference_use_email_kana_summary"
+					app:defaultValue="false"
 					/>
 			</PreferenceCategory>
 			<PreferenceCategory
-				android:title="@string/preference_nicownng_category_view_key"
+				app:title="@string/preference_nicownng_category_view_key"
 				>
 				<ListPreference
-					android:key="mainview_height_mode2"
-					android:title="@string/preference_key_height_title"
-					android:summary="@string/preference_key_height_summary"
-					android:entries="@array/key_height_entries"
-					android:entryValues="@array/key_height_values"
-					android:defaultValue="2"
+					app:key="mainview_height_mode2"
+					app:title="@string/preference_key_height_title"
+					app:summary="@string/preference_key_height_summary"
+					app:entries="@array/key_height_entries"
+					app:entryValues="@array/key_height_values"
+					app:defaultValue="2"
 					/>
 				<CheckBoxPreference
-					android:key="space_below_keyboard"
-					android:title="@string/preference_nicownng_space_below_keyboard_title"
-					android:summary="@string/preference_nicownng_space_below_keyboard_summary"
-					android:defaultValue="false"
+					app:key="space_below_keyboard"
+					app:title="@string/preference_nicownng_space_below_keyboard_title"
+					app:summary="@string/preference_nicownng_space_below_keyboard_summary"
+					app:defaultValue="false"
 					/>
 				<ListPreference
-					android:key="hidden_softkeyboard4"
-					android:title="@string/preference_nicownng_hidden_softkeyboard"
-					android:summary="@string/preference_nicownng_hidden_softkeyboard_summary_ja"
-					android:entries="@array/hidden_softkeyboard_entries"
-					android:entryValues="@array/hidden_softkeyboard_values"
-					android:defaultValue="3"
+					app:key="hidden_softkeyboard4"
+					app:title="@string/preference_nicownng_hidden_softkeyboard"
+					app:summary="@string/preference_nicownng_hidden_softkeyboard_summary_ja"
+					app:entries="@array/hidden_softkeyboard_entries"
+					app:entryValues="@array/hidden_softkeyboard_values"
+					app:defaultValue="3"
 					/>
 			</PreferenceCategory>
 			<PreferenceCategory
-				android:title="@string/preference_nicownng_category_operate_key"
+				app:title="@string/preference_nicownng_category_operate_key"
 				>
 				<CheckBoxPreference
-					android:key="can_flick_arrow_key"
-					android:title="@string/preference_can_flick_arrow_key_title"
-					android:summary="@string/preference_can_flick_arrow_key_summary_ja"
-					android:defaultValue="true"
+					app:key="can_flick_arrow_key"
+					app:title="@string/preference_can_flick_arrow_key_title"
+					app:summary="@string/preference_can_flick_arrow_key_summary_ja"
+					app:defaultValue="true"
 					/>
 				<CheckBoxPreference
-					android:key="can_flick_mode_key"
-					android:title="@string/preference_can_flick_mode_key_title"
-					android:summary="@string/preference_can_flick_mode_key_summary_ja"
-					android:defaultValue="true"
+					app:key="can_flick_mode_key"
+					app:title="@string/preference_can_flick_mode_key_title"
+					app:summary="@string/preference_can_flick_mode_key_summary_ja"
+					app:defaultValue="true"
 					/>
 			</PreferenceCategory>
 			<PreferenceCategory
-				android:title="@string/preference_nicownng_category_view_candidate"
+				app:title="@string/preference_nicownng_category_view_candidate"
 				>
 				<ListPreference
-					android:key="candidateview_height_mode2"
-					android:title="@string/preference_candidateview_height_title"
-					android:summary="@string/preference_candidateview_height_summary"
-					android:entries="@array/candidateview_height_entries"
-					android:entryValues="@array/candidateview_height_values"
-					android:defaultValue="2"
+					app:key="candidateview_height_mode2"
+					app:title="@string/preference_candidateview_height_title"
+					app:summary="@string/preference_candidateview_height_summary"
+					app:entries="@array/candidateview_height_entries"
+					app:entryValues="@array/candidateview_height_values"
+					app:defaultValue="2"
 					/>
 				<ListPreference
-					android:key="candidate_font_size"
-					android:title="@string/preference_candidate_font_size_title"
-					android:summary="@string/preference_candidate_font_size_summary"
-					android:entries="@array/candidate_font_size_entries"
-					android:entryValues="@array/candidate_font_size_values"
-					android:defaultValue="2"
+					app:key="candidate_font_size"
+					app:title="@string/preference_candidate_font_size_title"
+					app:summary="@string/preference_candidate_font_size_summary"
+					app:entries="@array/candidate_font_size_entries"
+					app:entryValues="@array/candidate_font_size_values"
+					app:defaultValue="2"
 					/>
 				<ListPreference
-					android:key="nico_candidate_lines"
-					android:title="@string/preference_nico_candidate_lines"
-					android:summary="@string/preference_nico_candidate_lines_summary_ja"
-					android:entries="@array/nico_candidate_lines_entries"
-					android:entryValues="@array/nico_candidate_lines_values"
-					android:defaultValue="1"
+					app:key="nico_candidate_lines"
+					app:title="@string/preference_nico_candidate_lines"
+					app:summary="@string/preference_nico_candidate_lines_summary_ja"
+					app:entries="@array/nico_candidate_lines_entries"
+					app:entryValues="@array/nico_candidate_lines_values"
+					app:defaultValue="1"
 					/>
 				<CheckBoxPreference
-					android:key="nico_candidate_vertical"
-					android:title="@string/preference_nico_candidate_vertical"
-					android:summary="@string/preference_nico_candidate_vertical_summary_ja"
-					android:defaultValue="true"
+					app:key="nico_candidate_vertical"
+					app:title="@string/preference_nico_candidate_vertical"
+					app:summary="@string/preference_nico_candidate_vertical_summary_ja"
+					app:defaultValue="true"
 					/>
 				<CheckBoxPreference
-					android:key="shrink_candidate_lines"
-					android:title="@string/preference_nico_candidate_lines_shrink_title"
-					android:summary="@string/preference_nico_candidate_lines_shrink_summary"
-					android:defaultValue="false"
+					app:key="shrink_candidate_lines"
+					app:title="@string/preference_nico_candidate_lines_shrink_title"
+					app:summary="@string/preference_nico_candidate_lines_shrink_summary"
+					app:defaultValue="false"
 					/>
 				<CheckBoxPreference
-					android:key="show_candidate_fulllist_button"
-					android:title="@string/preference_nico_candidate_show_button_fulllist_title"
-					android:summary="@string/preference_nico_candidate_show_button_fulllist_summary"
-					android:defaultValue="true"
+					app:key="show_candidate_fulllist_button"
+					app:title="@string/preference_nico_candidate_show_button_fulllist_title"
+					app:summary="@string/preference_nico_candidate_show_button_fulllist_summary"
+					app:defaultValue="true"
 					/>
 				<CheckBoxPreference
-					android:key="nospace_candidate2"
-					android:title="@string/preference_nicownng_is_nospace"
-					android:summary="@string/preference_nicownng_is_nospace_summary_ja"
-					android:defaultValue="false"
+					app:key="nospace_candidate2"
+					app:title="@string/preference_nicownng_is_nospace"
+					app:summary="@string/preference_nicownng_is_nospace_summary_ja"
+					app:defaultValue="false"
 					/>
 				<CheckBoxPreference
-					android:key="candidate_leftrightkey"
-					android:title="@string/preference_candidate_leftrightkey_title"
-					android:summary="@string/preference_candidate_leftrightkey_summary"
-					android:defaultValue="true"
+					app:key="candidate_leftrightkey"
+					app:title="@string/preference_candidate_leftrightkey_title"
+					app:summary="@string/preference_candidate_leftrightkey_summary"
+					app:defaultValue="true"
 					/>
 			</PreferenceCategory>
 			<PreferenceCategory
-				android:title="@string/preference_nicownng_category_input"
+				app:title="@string/preference_nicownng_category_input"
 				>
 				<CheckBoxPreference
-					android:key="is_skip_space"
-					android:title="@string/preference_nicownng_is_skip_space"
-					android:summary="@string/preference_nicownng_is_skip_space_summary_ja"
-					android:defaultValue="true"
+					app:key="is_skip_space"
+					app:title="@string/preference_nicownng_is_skip_space"
+					app:summary="@string/preference_nicownng_is_skip_space_summary_ja"
+					app:defaultValue="true"
 					/>
 				<CheckBoxPreference
-					android:key="auto_caps"
-					android:title="@string/preference_auto_caps_title"
-					android:summary="@string/preference_auto_caps_summary"
-					android:defaultValue="false"
+					app:key="auto_caps"
+					app:title="@string/preference_auto_caps_title"
+					app:summary="@string/preference_auto_caps_summary"
+					app:defaultValue="false"
 					/>
 				<ListPreference
-					android:key="cutpasteaction_byime"
-					android:title="@string/preference_cutpasteaction_byime_title"
-					android:summary="@string/preference_cutpasteaction_byime_summary"
-					android:entries="@array/cutpasteaction_byime_entries"
-					android:entryValues="@array/cutpasteaction_byime_values"
-					android:defaultValue="3"
+					app:key="cutpasteaction_byime"
+					app:title="@string/preference_cutpasteaction_byime_title"
+					app:summary="@string/preference_cutpasteaction_byime_summary"
+					app:entries="@array/cutpasteaction_byime_entries"
+					app:entryValues="@array/cutpasteaction_byime_values"
+					app:defaultValue="3"
 					/>
 				<ListPreference
-					android:key="wait_mushroom"
-					android:title="@string/preference_wait_mushroom_title"
-					android:summary="@string/preference_wait_mushroom_summary"
-					android:entries="@array/wait_mushroom_entries"
-					android:entryValues="@array/wait_mushroom_values"
-					android:defaultValue="3"
+					app:key="wait_mushroom"
+					app:title="@string/preference_wait_mushroom_title"
+					app:summary="@string/preference_wait_mushroom_summary"
+					app:entries="@array/wait_mushroom_entries"
+					app:entryValues="@array/wait_mushroom_values"
+					app:defaultValue="3"
 					/>
 			</PreferenceCategory>
 		</PreferenceScreen>
 		<CheckBoxPreference
-			android:key="different_pl"
-			android:title="@string/preference_nicownng_different_pl_title"
-			android:summary="@string/preference_nicownng_different_pl_summary"
-			android:defaultValue="true"
+			app:key="different_pl"
+			app:title="@string/preference_nicownng_different_pl_title"
+			app:summary="@string/preference_nicownng_different_pl_summary"
+			app:defaultValue="true"
 			/>
 	</PreferenceCategory>
 	<PreferenceCategory
-		android:title="@string/preference_key_setting_menu"
+		app:title="@string/preference_key_setting_menu"
 		>
 		<CheckBoxPreference
-			android:key="key_sound"
-			android:title="@string/preference_key_sound_title"
-			android:summary="@string/preference_key_sound_summary"
+			app:key="key_sound"
+			app:title="@string/preference_key_sound_title"
+			app:summary="@string/preference_key_sound_summary"
 			/>
 		<ListPreference
-			android:key="key_sound_vol"
-			android:title="@string/preference_key_sound_vol_title"
-			android:summary="@string/preference_key_sound_vol_summary"
-			android:entries="@array/key_sound_vol_entries"
-			android:entryValues="@array/key_sound_vol_values"
-			android:defaultValue="1"
+			app:key="key_sound_vol"
+			app:title="@string/preference_key_sound_vol_title"
+			app:summary="@string/preference_key_sound_vol_summary"
+			app:entries="@array/key_sound_vol_entries"
+			app:entryValues="@array/key_sound_vol_values"
+			app:defaultValue="1"
 			/>
 		<CheckBoxPreference
-			android:key="key_vibration"
-			android:title="@string/preference_key_vibration_title"
-			android:summary="@string/preference_key_vibration_summary"
+			app:key="key_vibration"
+			app:title="@string/preference_key_vibration_title"
+			app:summary="@string/preference_key_vibration_summary"
 			/>
 		<CheckBoxPreference
-			android:key="popup_preview"
-			android:title="@string/preference_preview_title"
-			android:summary="@string/preference_preview_summary"
-			android:defaultValue="true"
+			app:key="popup_preview"
+			app:title="@string/preference_preview_title"
+			app:summary="@string/preference_preview_summary"
+			app:defaultValue="true"
 			/>
 		<net.gorry.android.input.nicownng.JAJP.KeyboardListPreferenceJAJP
 			android:key="keyboard_skin"
@@ -509,63 +509,63 @@
 			android:defaultValue="keyboard_android_default"
 			/>
 		<CheckBoxPreference
-			android:key="fullscreen"
-			android:title="@string/preference_nicownng_fullscreen"
-			android:summary="@string/preference_nicownng_fullscreen_summary_ja"
-			android:defaultValue="false"
+			app:key="fullscreen"
+			app:title="@string/preference_nicownng_fullscreen"
+			app:summary="@string/preference_nicownng_fullscreen_summary_ja"
+			app:defaultValue="false"
 			/>
 		<Preference
-			android:key="keycode_test"
-			android:title="@string/preference_keycode_test_title"
-			android:summary="@string/preference_keycode_test_summary"
+			app:key="keycode_test"
+			app:title="@string/preference_keycode_test_title"
+			app:summary="@string/preference_keycode_test_summary"
 			/>
 	</PreferenceCategory>
 	<PreferenceCategory
-		android:title="@string/preference_conversion_menu"
+		app:title="@string/preference_conversion_menu"
 		>
 		<CheckBoxPreference
-			android:key="opt_enable_learning"
-			android:title="@string/preference_input_learning_title"
-			android:summary="@string/preference_input_learning_summary"
-			android:defaultValue="true"
+			app:key="opt_enable_learning"
+			app:title="@string/preference_input_learning_title"
+			app:summary="@string/preference_input_learning_summary"
+			app:defaultValue="true"
 			/>
 		<ListPreference
-			android:key="opt_prediction_mode2"
-			android:title="@string/preference_prediction_mode2_title"
-			android:summary="@string/preference_prediction_mode2_summary"
-			android:entries="@array/prediction_mode2_entries"
-			android:entryValues="@array/prediction_mode2_values"
-			android:defaultValue="0"
+			app:key="opt_prediction_mode2"
+			app:title="@string/preference_prediction_mode2_title"
+			app:summary="@string/preference_prediction_mode2_summary"
+			app:entries="@array/prediction_mode2_entries"
+			app:entryValues="@array/prediction_mode2_values"
+			app:defaultValue="0"
 			/>
 		<CheckBoxPreference
-			android:key="opt_prediction_afterenter"
-			android:title="@string/preference_prediction_afterenter_title"
-			android:summary="@string/preference_prediction_afterenter_summary"
-			android:defaultValue="true"
+			app:key="opt_prediction_afterenter"
+			app:title="@string/preference_prediction_afterenter_title"
+			app:summary="@string/preference_prediction_afterenter_summary"
+			app:defaultValue="true"
 			/>
 		<CheckBoxPreference
-			android:key="opt_spell_correction"
-			android:title="@string/preference_correct_spell_title"
-			android:summary="@string/preference_correct_spell_summary"
-			android:defaultValue="true"
+			app:key="opt_spell_correction"
+			app:title="@string/preference_correct_spell_title"
+			app:summary="@string/preference_correct_spell_summary"
+			app:defaultValue="true"
 			/>
 		<ListPreference
-			android:key="emoji_type"
-			android:title="@string/preference_emoji_type_title"
-			android:summary="@string/preference_emoji_type_summary"
-			android:entries="@array/emoji_type_entries"
-			android:entryValues="@array/emoji_type_values"
-			android:defaultValue="1"
+			app:key="emoji_type"
+			app:title="@string/preference_emoji_type_title"
+			app:summary="@string/preference_emoji_type_summary"
+			app:entries="@array/emoji_type_entries"
+			app:entryValues="@array/emoji_type_values"
+			app:defaultValue="1"
 			/>
 	</PreferenceCategory>
 	<PreferenceCategory
-		android:title="@string/preference_dictionary_menu"
+		app:title="@string/preference_dictionary_menu"
 		>
 		<PreferenceScreen
-			android:key="user_dictionary_edit_words"
-			android:title="@string/preference_dictionary_menu_ja"
-			android:summary="@string/preference_user_dictionary_edit_words_summary_ja"
-			android:persistent="false"
+			app:key="user_dictionary_edit_words_ja"
+			app:title="@string/preference_dictionary_menu_ja"
+			app:summary="@string/preference_user_dictionary_edit_words_summary_ja"
+			app:persistent="false"
 			>
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -574,10 +574,10 @@
 				/>
 		</PreferenceScreen>
 		<PreferenceScreen
-			android:key="user_dictionary_edit_words"
-			android:title="@string/preference_dictionary_menu_en"
-			android:summary="@string/preference_user_dictionary_edit_words_summary_en"
-			android:persistent="false"
+			app:key="user_dictionary_edit_words_en"
+			app:title="@string/preference_dictionary_menu_en"
+			app:summary="@string/preference_user_dictionary_edit_words_summary_en"
+			app:persistent="false"
 			>
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -595,9 +595,9 @@
 			/>
 	</PreferenceCategory>
 	<PreferenceCategory
-		android:title="@string/preference_config_menu"
+		app:title="@string/preference_config_menu"
 		>
-		<net.gorry.android.input.nicownng.BackupConfig
+		<net.gorry.android.input.nicownng.BackupConfigDialog
 			android:key="backup_config"
 			android:title="@string/preference_config_backup_title"
 			android:summary="@string/preference_config_backup_summary"
@@ -605,7 +605,7 @@
 			android:positiveButtonText="@string/dialog_button_ok"
 			android:negativeButtonText="@string/dialog_button_cancel"
 			/>
-		<net.gorry.android.input.nicownng.RestoreConfig
+		<net.gorry.android.input.nicownng.RestoreConfigDialog
 			android:key="restore_config"
 			android:title="@string/preference_config_restore_title"
 			android:summary="@string/preference_config_restore_summary"
@@ -614,10 +614,10 @@
 			android:negativeButtonText="@string/dialog_button_cancel"
 			/>
 		<PreferenceScreen
-			android:key="edit_usersymbol"
-			android:title="@string/preference_nicownng_edit_usersymbol_title"
-			android:summary="@string/preference_nicownng_edit_usersymbol_summary"
-			android:persistent="false"
+			app:key="edit_usersymbol"
+			app:title="@string/preference_nicownng_edit_usersymbol_title"
+			app:summary="@string/preference_nicownng_edit_usersymbol_summary"
+			app:persistent="false"
 			>
 			<intent
 				android:action="android.intent.action.MAIN"
@@ -643,19 +643,19 @@
 			/>
 	</PreferenceCategory>
 	<PreferenceCategory
-		android:title="@string/preference_aboutime_menu"
+		app:title="@string/preference_aboutime_menu"
 		>
 		<Preference
-			android:key="nicownng_help"
-			style="?android:preferenceInformationStyle"
-			android:title="@string/nicownng_help_title"
-			android:summary="@string/nicownng_help_summary"
+			app:key="nicownng_help"
+			style="?app:preferenceInformationStyle"
+			app:title="@string/nicownng_help_title"
+			app:summary="@string/nicownng_help_summary"
 			/>
 		<Preference
-			android:key="nicownng_version"
-			style="?android:preferenceInformationStyle"
-			android:title="@string/nicownng_japanese"
-			android:summary="@string/nicownng_japanese_copyright"
+			app:key="nicownng_version"
+			style="?app:preferenceInformationStyle"
+			app:title="@string/nicownng_japanese"
+			app:summary="@string/nicownng_japanese_copyright"
 			/>
 	</PreferenceCategory>
 </PreferenceScreen>

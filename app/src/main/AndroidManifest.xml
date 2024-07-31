@@ -21,6 +21,9 @@
 		android:name="android.permission.VIBRATE"
 		/>
 	<uses-permission
+		android:name="android.permission.READ_EXTERNAL_STORAGE"
+		/>
+	<uses-permission
 		android:name="android.permission.WRITE_EXTERNAL_STORAGE"
 		/>
 	<application
@@ -47,7 +50,7 @@
 				/>
 		</service>
 		<activity
-			android:name="NicoWnnGControlPanelJAJP"
+			android:name=".ActivityNicoWnnGSetting"
 			android:label="@string/preference_ime_setting_app"
 			android:configChanges="orientation|keyboardHidden"
 			android:exported="true"

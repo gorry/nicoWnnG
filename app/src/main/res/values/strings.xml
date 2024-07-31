@@ -116,13 +116,15 @@
 	<string name="preference_config_menu">Backup/Restore</string>
 	<string name="preference_config_backup_title">Export Configuration</string>
 	<string name="preference_config_backup_summary">Write All Settings to External-Memory</string>
-	<string name="dialog_config_backup_message">Write All Settings to File in:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+	<string name="dialog_config_backup_message">Write all settings to File.\nPlease specify destination in the next dialog.\nIf you haven\'t created destination yet, we recommend creating "nicoWnnG" at the root folder and specifying that.</string>
+	<string name="dialog_config_backup_message_api28">Write all settings to File at:\nDocuments/nicoWnnG/</string>
 	<string name="toast_config_backup_success">Complete writing.</string>
 	<string name="toast_config_backup_failed">Export Configuration Failed.</string>
 
 	<string name="preference_config_restore_title">Import Configuration</string>
 	<string name="preference_config_restore_summary">Restore All Settings from External-Memory</string>
-	<string name="dialog_config_restore_message">Restore All Settings from File in:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+	<string name="dialog_config_restore_message">Restore all settings from File.\nPlease specify destination in the next dialog.</string>
+	<string name="dialog_config_restore_message_api28">Restore all settings from File at:\nDocuments/nicoWnnG/</string>
 	<string name="toast_config_restore_success">Importing Configuration.</string>
 	<string name="toast_config_restore_failed">Import Configuration Failed.</string>
 
@@ -444,14 +446,14 @@
 
    <!-- IME dependency -->
   <!-- OpenWnn English -->
-  <string name="nicownng_english_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2023.0807.1</string>
+  <string name="nicownng_english_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2024.0731.1</string>
   <string name="nicownng_english">nicoWnnG English</string>
   <string name="nicownng_english_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnEngDic.so</string>
   <string name="nicownng_english_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableEN.dic</string>
   <string name="en_word_separators">.,;:!?</string>
 
   <!-- OpenWnn Japanese -->
-  <string name="nicownng_japanese_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2023.0807.1</string>
+  <string name="nicownng_japanese_copyright">Ver.1.3.1\nOMRON SOFTWARE Co., Ltd.\nNicoWnn Ver.1.3.0\nNicoWnnG Ver.2024.0731.1</string>
   <string name="nicownng_japanese">nicoWnnG IME</string>
   <string name="openwnn_japanese_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnJpnDic.so</string>
   <string name="nicownng_japanese_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableJAJP.dic</string>

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -129,21 +130,17 @@ public class KeyCodeTest extends Activity implements View.OnClickListener {
 	/** @see android.view.View.OnClickListener */
 	public void onClick(final View v) {
 
-		switch (v.getId()) {
-			case R.id.dialog_button_close:
-				finish();
-				break;
-			case R.id.dialog_button_clearlog:
-				mKeycodeText.setText("");
-				mKeycodeLog.setText("");
-				mKeycodeScrollView.scrollTo(0, 0);
-				break;
-			case R.id.dialog_button_copylog:
-			{
-				 ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-				 cm.setText(mKeycodeLog.getText());
-				 break;
-			}
+        int id = v.getId();
+        if (false) {
+		} else if (id == R.id.dialog_button_close) {
+			finish();
+		} else if (id == R.id.dialog_button_clearlog) {
+			mKeycodeText.setText("");
+			mKeycodeLog.setText("");
+			mKeycodeScrollView.scrollTo(0, 0);
+		} else if (id == R.id.dialog_button_copylog) {
+			ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+			cm.setText(mKeycodeLog.getText());
 		}
 	}
 
@@ -170,7 +167,12 @@ public class KeyCodeTest extends Activity implements View.OnClickListener {
 			mReceiver = new MyBroadcastReceiver();
 			mIntentFilter = new IntentFilter();
 			mIntentFilter.addAction("NICOWNNG_KEYCODETEST_ACTION");
-			registerReceiver(mReceiver, mIntentFilter);        
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+				registerReceiver(mReceiver, mIntentFilter, Context.RECEIVER_EXPORTED);
+			} else {
+				registerReceiver(mReceiver, mIntentFilter);
+
+			}
 		}
 		final SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
 		final SharedPreferences.Editor editor = pref.edit();

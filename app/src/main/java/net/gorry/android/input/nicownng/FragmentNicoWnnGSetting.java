@@ -16,31 +16,32 @@
 
 package net.gorry.android.input.nicownng;
 
+import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceManager;
-import android.preference.PreferenceScreen;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatDelegate;
+import androidx.annotation.Nullable;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.preference.CheckBoxPreference;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
+import androidx.preference.PreferenceScreen;
 
 /**
  * The control panel preference class for Japanese IME.
  *
  * @author Copyright (C) 2009 OMRON SOFTWARE CO., LTD.  All Rights Reserved.
  */
-public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
-	private final int MENU_RESET_SYMBOL = 0;
+public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
+
+	private static final String DIALOG_FRAGMENT_TAG = "net.gorry.android.input.nicownng.FragmentNicoWnnGSetting";
+
+	private Context me;
+	private ActivityNicoWnnGSetting mParentActivity;
 
 	SharedPreferences mPref;
 	PreferenceScreen mpsNicoWnnGMenu;
@@ -53,70 +54,85 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 
 	private Preference mPreferenceHelp = null;
 	private Preference mKeycodeTest = null;
-	
-	private Menu      mMenu;
-	private boolean mIsLandscape;
 
-	private static NicoWnnGControlPanelJAJP mSelf;
-	
-	public NicoWnnGControlPanelJAJP() {
-		mSelf = this;
+
+	public FragmentNicoWnnGSetting(ActivityNicoWnnGSetting a) {
+		mParentActivity = a;
 	}
-	
-	public static NicoWnnGControlPanelJAJP getInstance() {
-		return mSelf;
+
+	@Override
+	public void onAttach(Context context) {
+		super.onAttach(context);
+
+		me = context;
+
 	}
-	
-	/** @see android.preference.PreferenceActivity#onCreate */
-	@Override public void onCreate(final Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+
+/*
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		super.onCreateView(inflater, container, savedInstanceState);
+
+		return inflater.inflate(R.layout.fragment_setting, container, false);
+	}
+*/
+
+	@Override
+	public void onDisplayPreferenceDialog(Preference preference) {
+		if (getParentFragmentManager().findFragmentByTag(DIALOG_FRAGMENT_TAG) != null) {
+			 return;
+		}
+
+		DialogFragment f = null;
+		if (false) {
+		} else if (preference instanceof BackupConfigDialog) {
+			f = BackupConfigDialogFragment.newInstance(preference.getKey());
+		} else if (preference instanceof RestoreConfigDialog) {
+			f = RestoreConfigDialogFragment.newInstance(preference.getKey());
+		} else {
+			super.onDisplayPreferenceDialog(preference);
+		}
+		if (f != null) {
+			f.setTargetFragment(this, 0);
+			//getFragmentManagerは非推奨。代わりにgetParentFragmentManagerを使用
+			f.show(getParentFragmentManager(), DIALOG_FRAGMENT_TAG);
+		}
+	}
+
+
+	@Override
+	public void onCreatePreferences(@Nullable Bundle savedInstanceState, @Nullable String rootKey) {
 
 		if (NicoWnnGEN.getInstance() == null) {
-			new NicoWnnGEN(this);
+			new NicoWnnGEN(me);
 		}
 
 		if (NicoWnnGJAJP.getInstance() == null) {
-			new NicoWnnGJAJP(this);
+			new NicoWnnGJAJP(me);
 		}
 		NicoWnnGJAJP.getInstance().initializeEasySetting();
 		NicoWnnGJAJP.getInstance().convertOldPreferces();
 
-		mPref = PreferenceManager.getDefaultSharedPreferences(this);
+		mPref = PreferenceManager.getDefaultSharedPreferences(me);
 		mDifferent_pl = mPref.getBoolean("different_pl", true);
 
-		mIsLandscape = (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
-		if (mIsLandscape) {
-			if (Build.VERSION.SDK_INT >= 9) {
-				// setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
-				setRequestedOrientation(6);
-			} else {
-				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-			}
-		} else {
-			if (Build.VERSION.SDK_INT >= 9) {
-				// setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
-				setRequestedOrientation(7);
-			} else {
-				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-			}
-		}
-		copyInPreferences(mIsLandscape, mPref);
+		copyInPreferences(mParentActivity.isLandscape(), mPref);
 
 		if (NicoWnnGJAJP.getInstance() == null) {
-			new NicoWnnGJAJP(this);
+			new NicoWnnGJAJP(me);
 		}
 
 		// 縦横メニューの設定
-		addPreferencesFromResource(R.xml.nicownng_pref_ja);
+		setPreferencesFromResource(R.xml.nicownng_pref_ja, rootKey);
 		mpsNicoWnnGMenu = (PreferenceScreen)findPreference("nicownng_menu");
 		if (mDifferent_pl) {
-			mpsNicoWnnGMenu.setSummary(getString(mIsLandscape ? R.string.preference_nicownng_menu_summary_ja_landscape : R.string.preference_nicownng_menu_summary_ja_portrait));
+			mpsNicoWnnGMenu.setSummary(getString(mParentActivity.isLandscape() ? R.string.preference_nicownng_menu_summary_ja_landscape : R.string.preference_nicownng_menu_summary_ja_portrait));
 		} else {
 			mpsNicoWnnGMenu.setSummary("");
 		}
 		mcpDifferentPl = (CheckBoxPreference)findPreference("different_pl");
 		mcpDifferentPl.setOnPreferenceChangeListener(onPreferenceChangeListener);
-		
+
 		// ヘルプボタン
 		mPreferenceHelp = findPreference("nicownng_help");
 		mPreferenceHelp.setEnabled(true);
@@ -128,7 +144,7 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 		mKeycodeTest.setOnPreferenceClickListener(onPreferenceClickListener);
 
 		// onhardkey
-		mcpChangeHardkey =(CheckBoxPreference)findPreference("change_onhardkey"); 
+		mcpChangeHardkey =(CheckBoxPreference)findPreference("change_onhardkey");
 		setPreferenceEnabled_onhardkey();
 		mcpChangeHardkey.setOnPreferenceChangeListener(onPreferenceChangeListener);
 
@@ -137,8 +153,9 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 		mlNicoFlickMode.setOnPreferenceChangeListener(onPreferenceChangeListener);
 		mlInputMode12key = (ListPreference)findPreference("input_mode");
 		mlInputMode12key.setOnPreferenceChangeListener(onPreferenceChangeListener);
-		
+
 	}
+
 
 	private void setPreferenceEnabled_onhardkey() {
 		Preference p;
@@ -168,7 +185,7 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 			if (p == mcpDifferentPl) {
 				mDifferent_pl = (Boolean)value;
 				if (mDifferent_pl) {
-					mpsNicoWnnGMenu.setSummary(getString(mIsLandscape ? R.string.preference_nicownng_menu_summary_ja_landscape : R.string.preference_nicownng_menu_summary_ja_portrait));
+					mpsNicoWnnGMenu.setSummary(getString(mParentActivity.isLandscape() ? R.string.preference_nicownng_menu_summary_ja_landscape : R.string.preference_nicownng_menu_summary_ja_portrait));
 				} else {
 					mpsNicoWnnGMenu.setSummary("");
 				}
@@ -187,7 +204,7 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 						SharedPreferences.Editor editor = mPref.edit();
 						editor.putString("nicoflick_mode", "0");
 						editor.commit();
-						Toast.makeText(mSelf, mSelf.getString(R.string.toast_2touch_is_not_flickable), Toast.LENGTH_SHORT).show();
+						Toast.makeText(me, getString(R.string.toast_2touch_is_not_flickable), Toast.LENGTH_SHORT).show();
 						return false;
 					}
 				}
@@ -203,7 +220,7 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 						editor.putString("nicoflick_mode", "0");
 						editor.commit();
 						lp2.setValueIndex(lp2.findIndexOfValue("0"));
-						Toast.makeText(mSelf, mSelf.getString(R.string.toast_2touch_is_not_flickable), Toast.LENGTH_SHORT).show();
+						Toast.makeText(me, getString(R.string.toast_2touch_is_not_flickable), Toast.LENGTH_SHORT).show();
 					}
 				}
 			}
@@ -216,7 +233,7 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 		public boolean onPreferenceClick(final Preference p) {
 			if (p == mPreferenceHelp) {
 				NicoWnnGJAJP.getInstance().openHelp();
-				finish();
+				// finish();
 			}
 			else if (p == mKeycodeTest) {
 				NicoWnnGJAJP.getInstance().openKeycodeTest();
@@ -229,11 +246,11 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 	 *
 	 */
 	@Override public void onPause() {
-		super.onStop();
+		super.onPause();
 
 		mDifferent_pl = mPref.getBoolean("different_pl", true);
 		if (mDifferent_pl) {
-			copyOutPreferences(mIsLandscape, mPref);
+			copyOutPreferences(mParentActivity.isLandscape(), mPref);
 		} else {
 			copyOutPreferences(true, mPref);
 			copyOutPreferences(false, mPref);
@@ -244,7 +261,7 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 		editor.commit();
 
 		if (NicoWnnGJAJP.getInstance() == null) {
-			new NicoWnnGJAJP(this);
+			new NicoWnnGJAJP(me);
 		}
 		// 一度もキーボードを表示させずに以下を呼ぶとエラーになる
 		// NicoWnnGJAJP.getInstance().mInputViewManager.closing();
@@ -472,9 +489,5 @@ public class NicoWnnGControlPanelJAJP extends PreferenceActivity {
 			final boolean value = pref.getBoolean(key, false);
 			editor.putBoolean(outKey, value);
 		}
-	}
-	
-	public boolean isLandscape() {
-		return mIsLandscape;
 	}
 }

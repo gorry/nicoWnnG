@@ -5,7 +5,7 @@ package net.gorry.android.input.nicownng;
 
 import android.content.Context;
 import android.os.Environment;
-import android.preference.DialogPreference;
+import androidx.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.widget.Toast;
 
@@ -26,9 +26,9 @@ public class InitializeUserSymbol extends DialogPreference {
 		this(context, null);
 	}
 
-	@Override
-	protected void onDialogClosed(final boolean positiveResult) {
-		super.onDialogClosed(positiveResult);
+	// @Override
+	public void onDialogClosed(final boolean positiveResult) {
+		//super.onDialogClosed(positiveResult);
 		
 		if (positiveResult) {
 			SymbolList.copyUserSymbolDicFileToExternalStorageDirectory(me, true);

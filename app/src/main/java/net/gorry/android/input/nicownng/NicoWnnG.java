@@ -16,7 +16,6 @@
 
 package net.gorry.android.input.nicownng;
 
-import java.io.File;
 import java.util.StringTokenizer;
 
 import android.content.BroadcastReceiver;
@@ -597,7 +596,7 @@ public class NicoWnnG extends InputMethodService {
 	 */
 	public void openPreferenceSetting() {
 		final Intent intent = new Intent(
-				NicoWnnG.this, NicoWnnGControlPanelJAJP.class
+				NicoWnnG.this, ActivityNicoWnnGSetting.class
 		);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(intent);
@@ -1054,7 +1053,11 @@ public class NicoWnnG extends InputMethodService {
 
 	public void registerMushroomReceiver() {
 		final IntentFilter filter = new IntentFilter(Mushroom.ACTION);
-		registerReceiver(mReceiver, filter);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+			registerReceiver(mReceiver, filter, Context.RECEIVER_EXPORTED);
+		} else {
+			registerReceiver(mReceiver, filter);
+		}
 	}
 
 	public void unregisterMushroomReceiver() {
@@ -2185,5 +2188,5 @@ public class NicoWnnG extends InputMethodService {
     	return mUseLeftRightKeyCandidateSelection;
     }
     */
-	
+
 }

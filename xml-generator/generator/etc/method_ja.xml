@@ -16,4 +16,4 @@
 -->
 <!-- The attributes in this XML file provide configuration information -->
 <!-- for the Search Manager. -->
-<input-method xmlns:android="http://schemas.android.com/apk/res/android" android:settingsActivity="net.gorry.android.input.nicownng.NicoWnnGControlPanelJAJP" />
+<input-method xmlns:android="http://schemas.android.com/apk/res/android" android:settingsActivity="net.gorry.android.input.nicownng.ActivityNicoWnnGSetting" />

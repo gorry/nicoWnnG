@@ -178,27 +178,17 @@ public class MyHeightKeyboard extends Keyboard {
 					case DefaultSoftKeyboard.KEYCODE_JP12_TOGGLE_MODE2:
 					case DefaultSoftKeyboard.KEYCODE_QWERTY_TOGGLE_MODE2:
 					{
-						switch (key.popupResId) {
-							case R.xml.keyboard_popup_subten_qwerty_jp_0: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_1: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_2: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_3: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_4: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_5: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_6: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_7: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_8: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_9: 
-								if (isPortrait) {
-									key.popupResId = 0;									
+						if ((R.xml.keyboard_popup_subten_qwerty_jp_0 <= key.popupResId) && (key.popupResId <= R.xml.keyboard_popup_subten_qwerty_jp_9)) {
+							if (isPortrait) {
+								key.popupResId = 0;
+							} else {
+								if (key.codes[0] == DefaultSoftKeyboard.KEYCODE_JP12_TOGGLE_MODE2) {
+									key.codes[0] = DefaultSoftKeyboard.KEYCODE_JP12_TOGGLE_MODE;
 								} else {
-									if (key.codes[0] == DefaultSoftKeyboard.KEYCODE_JP12_TOGGLE_MODE2) {
-										key.codes[0] = DefaultSoftKeyboard.KEYCODE_JP12_TOGGLE_MODE;
-									} else {
-										key.codes[0] = DefaultSoftKeyboard.KEYCODE_QWERTY_TOGGLE_MODE;
-									}
-									
+									key.codes[0] = DefaultSoftKeyboard.KEYCODE_QWERTY_TOGGLE_MODE;
 								}
+
+							}
 						}						
 					}
 					break;
@@ -213,67 +203,18 @@ public class MyHeightKeyboard extends Keyboard {
 								n = j;
 							}
 						}
-						switch (key.popupResId) {
-							case R.xml.keyboard_popup_12key_jp_0:
-							case R.xml.keyboard_popup_12key_jp_1:
-							case R.xml.keyboard_popup_12key_jp_2:
-							case R.xml.keyboard_popup_12key_jp_3:
-							case R.xml.keyboard_popup_12key_jp_4:
-							case R.xml.keyboard_popup_12key_jp_5:
-							case R.xml.keyboard_popup_12key_jp_6:
-							case R.xml.keyboard_popup_12key_jp_7:
-							case R.xml.keyboard_popup_12key_jp_8:
-							case R.xml.keyboard_popup_12key_jp_9:
-								keyType = 0;
-								break;
-							case R.xml.keyboard_popup_qwerty_jp_0:
-							case R.xml.keyboard_popup_qwerty_jp_1:
-							case R.xml.keyboard_popup_qwerty_jp_2:
-							case R.xml.keyboard_popup_qwerty_jp_3:
-							case R.xml.keyboard_popup_qwerty_jp_4:
-							case R.xml.keyboard_popup_qwerty_jp_5:
-							case R.xml.keyboard_popup_qwerty_jp_6:
-							case R.xml.keyboard_popup_qwerty_jp_7:
-							case R.xml.keyboard_popup_qwerty_jp_8:
-							case R.xml.keyboard_popup_qwerty_jp_9:
-								keyType = 1;
-								break;
-							case R.xml.keyboard_popup_nico2_jp_0: 
-							case R.xml.keyboard_popup_nico2_jp_1: 
-							case R.xml.keyboard_popup_nico2_jp_2: 
-							case R.xml.keyboard_popup_nico2_jp_3: 
-							case R.xml.keyboard_popup_nico2_jp_4: 
-							case R.xml.keyboard_popup_nico2_jp_5: 
-							case R.xml.keyboard_popup_nico2_jp_6: 
-							case R.xml.keyboard_popup_nico2_jp_7:
-							case R.xml.keyboard_popup_nico2_jp_8:
-							case R.xml.keyboard_popup_nico2_jp_9:
-								keyType = 2;
-								break;
-							case R.xml.keyboard_popup_subten_qwerty_jp_0: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_1: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_2: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_3: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_4: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_5: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_6: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_7: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_8: 
-							case R.xml.keyboard_popup_subten_qwerty_jp_9: 
-								keyType = 3;
-								break;
-							case R.xml.keyboard_popup_subten_12key_jp_0: 
-							case R.xml.keyboard_popup_subten_12key_jp_1: 
-							case R.xml.keyboard_popup_subten_12key_jp_2: 
-							case R.xml.keyboard_popup_subten_12key_jp_3: 
-							case R.xml.keyboard_popup_subten_12key_jp_4: 
-							case R.xml.keyboard_popup_subten_12key_jp_5: 
-							case R.xml.keyboard_popup_subten_12key_jp_6: 
-							case R.xml.keyboard_popup_subten_12key_jp_7: 
-							case R.xml.keyboard_popup_subten_12key_jp_8: 
-							case R.xml.keyboard_popup_subten_12key_jp_9: 
-								keyType = 4;
-								break;
+						if (false) {
+							//
+						} else if ((R.xml.keyboard_popup_12key_jp_0 <= key.popupResId) && (key.popupResId <= R.xml.keyboard_popup_12key_jp_0)) {
+							keyType = 0;
+						} else if ((R.xml.keyboard_popup_qwerty_jp_0 <= key.popupResId) && (key.popupResId <= R.xml.keyboard_popup_qwerty_jp_9)) {
+							keyType = 1;
+						} else if ((R.xml.keyboard_popup_nico2_jp_0 <= key.popupResId) && (key.popupResId <= R.xml.keyboard_popup_nico2_jp_9)) {
+							keyType = 2;
+						} else if ((R.xml.keyboard_popup_subten_qwerty_jp_0 <= key.popupResId) && (key.popupResId <= R.xml.keyboard_popup_subten_qwerty_jp_9)) {
+							keyType = 3;
+						} else if ((R.xml.keyboard_popup_subten_12key_jp_0 <= key.popupResId) && (key.popupResId <= R.xml.keyboard_popup_subten_12key_jp_9)) {
+							keyType = 4;
 						}
 						key.popupResId = popupKeyboardTable[keyType][n];
 						if (key.label != null) {
