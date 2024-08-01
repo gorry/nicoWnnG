@@ -369,7 +369,7 @@ public class SymbolList implements WnnEngine {
 			}
 			fin.close();
 		} catch (final XmlPullParserException e) {
-			Log.e("NicoWnnG", "Ill-formatted keybaord resource file");
+			Log.e("NicoWnnG", "Ill-formatted keyboard resource file");
 			e.printStackTrace();
 		} catch (final IOException e) {
 			Log.e("NicoWnnG", "Unable to read keyboard resource file");

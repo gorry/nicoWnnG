@@ -59,43 +59,18 @@ public class BackupConfigDialogFragment extends PreferenceDialogFragmentCompat {
 				new NicoWnnGJAJP(me);
 			}
 
+			MyDocumentFolderSelector folder = new MyDocumentFolderSelector(me);
 			MyDocumentTreeSelector doctree = ActivityNicoWnnGSetting.getInstance().getMyDocumentTreeSelector();
-			doctree.setDirectory(sDirName)
-				.setSelected((resultCode, treeUri) -> {
-					Uri path = treeUri;
-					DocumentFile dir = DocumentFile.fromTreeUri(me, path);
-
-					if (!path.toString().endsWith(sDirName)) {
-						// 選択したフォルダが「nicoWnnG」でないとき
-						DocumentFile dir2 = dir.findFile(sDirName);
-						if ((dir2 != null) && dir2.exists()) {
-							// 選択したフォルダに「nicoWnnG」があるとき
-							if (!dir2.isDirectory()) {
-								// 「nicoWnnG」がフォルダでないとき
-								Toast.makeText(
-										me.getApplicationContext(),
-										R.string.toast_config_backup_failed,
-										Toast.LENGTH_LONG
-								).show();
-								return;
-							}
-							// 選択したフォルダにある「nicoWnnG」を新しい選択フォルダにする
-							dir = dir2;
-						} else {
-							// 選択したフォルダに「nicoWnnG」がないとき
-							dir2 = dir.createDirectory(sDirName);
-							if (dir2 == null) {
-								// 選択したフォルダに「nicoWnnG」が作れないとき
-								Toast.makeText(
-									me.getApplicationContext(),
-									R.string.toast_config_backup_failed,
-									Toast.LENGTH_LONG
-								).show();
-								return;
-							}
-							// 作成した「nicoWnnG」フォルダを新しい選択フォルダにする
-							dir = dir2;
-						}
+			folder.setDocumentTreeSelector(doctree)
+				.setInitialDirectory(sDirName)
+				.setSelected((resultCode, dir) -> {
+					if (dir == null) {
+						Toast.makeText(
+								me.getApplicationContext(),
+								R.string.toast_config_backup_failed,
+								Toast.LENGTH_LONG
+						).show();
+						return;
 					}
 
 					// 指定したフォルダにファイルがあるかどうか調べる
@@ -134,6 +109,7 @@ public class BackupConfigDialogFragment extends PreferenceDialogFragmentCompat {
 				.setUnselected((resultCode) -> {
 				})
 				.setWrite(true)
+				.setCreateFolder(true)
 				.select();
 		}
 

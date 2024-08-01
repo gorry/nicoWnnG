@@ -40,9 +40,9 @@ public class UserDictionaryToolsListEN extends UserDictionaryToolsList {
 	public UserDictionaryToolsListEN() {
 		mListViewName = "net.gorry.android.input.nicownng.EN.UserDictionaryToolsListEN";
 		mEditViewName = "net.gorry.android.input.nicownng.EN.UserDictionaryToolsEditEN";
-		mImportExportName = "UserDicEN.xml";
-		mLearnFlashName   = NicoWnnGEN.getInstance().writableENDic;
-		mLearnSDName      = NicoWnnG.writableENBaseName;
+		mOuterUserDicBaseName = mOuterUserDicBaseName;
+		mWritableDicBaseName = NicoWnnGEN.getInstance().writableDicENBaseName;
+		mWritableDicFileName = NicoWnnGEN.getInstance().writableDicENFileName;
 		mPackageName  = "net.gorry.android.input.nicownng";
 	}
 

@@ -53,20 +53,22 @@ public class NicoWnnG extends InputMethodService {
 
 
 	// dic.setup
-	public static final String writableJAJPBaseName = new String("writableJAJP.dic");
-	public static final String writableENBaseName   = new String("writableEN.dic");
+	public static final String writableDicJAJPBaseName = "writableJAJP.dic";
+	public static final String writableDicENBaseName   = "writableEN.dic";
+	public static final String outerUserDicENBaseName = "UserDicEN.xml";
+	public static final String outerUserDicJAJPBaseName = "UserDicJAJP.xml";
 
 //	public String writableJAJPDic = new String("/data/data/net.gorry.android.input.nicownng/databases/writableJAJP.dic");
 //	public String writableENDic   = new String("/data/data/net.gorry.android.input.nicownng/databases/writableEN.dic");
-	public String writableJAJPDic = null;
-	public String writableENDic   = null;
+	public String writableDicJAJPFileName = null;
+	public String writableDicENFileName = null;
 
-	public static final String INPUTMODE_NICO   = new String("input_nico");
-	public static final String INPUTMODE_BELL   = new String("input_bell");
-	public static final String INPUTMODE_NORMAL = new String("input_normal");
-	public static final String INPUTMODE_NICO2  = new String("input_nico2");
-	public static final String INPUTMODE_TEST   = new String("input_test");
-	public static final String INPUTMODE_2TOUCH = new String("input_2touch");
+	public static final String INPUTMODE_NICO   = "input_nico";
+	public static final String INPUTMODE_BELL   = "input_bell";
+	public static final String INPUTMODE_NORMAL = "input_normal";
+	public static final String INPUTMODE_NICO2  = "input_nico2";
+	public static final String INPUTMODE_TEST   = "input_test";
+	public static final String INPUTMODE_2TOUCH = "input_2touch";
 
 	/** Candidate view */
 //	protected CandidatesViewManager  mCandidatesViewManager = null;
@@ -126,8 +128,8 @@ public class NicoWnnG extends InputMethodService {
 		} catch (final Exception e) {
 			//
 		}
-    	writableJAJPDic = getDatabasePath("writableJAJP.dic").getPath();
-    	writableENDic = getDatabasePath("writableEN.dic").getPath();
+    	writableDicJAJPFileName = getDatabasePath(writableDicJAJPBaseName).getPath();
+    	writableDicENFileName = getDatabasePath(writableDicENBaseName).getPath();
 		// Log.w("NicoWnnG", "writableJAJPDic="+writableJAJPDic + ", writableENDic="+writableENDic);
 		// Log.w("NicoWnnG", "getDir()="+getDir("hoge",Context.MODE_PRIVATE).getPath());
 	}

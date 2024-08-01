@@ -18,6 +18,7 @@ package net.gorry.android.input.nicownng;
 
 import java.util.List;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -1111,7 +1112,6 @@ public class DefaultSoftKeyboard implements InputViewManager, KeyboardView.OnKey
 	/**
 	 * Create keyboard views
 	 *
-	 * @param parent   OpenWnn using the keyboards.
 	 */
 	protected void createKeyboards() {
 		/*
@@ -1181,8 +1181,6 @@ public class DefaultSoftKeyboard implements InputViewManager, KeyboardView.OnKey
 	/**
 	 * Get the keyboard changed the specified shift state.
 	 *
-	 * @param shift     Shift state
-	 * @return          Keyboard view
 	 */
 	protected MyHeightKeyboard getSlideChangeKeyboard(final int slide) {
 		try {

@@ -66,6 +66,11 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 	/** The package name of the user dictionary editor */
 	protected String  mPackageName;
 
+	protected String mOuterUserDicBaseName;
+	protected String mWritableDicBaseName;
+	protected String mWritableDicFileName;
+	protected Uri mOuterDicDir;
+
 	/** ID of the menu item (add) */
 	private final int MENU_ITEM_ADD = 0;
 	/** ID of the menu item (edit) */
@@ -145,7 +150,6 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 
 	/** List of the words in the user dictionary */
 	private ArrayList<WnnWord> mWordList = null;
-	private ArrayList<WnnWord> mImportWordList = null;
 
 	/** Work area for sorting the word list */
 	private WnnWord[] mSortData;
@@ -161,12 +165,9 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 
 	protected ProgressDialog              mProgressDialogTop;
 	UserDictionaryToolsList               mThis;
-	protected String                      mImportExportName;
-	protected String                      mLearnFlashName;
-	protected String                      mLearnSDName;
 
 	private static final int SELECT_TXT_ACTIVITY = 1;
-	private String mImportTextDictionaryPath;
+	private String mImportTextDicFileName;
 	
 	private String mMessage;
 
@@ -328,9 +329,9 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 		}
 		switch (requestCode) {
 			case SELECT_TXT_ACTIVITY:
-				if (extras != null) {
-					final String path = extras.getString("path");
-					doImportTextDictionary(path);
+				if (data != null) {
+					final Uri uri = data.getData();
+					doImportTextDictionary(uri);
 				}
 				break;
 		}
@@ -530,9 +531,8 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 				.create();
 
 			case DIALOG_CONTROL_IMPORT_TEXTDIC_CONFIRM:
-				String msg = String.format(getString(R.string.dialog_import_textdic_message), mImportTextDictionaryPath);
 				return new AlertDialog.Builder(UserDictionaryToolsList.this)
-				.setMessage(msg)
+				.setMessage(R.string.dialog_import_textdic_message)
 				.setNegativeButton(android.R.string.cancel, null)
 				.setPositiveButton(android.R.string.ok, mImportTextDicReady)
 				.setCancelable(true)
@@ -635,14 +635,42 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 		new DialogInterface.OnClickListener() {
 		@Override
 		public void onClick(final DialogInterface dialog, final int button) {
-			mImportWordList = null;
-			final UserDicImportExport task = new UserDicImportExport(mThis, 0);
-			final String[] params = new String[4];
-			params[0] = "import";
-			params[1] = mImportExportName;
-			params[2] = mLearnSDName;
-			params[3] = mLearnFlashName;
-			task.execute(params);
+			if (NicoWnnGJAJP.getInstance() == null) {
+				new NicoWnnGJAJP(mThis);
+			}
+
+			MyDocumentFolderSelector folder = new MyDocumentFolderSelector(mThis);
+			MyDocumentTreeSelector doctree = ActivityNicoWnnGSetting.getInstance().getMyDocumentTreeSelector();
+			folder.setDocumentTreeSelector(doctree)
+				.setInitialDirectory("nicoWnnG")
+				.setSelected((resultCode, dir) -> {
+					if (dir == null) {
+						Toast.makeText(
+								mThis.getApplicationContext(),
+								R.string.toast_config_backup_failed,
+								Toast.LENGTH_LONG
+						).show();
+						return;
+					}
+
+					Uri inWordsFile = Uri.parse(mOuterDicDir + "%2f" + mOuterUserDicBaseName);
+					Uri inLearnFile = Uri.parse(mOuterDicDir + "%2f" + mWritableDicBaseName);
+					String outLearnFile = mWritableDicFileName;
+
+					final UserDicImportExport task = new UserDicImportExport(mThis, 0);
+					final String[] params = new String[4];
+					params[0] = "import";
+					params[1] = inWordsFile.toString();
+					params[2] = inLearnFile.toString();
+					params[3] = outLearnFile;
+					task.execute(params);
+				})
+				.setUnselected((resultCode) -> {
+				})
+				.setWrite(false)
+				.setCreateFolder(true)
+				.select();
+
 		}
 	};
 	/**
@@ -653,13 +681,42 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 		new DialogInterface.OnClickListener() {
 		@Override
 		public void onClick(final DialogInterface dialog, final int button) {
-			final UserDicImportExport task = new UserDicImportExport(mThis, 1);
-			final String[] params = new String[4];
-			params[0] = "export";
-			params[1] = mImportExportName;
-			params[2] = mLearnFlashName;
-			params[3] = mLearnSDName;
-			task.execute(params);
+			if (NicoWnnGJAJP.getInstance() == null) {
+				new NicoWnnGJAJP(mThis);
+			}
+
+			MyDocumentFolderSelector folder = new MyDocumentFolderSelector(mThis);
+			MyDocumentTreeSelector doctree = ActivityNicoWnnGSetting.getInstance().getMyDocumentTreeSelector();
+			folder.setDocumentTreeSelector(doctree)
+				.setInitialDirectory("nicoWnnG")
+				.setSelected((resultCode, dir) -> {
+					if (dir == null) {
+						Toast.makeText(
+								mThis.getApplicationContext(),
+								R.string.toast_config_backup_failed,
+								Toast.LENGTH_LONG
+						).show();
+						return;
+					}
+
+					String inLearnFile = mWritableDicFileName;
+					Uri outWordsFile = Uri.parse(mOuterDicDir + "%2f" + mOuterUserDicBaseName);
+					Uri outLearnFile = Uri.parse(mOuterDicDir + "%2f" + mWritableDicBaseName);
+
+					final String[] params = new String[4];
+					params[0] = "export";
+					params[1] = inLearnFile;
+					params[2] = outWordsFile.toString();
+					params[3] = outLearnFile.toString();
+					final UserDicImportExport task = new UserDicImportExport(mThis, 1);
+					task.execute(params);
+				})
+				.setUnselected((resultCode) -> {
+				})
+				.setWrite(false)
+				.setCreateFolder(true)
+				.select();
+
 		}
 	};
 	/**
@@ -670,37 +727,77 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 		new DialogInterface.OnClickListener() {
 		@Override
 		public void onClick(final DialogInterface dialog, final int button) {
-			mImportWordList = null;
-			final UserDicImportExport task = new UserDicImportExport(mThis, 2);
-			final String[] params = new String[4];
-			params[0] = "import_msime";
-			params[1] = mImportTextDictionaryPath;
-			params[2] = "";
-			params[3] = "";
-			task.execute(params);
+			if (NicoWnnGJAJP.getInstance() == null) {
+				new NicoWnnGJAJP(mThis);
+			}
+
+			MyDocumentFolderSelector folder = new MyDocumentFolderSelector(mThis);
+			MyDocumentTreeSelector doctree = ActivityNicoWnnGSetting.getInstance().getMyDocumentTreeSelector();
+			folder.setDocumentTreeSelector(doctree)
+				.setInitialDirectory("nicoWnnG")
+				.setSelected((resultCode, dir) -> {
+					if (dir == null) {
+						Toast.makeText(
+								mThis.getApplicationContext(),
+								R.string.toast_config_backup_failed,
+								Toast.LENGTH_LONG
+						).show();
+						return;
+					}
+
+					final UserDicImportExport task = new UserDicImportExport(mThis, 2);
+					final String[] params = new String[4];
+					params[0] = "import_msime";
+					params[1] = mImportTextDicFileName;
+					params[2] = "";
+					params[3] = "";
+					task.execute(params);
+				})
+				.setUnselected((resultCode) -> {
+				})
+				.setWrite(false)
+				.setCreateFolder(true)
+				.select();
 
 		}
 	};
 
-	private void doImportTextDictionary(final String path) {
-		mImportTextDictionaryPath = path;
+	private void doImportTextDictionary(final Uri uri) {
+		mImportTextDicFileName = uri.toString();
 		showDialog(DIALOG_CONTROL_IMPORT_TEXTDIC_CONFIRM);
 	}
 
 	private void importTextDic() {
-		final Intent intent = new Intent(
-				mThis,
-				SelectTxtFileActivity.class
-		);
-		NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();
-		String path = wnn.getExternalFilesDir(null).toString();
-		final Uri uri = Uri.parse("file://" + path + "/");
-		intent.setData(uri);
-		mThis.startActivityForResult(intent, SELECT_TXT_ACTIVITY);
+			if (NicoWnnGJAJP.getInstance() == null) {
+				new NicoWnnGJAJP(mThis);
+			}
+
+			MyDocumentFolderSelector folder = new MyDocumentFolderSelector(mThis);
+			MyDocumentTreeSelector doctree = ActivityNicoWnnGSetting.getInstance().getMyDocumentTreeSelector();
+			folder.setDocumentTreeSelector(doctree)
+				.setInitialDirectory("nicoWnnG")
+				.setSelected((resultCode, dir) -> {
+					if (dir == null) {
+						Toast.makeText(
+								mThis.getApplicationContext(),
+								R.string.toast_config_backup_failed,
+								Toast.LENGTH_LONG
+						).show();
+						return;
+					}
+
+					Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+					intent.addCategory(Intent.CATEGORY_OPENABLE);
+					intent.setType("text/plain");
+
+					mThis.startActivityForResult(intent, SELECT_TXT_ACTIVITY);
+				})
+				.setUnselected((resultCode) -> {
+				})
+				.setWrite(false)
+				.setCreateFolder(true)
+				.select();
 	}
-	
-	
-	
 
 	/** @see android.view.View.OnClickListener#onClick */
 	@Override

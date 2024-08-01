@@ -3,7 +3,9 @@ package net.gorry.android.input.nicownng;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -13,9 +15,12 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
+import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Environment;
 import android.util.Log;
+
+import androidx.documentfile.provider.DocumentFile;
 
 
 public class UserDicImportExport extends AsyncTask<String, String, String[]>{
@@ -42,7 +47,7 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 		boolean result = false;
 		mResultString = new String[2];
 		if (params[0].equals("import")) {
-			result = importUserDic(params[1], params[2], params[3]);
+			result = importUserDic(Uri.parse(params[1]), Uri.parse(params[2]), params[3]);
 			if (true == result) {
 				mResultString[0] = "true";
 				mResultString[1] = mActivity.getString(R.string.dialog_import_dic_message_done);
@@ -53,7 +58,7 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 			}
 		}
 		else if (params[0].equals("import_msime")) {
-			result = importMSIMEDic(params[1], "MS932");
+			result = importMSIMEDic(Uri.parse(params[1]), "MS932");
 			if (true == result) {
 				mResultString[0] = "true";
 				mResultString[1] = mActivity.getString(R.string.dialog_import_textdic_message_done);
@@ -64,7 +69,7 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 			}
 		}
 		else if (params[0].equals("export")) {
-			exportUserDic(params[1], params[2], params[3]);
+			exportUserDic(params[1], Uri.parse(params[2]), Uri.parse(params[3]));
 		}
 		return mResultString;
 	}
@@ -97,12 +102,13 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 	/*
 	 *
 	 */
-	private boolean importMSIMEDic(final String wordsFileName, final String encode) {
+	private boolean importMSIMEDic(final Uri wordsFileName, final String encode) {
 		// import words dic
 		try {
-			final File fileWords = new File(wordsFileName);
+			ContentResolver cr = mActivity.getContentResolver();
+			final InputStream istream = cr.openInputStream(wordsFileName);
 			Log.d("load", "open fileWords\n");
-			final BufferedReader finWords = new BufferedReader(new InputStreamReader(new FileInputStream(fileWords), encode));
+			final BufferedReader finWords = new BufferedReader(new InputStreamReader(istream, encode));
 			String line;
 			mDialogCount = 0;
 			mDialogUpdateCount = 0;
@@ -166,29 +172,37 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 	/*
 	 *
 	 */
-	private boolean importUserDic(final String wordsFileName, final String learnFileName_sd, final String learnFileName_flash) {
+	private boolean importUserDic(final Uri inWordsFileName, final Uri inLearnFileName, final String outLearnFileName) {
 		NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();
-		final File fileSdCard = wnn.getExternalFilesDir(null);
-		if (null == fileSdCard) {
-			return false;
-		}
-		final File fileBase = createNicoWnnGDirectory(fileSdCard);
-		if (null == fileBase) {
-			return false;
-		}
-		// import learn dic
-		final File sFile = new File(fileBase, learnFileName_sd);
-		final File dFile = new File(learnFileName_flash);
-		if (false == copyFile(dFile, sFile)) {
-			return false;
-		}
-		Log.d("load", "finish import learn dic!!\n");
+		ContentResolver cr = mActivity.getContentResolver();
 
-		// import words dic
+		// import learn dic
 		try {
-			final File fileWords = new File(fileBase, wordsFileName);
+			final InputStream istream = cr.openInputStream(inLearnFileName);
+			final FileOutputStream ostream = new FileOutputStream(outLearnFileName);
+			byte[] buf = new byte[1024*16];
+			while (true) {
+				int size = istream.read(buf);
+				if (size < 0) break;
+				ostream.write(buf, 0, size);
+			}
+			istream.close();
+			ostream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return false;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+        // import words dic
+		try {
+			final InputStream finWords = cr.openInputStream(inWordsFileName);
 			// Log.d("load", "open fileWords\n");
-			final FileInputStream finWords = new FileInputStream(fileWords);
 			// Log.d("load", "open finWordsm\n");
 			final XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
 			final XmlPullParser parser = factory.newPullParser();
@@ -238,24 +252,15 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 	/*
 	 *
 	 */
-	private boolean exportUserDic(final String wordsFileName, final String learnFileName_flash, final String learnFileName_sd) {
+	private boolean exportUserDic(final String inLearnFileName, final Uri outWordsFileName, final Uri outLearnFileName) {
 		NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();
-		mResultString[0] = "true";
-		mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_done);
+		ContentResolver cr = mActivity.getContentResolver();
 
-		final File fileSdCard = wnn.getExternalFilesDir(null);
-		if (null == fileSdCard) {
-			mResultString[0] = "false";
-			mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_failed);
-			return false;
-		}
-		final File fileBase = createNicoWnnGDirectory(fileSdCard);
-		if (null == fileBase) {
-			return false;
-		}
+		mResultString[0] = "false";
+		mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_failed);
+
 		try {
-			final File fileSave = new File(fileBase, wordsFileName);
-			final FileOutputStream fout = new FileOutputStream(fileSave);
+			final OutputStream fout = cr.openOutputStream(outWordsFileName);
 			// output XML header
 			final String header = new String("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
 			final String top    = new String("<wordlist>\n");
@@ -271,76 +276,41 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 				final String outstring = new String("  <dicword stroke=\"" + getword.stroke + "\">\"" + getword.candidate + "\"</dicword>\n");
 				fout.write(outstring.getBytes());
 			}
+			fout.close();
 			fout.write(end.getBytes());
 		} catch (final Exception e) {
 			mResultString[0] = "false";
 			mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_failed);
 			return false;
 		} finally {
-			//
 		}
+
 		// export learn dic
-		final File sFile = new File(learnFileName_flash);
-		final File dFile = new File(fileBase, learnFileName_sd);
-		copyFile(dFile, sFile);
-		return true;
-	}
-	/*************************************************************************************/
-	/* file load/save                                                                    */
-	/*************************************************************************************/
-	/*
-	 *
-	 */
-	private File createNicoWnnGDirectory(final File fileSdCard) {
-		boolean result;
-		File fileOld  = null;
-		File fileNico = null;
-		fileOld  = new File(fileSdCard, "OpenWnn");
-		fileNico = new File(fileSdCard, "nicoWnnG");
-		if (!fileOld.exists()) {
-			fileOld  = new File(fileSdCard, "NicoWnnG");
-		}
-		if (fileOld.exists()) {
-			result = fileOld.renameTo(fileNico);
-			if (false == result) {
-				mResultString[0] = "false";
-				mResultString[1] = mActivity.getString(R.string.dialog_importexport_rendir_failed);
-				return null;
-			}
-			return fileNico;
-		}
-		if (!fileNico.exists()) {
-			if (!fileNico.mkdir()) {
-				mResultString[0] = "false";
-				mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_failed);
-				return null;
-			} // mkdir
-		} // exists
-		return fileNico;
-	}
-	/*
-	 *
-	 */
-	private boolean copyFile(final File dFile, final File sFile) {
-		if (!sFile.exists()) {
-			return false;
-		}
-		InputStream input = null;
-		OutputStream output = null;
 		try {
-			input  = new FileInputStream(sFile);
-			output = new FileOutputStream(dFile);
-			final int DEFAULT_BUFFER_SIZE = 1024 * 4;
-			final byte[] buffer = new byte[DEFAULT_BUFFER_SIZE];
-			int n = 0;
-			while (-1 != (n = input.read(buffer))) {
-				output.write(buffer, 0, n);
+			final FileInputStream istream = new FileInputStream(inLearnFileName);
+			final OutputStream ostream = cr.openOutputStream(outLearnFileName);
+			byte[] buf = new byte[1024*16];
+			while (true) {
+				int size = istream.read(buf);
+				if (size < 0) break;
+				ostream.write(buf, 0, size);
 			}
-			input.close();
-			output.close();
-		} catch (final Exception e) {
+			istream.close();
+			ostream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return false;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		} catch (Exception e) {
+			e.printStackTrace();
 			return false;
 		}
+
+		mResultString[0] = "true";
+		mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_done);
+
 		return true;
 	}
 }

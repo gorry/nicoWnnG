@@ -40,9 +40,9 @@ public class UserDictionaryToolsListJAJP extends UserDictionaryToolsList {
 	public UserDictionaryToolsListJAJP() {
 		mListViewName = "net.gorry.android.input.nicownng.JAJP.UserDictionaryToolsListJAJP";
 		mEditViewName = "net.gorry.android.input.nicownng.JAJP.UserDictionaryToolsEditJAJP";
-		mImportExportName = "UserDicJAJP.xml";
-		mLearnFlashName   = NicoWnnGJAJP.getInstance().writableJAJPDic;
-		mLearnSDName      = NicoWnnG.writableJAJPBaseName;
+		mOuterUserDicBaseName = mOuterUserDicBaseName;
+		mWritableDicBaseName = NicoWnnGJAJP.getInstance().writableDicJAJPBaseName;
+		mWritableDicFileName = NicoWnnGJAJP.getInstance().writableDicJAJPFileName;
 		mPackageName  = "net.gorry.android.input.nicownng";
 	}
 

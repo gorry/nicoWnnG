@@ -409,7 +409,7 @@
     <string name="dialog_export_dic_message_doing">ユーザー辞書をファイルへ保存しています……</string>
     <string name="dialog_export_dic_message_done">ユーザー辞書をファイルへ保存しました。</string>
     <string name="dialog_export_dic_message_failed">ユーザー辞書の保存に失敗しました。</string>
-    <string name="dialog_import_textdic_message">テキスト辞書ファイル\n%s\nを読み込んで単語を追加します。</string>
+    <string name="dialog_import_textdic_message">テキスト辞書ファイルを読み込んで単語を追加します。</string>
     <string name="dialog_import_textdic_message_doing">テキスト辞書ファイルを読み込んでいます……</string>
     <string name="dialog_import_textdic_message_doing_phase2">辞書に単語を追加しています……</string>
     <string name="dialog_import_textdic_message_done">テキスト辞書ファイルを読み込みました。</string>

@@ -52,7 +52,8 @@ public class MyDocumentTreeSelector {
 	private ComponentActivity me;
 
 	//String startDir = "DCIM/Camera";  // replace "/", "%2F"
-	private String mDirectory = "";
+	private String mInitialDirectory = "";
+	private Uri mInitialUri = null;
 	private BiConsumer<Integer, Uri> mSelected = null;
 	private Consumer<Integer> mUnselected = null;
 	private Boolean mWrite = false;
@@ -102,6 +103,7 @@ public class MyDocumentTreeSelector {
 				);
 				DocumentFile tree = DocumentFile.fromTreeUri(me, uri);
 				Uri treeUri = tree.getUri();
+				mInitialUri = treeUri;  // 次回の初期Uriとなる
 				if (T) Log.v(TAG, M()+"treeUri="+treeUri);
 				if (mSelected != null) {
 					mSelected.accept(resultCode, treeUri);
@@ -114,13 +116,29 @@ public class MyDocumentTreeSelector {
 		if (T) Log.v(TAG, M()+"@out");
 	}
 
-	public MyDocumentTreeSelector setDirectory(String dir) {
+	public MyDocumentTreeSelector setInitialDirectory(String dir) {
 		if (T) Log.v(TAG, M()+"@in: dir="+dir);
 
-		mDirectory = dir;
+		mInitialDirectory = dir;
 
 		if (T) Log.v(TAG, M()+"@out");
 		return this;
+	}
+
+	public MyDocumentTreeSelector setInitialUri(Uri uri) {
+		if (T) Log.v(TAG, M()+"@in: uri="+uri);
+
+		mInitialUri = uri;
+
+		if (T) Log.v(TAG, M()+"@out");
+		return this;
+	}
+
+	public Uri getSelectedUri() {
+		if (T) Log.v(TAG, M()+"@in");
+
+		if (T) Log.v(TAG, M()+"@out: uri="+mInitialUri);
+		return mInitialUri;
 	}
 
 	public MyDocumentTreeSelector setSelected(BiConsumer<Integer, Uri> c) {
@@ -158,14 +176,19 @@ public class MyDocumentTreeSelector {
 		StorageManager sm = (StorageManager)me.getSystemService(Context.STORAGE_SERVICE);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
 			intent = sm.getPrimaryStorageVolume().createOpenDocumentTreeIntent();
-			Uri uri = intent.getParcelableExtra("android.provider.extra.INITIAL_URI");
-			String scheme = uri.toString();
-			Log.d(TAG, "INITIAL_URI scheme: " + scheme);
-			scheme = scheme.replace("/root/", "/document/");
-			scheme += "%3A" + mDirectory;
-			uri = Uri.parse(scheme);
-			intent.putExtra("android.provider.extra.INITIAL_URI", uri);
-			Log.d(TAG, "uri: " + uri.toString());
+			if (mInitialUri != null) {
+				intent.putExtra("android.provider.extra.INITIAL_URI", mInitialUri);
+				Log.d(TAG, "uri: " + mInitialUri.toString());
+			} else {
+				Uri uri = intent.getParcelableExtra("android.provider.extra.INITIAL_URI");
+				String scheme = uri.toString();
+				Log.d(TAG, "INITIAL_URI scheme: " + scheme);
+				scheme = scheme.replace("/root/", "/document/");
+				scheme += "%3A" + mInitialDirectory;
+				uri = Uri.parse(scheme);
+				intent.putExtra("android.provider.extra.INITIAL_URI", uri);
+				Log.d(TAG, "uri: " + uri.toString());
+			}
 		} else {
 			intent = sm.getPrimaryStorageVolume().createAccessIntent(Environment.DIRECTORY_DOCUMENTS);
 		}

@@ -678,9 +678,9 @@ public class NicoWnnGJAJP extends NicoWnnG {
 	}
 
 	private void initConverter() {
-		mConverter = mConverterJAJP = new NicoWnnGEngineJAJP(writableJAJPDic);
+		mConverter = mConverterJAJP = new NicoWnnGEngineJAJP(writableDicJAJPFileName);
 		mConverter.init();
-		mConverterEN = new NicoWnnGEngineEN(writableENDic);
+		mConverterEN = new NicoWnnGEngineEN(writableDicENFileName);
 		final String delimiter = Pattern.quote(getResources().getString(R.string.en_word_separators));
 		mEnglishAutoCommitDelimiter = Pattern.compile(".*[" + delimiter + "]$");
 		if (mConverterSymbolEngineBack == null) {

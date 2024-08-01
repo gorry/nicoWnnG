@@ -224,7 +224,7 @@ public class NicoWnnGEN extends NicoWnnG {
 	}
 
 	private void initConverter() {
-		mConverterEN = new NicoWnnGEngineEN(writableENDic);
+		mConverterEN = new NicoWnnGEngineEN(writableDicENFileName);
 		mConverter = mConverterEN;
 		mWordSeparators = getResources().getString(R.string.en_word_separators);
 
