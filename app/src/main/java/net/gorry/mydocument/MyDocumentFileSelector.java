@@ -169,27 +169,17 @@ public class MyDocumentFileSelector {
 	public void select() {
 		if (T) Log.v(TAG, M()+"@in");
 
-		Intent intent;
-		StorageManager sm = (StorageManager)me.getSystemService(Context.STORAGE_SERVICE);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-			intent = sm.getPrimaryStorageVolume().createOpenDocumentTreeIntent();
-			if (mInitialUri != null) {
-				intent.putExtra("android.provider.extra.INITIAL_URI", mInitialUri);
-				Log.d(TAG, "uri: " + mInitialUri.toString());
-			} else {
-				Uri uri = intent.getParcelableExtra("android.provider.extra.INITIAL_URI");
-				String scheme = uri.toString();
-				Log.d(TAG, "INITIAL_URI scheme: " + scheme);
-				scheme = scheme.replace("/root/", "/document/");
-				if (mInitialFile != null) {
-					scheme += "%3A" + mInitialFile;
-				}
-				uri = Uri.parse(scheme);
-				intent.putExtra("android.provider.extra.INITIAL_URI", uri);
-				Log.d(TAG, "uri: " + uri.toString());
-			}
-		} else {
-			intent = sm.getPrimaryStorageVolume().createAccessIntent(Environment.DIRECTORY_DOCUMENTS);
+		Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+		intent.addCategory(Intent.CATEGORY_OPENABLE);
+		intent.setType("*/*");
+		intent.putExtra("android.content.extra.SHOW_ADVANCED", true);
+		if (mInitialFile != null) {
+			String path = mInitialFile.replaceAll("/", "%2F");
+			Uri uri = Uri.parse("content://com.android.externalstorage.documents/document/primary"+"%3A"+path);
+			intent.putExtra("android.provider.extra.INITIAL_URI", uri);
+		}
+		if (mInitialUri != null) {
+			intent.putExtra("android.provider.extra.INITIAL_URI", mInitialUri);
 		}
 
 		mLauncher.launch(intent);

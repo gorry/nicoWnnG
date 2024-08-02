@@ -51,6 +51,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import net.gorry.mydocument.MyDocumentFileSelector;
 import net.gorry.mydocument.MyDocumentFolderSelector;
 import net.gorry.mydocument.MyDocumentTreeSelector;
 
@@ -174,6 +175,7 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 	private String mMessage;
 
 	private MyDocumentTreeSelector mMyDocumentTreeSelector;
+	private MyDocumentFileSelector mMyDocumentFileSelector;
 
 	/**
 	 * Send the specified event to IME
@@ -196,6 +198,7 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 
 		me = this;
 		mMyDocumentTreeSelector = new MyDocumentTreeSelector(this);
+		mMyDocumentFileSelector = new MyDocumentFileSelector(this);
 
 		/* create XML layout */
 		//requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
@@ -280,7 +283,7 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 		b.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(final View v) {
-				importTextDic();
+				showDialog(DIALOG_CONTROL_IMPORT_TEXTDIC_CONFIRM);
 			}
 		});
 
@@ -315,32 +318,6 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 		leftText.setText(mWordList.size() + "/" + MAX_WORD_COUNT);
 
 		updateWordList();
-	}
-
-	/*
-	 * アクティビティの結果処理
-	 * @see android.app.Activity#onActivityResult(int, int, android.content.Intent)
-	 */
-	@Override
-	public void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-
-		Bundle extras = null;
-		if (data != null) {
-			extras = data.getExtras();
-			if (extras != null) {
-				// intentResult = extras.getInt("result");
-			}
-		}
-		switch (requestCode) {
-			case SELECT_TXT_ACTIVITY:
-				if (data != null) {
-					final Uri uri = data.getData();
-					doImportTextDictionary(uri);
-				}
-				break;
-		}
-
 	}
 
 	/**
@@ -472,7 +449,7 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 
 			case MENU_ITEM_IMPORT_TEXTDIC:
 				/* clear the dictionary (show dialog) */
-				importTextDic();
+				showDialog(DIALOG_CONTROL_IMPORT_TEXTDIC_CONFIRM);
 				ret = true;
 				break;
 
@@ -539,7 +516,7 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 				return new AlertDialog.Builder(UserDictionaryToolsList.this)
 				.setMessage(R.string.dialog_import_textdic_message)
 				.setNegativeButton(android.R.string.cancel, null)
-				.setPositiveButton(android.R.string.ok, mImportTextDicReady)
+				.setPositiveButton(android.R.string.ok, mImportTextDic)
 				.setCancelable(true)
 				.create();
 
@@ -644,15 +621,16 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 				new NicoWnnGJAJP(me);
 			}
 
-			MyDocumentFolderSelector folder = new MyDocumentFolderSelector(me);
+			MyDocumentFolderSelector selector = new MyDocumentFolderSelector(me);
 			MyDocumentTreeSelector doctree = getMyDocumentTreeSelector();
-			folder.setDocumentTreeSelector(doctree)
+			selector
+				.setDocumentTreeSelector(doctree)
 				.setInitialDirectory("nicoWnnG")
 				.setSelected((resultCode, dir) -> {
 					if (dir == null) {
 						Toast.makeText(
 								me.getApplicationContext(),
-								R.string.toast_config_backup_failed,
+								R.string.dialog_import_dic_message_failed,
 								Toast.LENGTH_LONG
 						).show();
 						return;
@@ -690,15 +668,16 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 				new NicoWnnGJAJP(me);
 			}
 
-			MyDocumentFolderSelector folder = new MyDocumentFolderSelector(me);
+			MyDocumentFolderSelector selector = new MyDocumentFolderSelector(me);
 			MyDocumentTreeSelector doctree = getMyDocumentTreeSelector();
-			folder.setDocumentTreeSelector(doctree)
+			selector
+				.setDocumentTreeSelector(doctree)
 				.setInitialDirectory("nicoWnnG")
 				.setSelected((resultCode, dir) -> {
 					if (dir == null) {
 						Toast.makeText(
 								me.getApplicationContext(),
-								R.string.toast_config_backup_failed,
+								R.string.dialog_export_dic_message_failed,
 								Toast.LENGTH_LONG
 						).show();
 						return;
@@ -728,7 +707,7 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 	 * @param  dialog    The information of the dialog
 	 * @param  button    The button that is pushed
 	 */
-	private final DialogInterface.OnClickListener mImportTextDicReady =
+	private final DialogInterface.OnClickListener mImportTextDic =
 		new DialogInterface.OnClickListener() {
 		@Override
 		public void onClick(final DialogInterface dialog, final int button) {
@@ -736,15 +715,14 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 				new NicoWnnGJAJP(me);
 			}
 
-			MyDocumentFolderSelector folder = new MyDocumentFolderSelector(me);
-			MyDocumentTreeSelector doctree = getMyDocumentTreeSelector();
-			folder.setDocumentTreeSelector(doctree)
-				.setInitialDirectory("nicoWnnG")
-				.setSelected((resultCode, dir) -> {
-					if (dir == null) {
+			MyDocumentFileSelector selector = getMyDocumentFileSelector();
+			selector
+				.setInitialFile("nicoWnnG/textdic.txt")
+				.setSelected((resultCode, file) -> {
+					if (file == null) {
 						Toast.makeText(
 								me.getApplicationContext(),
-								R.string.toast_config_backup_failed,
+								R.string.dialog_import_textdic_message_failed,
 								Toast.LENGTH_LONG
 						).show();
 						return;
@@ -753,7 +731,7 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 					final UserDicImportExport task = new UserDicImportExport(me, 2);
 					final String[] params = new String[4];
 					params[0] = "import_msime";
-					params[1] = mImportTextDicFileName;
+					params[1] = file.toString();
 					params[2] = "";
 					params[3] = "";
 					task.execute(params);
@@ -761,48 +739,10 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 				.setUnselected((resultCode) -> {
 				})
 				.setWrite(false)
-				.setCreateFolder(true)
 				.select();
 
 		}
 	};
-
-	private void doImportTextDictionary(final Uri uri) {
-		mImportTextDicFileName = uri.toString();
-		showDialog(DIALOG_CONTROL_IMPORT_TEXTDIC_CONFIRM);
-	}
-
-	private void importTextDic() {
-			if (NicoWnnGJAJP.getInstance() == null) {
-				new NicoWnnGJAJP(me);
-			}
-
-			MyDocumentFolderSelector folder = new MyDocumentFolderSelector(me);
-			MyDocumentTreeSelector doctree = getMyDocumentTreeSelector();
-			folder.setDocumentTreeSelector(doctree)
-				.setInitialDirectory("nicoWnnG")
-				.setSelected((resultCode, dir) -> {
-					if (dir == null) {
-						Toast.makeText(
-								me.getApplicationContext(),
-								R.string.toast_config_backup_failed,
-								Toast.LENGTH_LONG
-						).show();
-						return;
-					}
-
-					Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-					intent.addCategory(Intent.CATEGORY_OPENABLE);
-					intent.setType("text/plain");
-
-					me.startActivityForResult(intent, SELECT_TXT_ACTIVITY);
-				})
-				.setUnselected((resultCode) -> {
-				})
-				.setWrite(false)
-				.setCreateFolder(true)
-				.select();
-	}
 
 	/** @see android.view.View.OnClickListener#onClick */
 	@Override
@@ -1201,6 +1141,10 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 
 	public MyDocumentTreeSelector getMyDocumentTreeSelector() {
 		return mMyDocumentTreeSelector;
+	}
+
+	public MyDocumentFileSelector getMyDocumentFileSelector() {
+		return mMyDocumentFileSelector;
 	}
 
 }

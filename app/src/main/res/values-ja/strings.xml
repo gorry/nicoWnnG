@@ -155,23 +155,25 @@
     <string name="preference_nicownng_qwerty_english_predict_summary">半角英字入力モードのとき、英語予測変換を行います</string>
 
     <string name="preference_nicownng_import_usersymbol_title">[@!?]キー登録読み込み</string>
-    <string name="preference_nicownng_import_usersymbol_summary">[@!?]キーで入力できるユーザーシンボルを読み込みします</string>
-    <string name="dialog_nicownng_import_usersymbol_message">以下からユーザーシンボルファイルを読み込んで[@!?]キーに登録します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
-    <string name="preference_nicownng_import_usersymbol_success">[@!?]キー登録読み込みを行いました</string>
-    <string name="preference_nicownng_import_usersymbol_failed">[@!?]キー登録読み込みに失敗しました</string>
+    <string name="preference_nicownng_import_usersymbol_summary">外部へ書き出したユーザーシンボルファイル（[@!?]キーの登録内容）を読み込みます。</string>
+    <string name="dialog_nicownng_import_usersymbol_message">外部へ書き出したユーザーシンボルファイル（[@!?]キーの登録内容）を読み込んで復元します。復元します。\n次のダイアログで、読み出し先フォルダを指定してください。</string>
+    <string name="dialog_nicownng_import_usersymbol_message_api28">外部へ書き出したユーザーシンボルファイル（[@!?]キーの登録内容）を以下から読み込んで復元します。\nDocuments/nicoWnnG</string>
+    <string name="preference_nicownng_import_usersymbol_success">[@!?]キー登録読み込みを行いました。</string>
+    <string name="preference_nicownng_import_usersymbol_failed">[@!?]キー登録読み込みに失敗しました。</string>
     <string name="preference_nicownng_export_usersymbol_title">[@!?]キー登録書き出し</string>
-    <string name="preference_nicownng_export_usersymbol_summary">[@!?]キーで入力できるユーザーシンボルを書き出します</string>
-    <string name="dialog_nicownng_export_usersymbol_message">以下から[@!?]キーで入力できるユーザーシンボルファイルを書き出します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
-    <string name="preference_nicownng_export_usersymbol_success">[@!?]キー登録書き出しを行いました</string>
-    <string name="preference_nicownng_export_usersymbol_failed">[@!?]キー登録書き出しに失敗しました</string>
+    <string name="preference_nicownng_export_usersymbol_summary">ユーザーシンボルファイル（[@!?]キーの登録内容）を外部へ書き出します。</string>
+    <string name="dialog_nicownng_export_usersymbol_message">ユーザーシンボルファイル（[@!?]キーの登録内容）を外部へ書き出します。次のダイアログで、保存先フォルダを指定してください。\nまだ保存先を作成していない場合は、ルートフォルダに「nicoWnnG」を作成して、それを指定することをおすすめします。</string>
+    <string name="dialog_nicownng_export_usersymbol_message_api28">ユーザーシンボルファイル（[@!?]キーの登録内容）を以下へ書き出します。\nDocuments/nicoWnnG</string>
+    <string name="preference_nicownng_export_usersymbol_success">[@!?]キー登録書き出しを行いました。</string>
+    <string name="preference_nicownng_export_usersymbol_failed">[@!?]キー登録書き出しに失敗しました。</string>
     <string name="preference_nicownng_initialize_usersymbol_title">[@!?]キー登録内容初期化</string>
-    <string name="preference_nicownng_initialize_usersymbol_summary">[@!?]キーの登録内容となるユーザーシンボルファイルを初期化します</string>
-    <string name="dialog_nicownng_initialize_usersymbol_message">以下のユーザーシンボルファイルを初期化します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
-    <string name="preference_nicownng_initialize_usersymbol_success">ユーザーシンボルファイルを初期化しました</string>
-    <string name="preference_nicownng_initialize_usersymbol_failed">ユーザーシンボルファイルの初期化に失敗しました</string>
-    <string name="toast_setusersymboldictionary_waitload">ユーザーシンボルファイルの読み込みに時間がかかっています。しばらくお待ちください</string>
+    <string name="preference_nicownng_initialize_usersymbol_summary">[@!?]キーの登録内容を初期化します。</string>
+    <string name="dialog_nicownng_initialize_usersymbol_message">[@!?]キーの登録内容を初期化します。</string>
+    <string name="preference_nicownng_initialize_usersymbol_success">[@!?]キーの登録内容を初期化しました。</string>
+    <string name="preference_nicownng_initialize_usersymbol_failed">[@!?]キーの登録内容の初期化に失敗しました</string>
+    <string name="toast_setusersymboldictionary_waitload">ユーザーシンボルファイル（[@!?]キーの登録内容）の読み込みに時間がかかっています。しばらくお待ちください</string>
     <string name="toast_setusersymboldictionary_nodata">このキーボードにはユーザーシンボルがありません</string>
-    <string name="toast_setusersymboldictionary_broken">ユーザーシンボルファイルが壊れている可能性があります。「[@!?]キー登録内容初期化」をしてください</string>
+    <string name="toast_setusersymboldictionary_broken">[@!?]キーの登録内容が壊れている可能性があります。「[@!?]キー登録内容初期化」をしてください</string>
     <string name="toast_setusersymboldictionary_error_overpage">エラー：ユーザーシンボルのページ番号が範囲外です</string>
     <string name="toast_setusersymboldictionary_error_overmode">エラー：ユーザーシンボルの入力モードが範囲外です</string>
 
@@ -321,18 +323,18 @@
 
 	<string name="preference_config_menu">設定の保存と復元</string>
 	<string name="preference_config_backup_title">設定の書き出し</string>
-	<string name="preference_config_backup_summary">各種設定を外部メモリへ書き出します</string>
-	<string name="dialog_config_backup_message">各種設定を書き出します。\n次のダイアログで、保存先フォルダを指定してください。\nまだ保存先を作成していない場合は、ルートフォルダに「nicoWnnG」を作成して、それを指定することをおすすめします。</string>
-	<string name="dialog_config_backup_message_api28">各種設定を以下へ書き出します\nDocuments/nicoWnnG/</string>
-	<string name="toast_config_backup_success">設定の書き出しが完了しました</string>
-	<string name="toast_config_backup_failed">設定の書き出しに失敗しました</string>
+	<string name="preference_config_backup_summary">各種設定を外部へ書き出します。</string>
+	<string name="dialog_config_backup_message">各種設定を外部へ書き出します。\n次のダイアログで、保存先フォルダを指定してください。\nまだ保存先を作成していない場合は、ルートフォルダに「nicoWnnG」を作成して、それを指定することをおすすめします。</string>
+	<string name="dialog_config_backup_message_api28">各種設定を以下へ書き出します。\nDocuments/nicoWnnG/</string>
+	<string name="toast_config_backup_success">設定の書き出しが完了しました。</string>
+	<string name="toast_config_backup_failed">設定の書き出しに失敗しました。</string>
 
 	<string name="preference_config_restore_title">設定の読み込み</string>
-	<string name="preference_config_restore_summary">外部メモリへ書き出した各種設定を読み込んで復元します</string>
-	<string name="dialog_config_restore_message">各種設定ファイルを読み込んで復元します。\n次のダイアログで、読み出し先フォルダを指定してください。</string>
-	<string name="dialog_config_restore_message_api28">以下から各種設定ファイルを読み込んで復元します\nDocuments/nicoWnnG</string>
-	<string name="toast_config_restore_success">設定の読み込みが完了しました</string>
-	<string name="toast_config_restore_failed">設定の読み込みに失敗しました</string>
+	<string name="preference_config_restore_summary">外部へ書き出した各種設定を読み込んで復元します。</string>
+	<string name="dialog_config_restore_message">外部へ書き出した各種設定ファイルを読み込んで復元します。\n次のダイアログで、読み出し先フォルダを指定してください。</string>
+	<string name="dialog_config_restore_message_api28">各種設定ファイルを以下から読み込んで復元します。\nDocuments/nicoWnnG</string>
+	<string name="toast_config_restore_success">設定の読み込みが完了しました。</string>
+	<string name="toast_config_restore_failed">設定の読み込みに失敗しました。</string>
 
 	<string name="preference_use_12key_subten_title">ハードキー用ミニモード</string>
 	<string name="preference_use_12key_subten_summary">ハードキーを持っている端末用に、数字キーのないソフトキーボードを表示します</string>
@@ -406,15 +408,17 @@
 
         
     <string name="dialog_title_dic_message_doing">作業中</string>
-    <string name="dialog_import_dic_message">ファイルからユーザー辞書を復元します。</string>
-    <string name="dialog_import_dic_message_doing">ファイルからユーザー辞書を復元しています……</string>
+    <string name="dialog_import_dic_message">外部へ書き出したユーザー辞書を読み込んで復元します。\n次のダイアログで、読み出し先フォルダを指定してください。</string>
+    <string name="dialog_import_dic_message_api28">書き出したユーザー辞書を以下から読み込んで復元します。\nDocuments/nicoWnnG</string>
+    <string name="dialog_import_dic_message_doing">ユーザー辞書を復元しています……</string>
     <string name="dialog_import_dic_message_done">ユーザー辞書を復元しました。</string>
     <string name="dialog_import_dic_message_failed">ユーザー辞書の復元に失敗しました。</string>
-    <string name="dialog_export_dic_message">ユーザー辞書をファイルへ保存します。\n保存先は\n\"/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/\"\nになります</string>
+    <string name="dialog_export_dic_message">ユーザー辞書を書き出します。次のダイアログで、保存先フォルダを指定してください。\nまだ保存先を作成していない場合は、ルートフォルダに「nicoWnnG」を作成して、それを指定することをおすすめします。</string>
+    <string name="dialog_export_dic_message_api28">ユーザー辞書を以下へ書き出します。\nDocuments/nicoWnnG/</string>
     <string name="dialog_export_dic_message_doing">ユーザー辞書をファイルへ保存しています……</string>
     <string name="dialog_export_dic_message_done">ユーザー辞書をファイルへ保存しました。</string>
     <string name="dialog_export_dic_message_failed">ユーザー辞書の保存に失敗しました。</string>
-    <string name="dialog_import_textdic_message">テキスト辞書ファイルを読み込んで単語を追加します。</string>
+    <string name="dialog_import_textdic_message">テキスト辞書ファイルを読み込んで単語を追加します。次のダイアログで、読み込むファイルを指定してください。</string>
     <string name="dialog_import_textdic_message_doing">テキスト辞書ファイルを読み込んでいます……</string>
     <string name="dialog_import_textdic_message_doing_phase2">辞書に単語を追加しています……</string>
     <string name="dialog_import_textdic_message_done">テキスト辞書ファイルを読み込みました。</string>

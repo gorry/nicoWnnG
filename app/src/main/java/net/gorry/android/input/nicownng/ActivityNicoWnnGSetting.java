@@ -24,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.fragment.app.FragmentTransaction;
 
+import net.gorry.mydocument.MyDocumentFileSelector;
 import net.gorry.mydocument.MyDocumentTreeSelector;
 
 public class ActivityNicoWnnGSetting extends AppCompatActivity {
@@ -37,6 +38,7 @@ public class ActivityNicoWnnGSetting extends AppCompatActivity {
 	private FragmentNicoWnnGSetting mFragment;
 	private boolean mIsLandscape;
 	private MyDocumentTreeSelector mMyDocumentTreeSelector;
+	private MyDocumentFileSelector mMyDocumentFileSelector;
 
 
 	@Override public void onCreate(final Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class ActivityNicoWnnGSetting extends AppCompatActivity {
 		me = this;
 
 		mMyDocumentTreeSelector = new MyDocumentTreeSelector(this);
+		mMyDocumentFileSelector = new MyDocumentFileSelector(this);
 		mIsLandscape = (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
 
 		setContentView(R.layout.activity_setting);
@@ -69,6 +72,10 @@ public class ActivityNicoWnnGSetting extends AppCompatActivity {
 
 	public MyDocumentTreeSelector getMyDocumentTreeSelector() {
 		return mMyDocumentTreeSelector;
+	}
+
+	public MyDocumentFileSelector getMyDocumentFileSelector() {
+		return mMyDocumentFileSelector;
 	}
 
 }

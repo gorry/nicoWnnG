@@ -190,6 +190,10 @@ public class MyDocumentTreeSelector {
 			}
 		} else {
 			intent = sm.getPrimaryStorageVolume().createAccessIntent(Environment.DIRECTORY_DOCUMENTS);
+			if (mInitialUri != null) {
+				intent.putExtra("android.provider.extra.INITIAL_URI", mInitialUri);
+				Log.d(TAG, "uri: " + mInitialUri.toString());
+			}
 		}
 
 		mLauncher.launch(intent);

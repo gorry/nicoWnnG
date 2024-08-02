@@ -116,7 +116,7 @@
 	<string name="preference_config_menu">Backup/Restore</string>
 	<string name="preference_config_backup_title">Export Configuration</string>
 	<string name="preference_config_backup_summary">Write All Settings to External-Memory</string>
-	<string name="dialog_config_backup_message">Write all settings to File.\nPlease specify destination in the next dialog.\nIf you haven\'t created destination yet, we recommend creating "nicoWnnG" at the root folder and specifying that.</string>
+	<string name="dialog_config_backup_message">Write all settings to File.\nPlease specify destination in the next dialog.\nIf you haven\'t created destination yet, we recommend creating "nicoWnnG" folder at the root folder and specifying that.</string>
 	<string name="dialog_config_backup_message_api28">Write all settings to File at:\nDocuments/nicoWnnG/</string>
 	<string name="toast_config_backup_success">Complete writing.</string>
 	<string name="toast_config_backup_failed">Export Configuration Failed.</string>
@@ -199,15 +199,17 @@
   <string name="dialog_clear_learning_dictionary_done">Cleared.</string>
 
   <string name="dialog_title_dic_message_doing">Working</string>
-  <string name="dialog_import_dic_message">Restore Dictionary from File</string>
+  <string name="dialog_import_dic_message">Restore Dictionary from File.\nPlease specify destination in the next dialog.</string>
+  <string name="dialog_import_dic_message_api28">Restore Dictionary from File at:\nDocuments/nicoWnnG/</string>
   <string name="dialog_import_dic_message_doing">Restoring Dictionary ...</string>
   <string name="dialog_import_dic_message_done">Success Restore.</string>
   <string name="dialog_import_dic_message_failed">Failed Restore.</string>
-  <string name="dialog_export_dic_message">Backup Dictionary to File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+  <string name="dialog_export_dic_message">Backup Dictionary to File.\nPlease specify destination in the next dialog.\nIf you haven\'t created destination yet, we recommend creating "nicoWnnG" folder at the root folder and specifying that.</string>
+  <string name="dialog_export_dic_message_api28">Backup Dictionary to File at:\nDocuments/nicoWnnG/</string>
   <string name="dialog_export_dic_message_doing">Backup Dictionary ...</string>
   <string name="dialog_export_dic_message_done">Success Backup.</string>
   <string name="dialog_export_dic_message_failed">Failed Backup.</string>
-  <string name="dialog_import_textdic_message">Import Words from Dictionary-Text-File\n%s</string>
+  <string name="dialog_import_textdic_message">Import Words from Dictionary-Text-File. \nPlease specify a file in the next dialog.</string>
   <string name="dialog_import_textdic_message_doing">Importing Dictionary-Text-File ...</string>
   <string name="dialog_import_textdic_message_doing_phase2">Registering to Dictionary...</string>
   <string name="dialog_import_textdic_message_done">Success Import.</string>
@@ -268,17 +270,19 @@
 
   <string name="preference_nicownng_import_usersymbol_title">Import [@!?]-Key Definition</string>
   <string name="preference_nicownng_import_usersymbol_summary">Import User Symbols at Typing [@!?]-Key</string>
-    <string name="dialog_nicownng_import_usersymbol_message">Import User Symbols from File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+    <string name="dialog_nicownng_import_usersymbol_message">Import User Symbols from File. Please specify destination in the next dialog.</string>
+    <string name="dialog_nicownng_import_usersymbol_message_api28">Import User Symbols from File at:\nDocuments/nicoWnnG</string>
     <string name="preference_nicownng_import_usersymbol_success">Success Import.</string>
     <string name="preference_nicownng_import_usersymbol_failed">Failed Importing User Symbols.</string>
   <string name="preference_nicownng_export_usersymbol_title">Export [@!?]-Key Definition</string>
   <string name="preference_nicownng_export_usersymbol_summary">Export User Symbols at Typing [@!?]-Key</string>
-    <string name="dialog_nicownng_export_usersymbol_message">Export User Symbols from File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+    <string name="dialog_nicownng_export_usersymbol_message">Export User Symbols from File:\nPlease specify destination in the next dialog.\nIf you haven\'t created destination yet, we recommend creating "nicoWnnG" folder at the root folder and specifying that.</string>
+    <string name="dialog_nicownng_export_usersymbol_message_api28">Export User Symbols from File at:\nDocuments/nicoWnnG</string>
     <string name="preference_nicownng_export_usersymbol_success">Success Export.</string>
     <string name="preference_nicownng_export_usersymbol_failed">Failed Exporting User Symbols.</string>
   <string name="preference_nicownng_initialize_usersymbol_title">Initialize [@!?]-Key Definition</string>
   <string name="preference_nicownng_initialize_usersymbol_summary">Initialize User Symbols at Typing [@!?]-Key</string>
-    <string name="dialog_nicownng_initialize_usersymbol_message">Initialize User Symbols from File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+    <string name="dialog_nicownng_initialize_usersymbol_message">Initialize User Symbols at Typing [@!?]-Key.</string>
     <string name="preference_nicownng_initialize_usersymbol_success">Success Initialize.</string>
     <string name="preference_nicownng_initialize_usersymbol_failed">Failed Initializing User Symbols.</string>
     <string name="toast_setusersymboldictionary_waitload">Waiting for Loading User Symbols data.</string>

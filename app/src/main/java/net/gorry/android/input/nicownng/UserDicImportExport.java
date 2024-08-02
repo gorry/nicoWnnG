@@ -121,7 +121,7 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 				line.replaceFirst("^[ \t]+", "");
 
 				// "!"で始まる行はスキップ
-				if (line.matches("^!")) continue;
+				if (line.startsWith("!")) continue;
 				
 				// タブで分割
 				String[] w = line.split("\t");
