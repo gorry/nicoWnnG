@@ -597,7 +597,7 @@
 	<PreferenceCategory
 		android:title="@string/preference_config_menu"
 		>
-		<net.gorry.android.input.nicownng.BackupConfigDialog
+		<net.gorry.android.input.nicownng.ConfigBackupDialog
 			android:key="backup_config"
 			android:title="@string/preference_config_backup_title"
 			android:summary="@string/preference_config_backup_summary"

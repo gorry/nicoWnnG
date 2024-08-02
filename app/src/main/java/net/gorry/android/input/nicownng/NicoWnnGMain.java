@@ -33,7 +33,7 @@ public class NicoWnnGMain extends Activity {
             Log.e("NicoWnnG", "デバッグログテスト");
         }
 
-		SymbolList.copyUserSymbolDicFileToExternalStorageDirectory(this, false);
+		SymbolList.copyUserSymbolDicResourceToExternalStorageDirectory(this, false);
 
 		if (NicoWnnGEN.getInstance() == null) {
 			NicoWnnGEN t = new NicoWnnGEN(this);

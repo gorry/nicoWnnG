@@ -154,11 +154,16 @@
     <string name="preference_nicownng_qwerty_english_predict_title">英語予測変換</string>
     <string name="preference_nicownng_qwerty_english_predict_summary">半角英字入力モードのとき、英語予測変換を行います</string>
 
-    <string name="preference_nicownng_reload_usersymbol_title">[@!?]キー登録再読み込み</string>
-    <string name="preference_nicownng_reload_usersymbol_summary">[@!?]キーで入力できるユーザーシンボルを再読込します</string>
-    <string name="dialog_nicownng_reload_usersymbol_message">以下からユーザーシンボルファイルを読み込んで[@!?]キーに登録します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
-    <string name="preference_nicownng_reload_usersymbol_success">[@!?]キー登録再読み込みを行いました</string>
-    <string name="preference_nicownng_reload_usersymbol_failed">[@!?]キー登録再読み込みに失敗しました</string>
+    <string name="preference_nicownng_import_usersymbol_title">[@!?]キー登録読み込み</string>
+    <string name="preference_nicownng_import_usersymbol_summary">[@!?]キーで入力できるユーザーシンボルを読み込みします</string>
+    <string name="dialog_nicownng_import_usersymbol_message">以下からユーザーシンボルファイルを読み込んで[@!?]キーに登録します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+    <string name="preference_nicownng_import_usersymbol_success">[@!?]キー登録読み込みを行いました</string>
+    <string name="preference_nicownng_import_usersymbol_failed">[@!?]キー登録読み込みに失敗しました</string>
+    <string name="preference_nicownng_export_usersymbol_title">[@!?]キー登録書き出し</string>
+    <string name="preference_nicownng_export_usersymbol_summary">[@!?]キーで入力できるユーザーシンボルを書き出します</string>
+    <string name="dialog_nicownng_export_usersymbol_message">以下から[@!?]キーで入力できるユーザーシンボルファイルを書き出します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+    <string name="preference_nicownng_export_usersymbol_success">[@!?]キー登録書き出しを行いました</string>
+    <string name="preference_nicownng_export_usersymbol_failed">[@!?]キー登録書き出しに失敗しました</string>
     <string name="preference_nicownng_initialize_usersymbol_title">[@!?]キー登録内容初期化</string>
     <string name="preference_nicownng_initialize_usersymbol_summary">[@!?]キーの登録内容となるユーザーシンボルファイルを初期化します</string>
     <string name="dialog_nicownng_initialize_usersymbol_message">以下のユーザーシンボルファイルを初期化します\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>

@@ -15,6 +15,7 @@ import androidx.preference.PreferenceDialogFragmentCompat;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.function.BiConsumer;
@@ -25,6 +26,19 @@ import java.util.function.BiConsumer;
  */
 
 public class MyDocumentFolderSelector {
+	private static final boolean RELEASE = true;//!BuildConfig.DEBUG;
+	private static final String TAG = "ActivityMain";
+	private static final boolean T = !RELEASE;
+	private static final boolean V = !RELEASE;
+	private static final boolean D = !RELEASE;
+	private static final boolean I = true;
+
+	private static String M() {
+		StackTraceElement[] es = new Exception().getStackTrace();
+		int count = 1; while (es[count].getMethodName().contains("$")) count++;
+		return es[count].getFileName()+"("+es[count].getLineNumber()+"): "+es[count].getMethodName()+"(): ";
+	}
+
 
 	private String mInitialDirectory = null;
 	private Context me;
@@ -35,40 +49,70 @@ public class MyDocumentFolderSelector {
 	private MyDocumentTreeSelector mDocumentTreeSelector;
 
 	public MyDocumentFolderSelector(Context c) {
+		if (T) Log.v(TAG, M()+"@in: c="+c);
+
 		me = c;
+
+		if (T) Log.v(TAG, M()+"@out");
 	}
 
 	public MyDocumentFolderSelector setInitialDirectory(String s) {
+		if (T) Log.v(TAG, M()+"@in: s="+s);
+
 		mInitialDirectory = s;
+
+		if (T) Log.v(TAG, M()+"@out");
 		return this;
 	}
 
 	public MyDocumentFolderSelector setDocumentTreeSelector(MyDocumentTreeSelector s) {
+		if (T) Log.v(TAG, M()+"@in: s="+s);
+
 		mDocumentTreeSelector = s;
+
+		if (T) Log.v(TAG, M()+"@out");
 		return this;
 	}
 
 	public MyDocumentFolderSelector setWrite(boolean b) {
+		if (T) Log.v(TAG, M()+"@in: b="+b);
+
 		mWrite = b;
+
+		if (T) Log.v(TAG, M()+"@out");
 		return this;
 	}
 
 	public MyDocumentFolderSelector setCreateFolder(boolean b) {
+		if (T) Log.v(TAG, M()+"@in: b="+b);
+
 		mCreateFolder = b;
+
+		if (T) Log.v(TAG, M()+"@out: ret="+this);
 		return this;
 	}
 
 	public MyDocumentFolderSelector setSelected(BiConsumer<Integer, DocumentFile> c) {
+		if (T) Log.v(TAG, M()+"@in: c="+c);
+
 		mSelected = c;
+
+		if (T) Log.v(TAG, M()+"@out: ret="+this);
 		return this;
 	}
 
 	public MyDocumentFolderSelector setUnselected(Consumer<Integer> c)  {
+		if (T) Log.v(TAG, M()+"@in: c="+c);
+
 		mUnselected = c;
+
+		if (T) Log.v(TAG, M()+"@out: ret="+this);
 		return this;
 	}
 
 	public void select() {
+		if (T) Log.v(TAG, M()+"@in");
+
 		if (mDocumentTreeSelector == null) {
 			return;
 		}
@@ -77,6 +121,8 @@ public class MyDocumentFolderSelector {
 		}
 		mDocumentTreeSelector.setInitialDirectory(mInitialDirectory)
 			.setSelected((resultCode, treeUri) -> {
+				if (T) Log.v(TAG, M()+"@in: resultCode="+resultCode+", treeUri="+treeUri);
+
 				Uri path = treeUri;
 				DocumentFile dir = DocumentFile.fromTreeUri(me, path);
 
@@ -110,13 +156,20 @@ public class MyDocumentFolderSelector {
 				if (mSelected != null) {
 					mSelected.accept(resultCode, dir);
 				}
+
+				if (T) Log.v(TAG, M()+"@out");
 			})
 			.setUnselected((resultCode) -> {
+				if (T) Log.v(TAG, M()+"@in: resultCode="+resultCode);
+
 				if (mUnselected != null) {
 					mUnselected.accept(resultCode);
 				}
+
+				if (T) Log.v(TAG, M()+"@out");
 			})
 			.setWrite(true)
 			.select();
+		if (T) Log.v(TAG, M()+"@out");
 	}
 }

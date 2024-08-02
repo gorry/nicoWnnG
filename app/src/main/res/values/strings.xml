@@ -266,11 +266,16 @@
   <string name="preference_nicownng_is_flipscreen">No screen 12key</string>
   <string name="preference_nicownng_is_flipscreen_summary_ja">Check, no display second screen.(not active nico2 mode)</string>
 
-  <string name="preference_nicownng_reload_usersymbol_title">Reload [@!?]-Key Definition</string>
-  <string name="preference_nicownng_reload_usersymbol_summary">Reload User Symbols at Typing [@!?]-Key</string>
-    <string name="dialog_nicownng_reload_usersymbol_message">Reload User Symbols from File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
-    <string name="preference_nicownng_reload_usersymbol_success">Success Reload.</string>
-    <string name="preference_nicownng_reload_usersymbol_failed">Failed Reloading User Symbols.</string>
+  <string name="preference_nicownng_import_usersymbol_title">Import [@!?]-Key Definition</string>
+  <string name="preference_nicownng_import_usersymbol_summary">Import User Symbols at Typing [@!?]-Key</string>
+    <string name="dialog_nicownng_import_usersymbol_message">Import User Symbols from File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+    <string name="preference_nicownng_import_usersymbol_success">Success Import.</string>
+    <string name="preference_nicownng_import_usersymbol_failed">Failed Importing User Symbols.</string>
+  <string name="preference_nicownng_export_usersymbol_title">Export [@!?]-Key Definition</string>
+  <string name="preference_nicownng_export_usersymbol_summary">Export User Symbols at Typing [@!?]-Key</string>
+    <string name="dialog_nicownng_export_usersymbol_message">Export User Symbols from File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>
+    <string name="preference_nicownng_export_usersymbol_success">Success Export.</string>
+    <string name="preference_nicownng_export_usersymbol_failed">Failed Exporting User Symbols.</string>
   <string name="preference_nicownng_initialize_usersymbol_title">Initialize [@!?]-Key Definition</string>
   <string name="preference_nicownng_initialize_usersymbol_summary">Initialize User Symbols at Typing [@!?]-Key</string>
     <string name="dialog_nicownng_initialize_usersymbol_message">Initialize User Symbols from File:\n/storage/emulated/0/Android/data/net.gorry.android.input.nicownng/files/nicoWnnG/</string>

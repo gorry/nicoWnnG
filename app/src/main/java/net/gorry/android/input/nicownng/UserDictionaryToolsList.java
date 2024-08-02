@@ -658,8 +658,8 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 						return;
 					}
 
-					Uri inWordsFile = Uri.parse(dir.getUri() + "%2F" + mOuterUserDicBaseName);
-					Uri inLearnFile = Uri.parse(dir.getUri() + "%2F" + mWritableDicBaseName);
+					Uri inWordsFile = Uri.parse(dir.getUri().toString() + "%2F" + mOuterUserDicBaseName);
+					Uri inLearnFile = Uri.parse(dir.getUri().toString() + "%2F" + mWritableDicBaseName);
 					String outLearnFile = mWritableDicFileName;
 
 					final UserDicImportExport task = new UserDicImportExport(me, 0);
@@ -705,8 +705,8 @@ implements View.OnClickListener, OnTouchListener, OnFocusChangeListener {
 					}
 
 					String inLearnFile = mWritableDicFileName;
-					Uri outWordsFile = Uri.parse(dir.getUri() + "%2F" + mOuterUserDicBaseName);
-					Uri outLearnFile = Uri.parse(dir.getUri() + "%2F" + mWritableDicBaseName);
+					Uri outWordsFile = Uri.parse(dir.getUri().toString() + "%2F" + mOuterUserDicBaseName);
+					Uri outLearnFile = Uri.parse(dir.getUri().toString() + "%2F" + mWritableDicBaseName);
 
 					final String[] params = new String[4];
 					params[0] = "export";

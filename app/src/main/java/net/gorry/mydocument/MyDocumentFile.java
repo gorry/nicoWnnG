@@ -75,15 +75,47 @@ public class MyDocumentFile {
 			return null;
 		}
 
-		DocumentFile ret = d.createFile(mimeType, displayName);
-		if (ret != null) {
+		DocumentFile ret = d.findFile(displayName);
+		if (ret == null) {
+			ret = d.createFile(mimeType, displayName);
 			return ret;
 		}
 
-		ret = d.findFile(displayName);
-		if (ret == null) {
+		if (ret.isDirectory()) {
 			return null;
 		}
+
+		return ret;
+	}
+
+
+	public static DocumentFile createFileAlways(Context c, Uri uri, String mimeType) {
+		int idx = uri.toString().lastIndexOf("%2F");
+		if (idx < 0) {
+			return null;
+		}
+		Uri parent = Uri.parse(uri.toString().substring(0, idx));
+		String displayName = uri.toString().substring(idx+3);
+		return createFileAlways(c, parent, displayName, mimeType);
+	}
+
+	public static DocumentFile createFileAlways(Context c, Uri parent, String displayName, String mimeType) {
+		DocumentFile d = DocumentFile.fromTreeUri(c, parent);
+		if (d == null) {
+			return null;
+		}
+
+		DocumentFile ret = d.findFile(displayName);
+		if (ret == null) {
+			ret = d.createFile(mimeType, displayName);
+			return ret;
+		}
+		if (ret.isDirectory()) {
+			return null;
+		}
+
+		ret.delete();
+		ret = d.createFile(mimeType, displayName);
 		if (ret.isDirectory()) {
 			return null;
 		}

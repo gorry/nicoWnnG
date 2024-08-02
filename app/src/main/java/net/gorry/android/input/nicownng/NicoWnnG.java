@@ -151,7 +151,7 @@ public class NicoWnnG extends InputMethodService {
 
 		initializeEasySetting();
 		convertOldPreferces();
-		SymbolList.copyUserSymbolDicFileToExternalStorageDirectory(this, false);
+		SymbolList.copyUserSymbolDicResourceToExternalStorageDirectory(this, false);
 
 		if (mConverter != null) { mConverter.init(); }
 		if (mComposingText != null) { mComposingText.clear(); }

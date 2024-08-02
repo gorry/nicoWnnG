@@ -85,10 +85,14 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 
 		DialogFragment f = null;
 		if (false) {
-		} else if (preference instanceof BackupConfigDialog) {
-			f = BackupConfigDialogFragment.newInstance(preference.getKey());
-		} else if (preference instanceof RestoreConfigDialog) {
-			f = RestoreConfigDialogFragment.newInstance(preference.getKey());
+		} else if (preference instanceof ConfigBackupDialog) {
+			f = ConfigBackupDialogFragment.newInstance(preference.getKey());
+		} else if (preference instanceof ConfigRestoreDialog) {
+			f = ConfigRestoreDialogFragment.newInstance(preference.getKey());
+		} else if (preference instanceof UserSymbolImportDialog) {
+			f = UserSymbolImportDialogFragment.newInstance(preference.getKey());
+		} else if (preference instanceof UserSymbolExportDialog) {
+			f = UserSymbolExportDialogFragment.newInstance(preference.getKey());
 		} else {
 			super.onDisplayPreferenceDialog(preference);
 		}

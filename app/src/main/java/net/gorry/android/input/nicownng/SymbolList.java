@@ -22,7 +22,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.channels.FileChannel;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -31,14 +31,19 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetManager;
 import android.content.res.XmlResourceParser;
-import android.os.Environment;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.activity.ComponentActivity;
+import androidx.documentfile.provider.DocumentFile;
+
+import net.gorry.mydocument.MyDocumentFile;
 
 /**
  * The generator class of symbol list.
@@ -398,7 +403,7 @@ public class SymbolList implements WnnEngine {
 	/*
 	 *
 	 */
-	static public boolean copyUserSymbolDicFileToExternalStorageDirectory(Context context, boolean force) {
+	static public boolean copyUserSymbolDicResourceToExternalStorageDirectory(Context context, boolean force) {
 		InputStream fin = null;
 		FileOutputStream fout = null;
 		try {
@@ -435,6 +440,97 @@ public class SymbolList implements WnnEngine {
 		fout = null;
 		fin = null;
 		return true;
+	}
+	/*
+	 *
+	 */
+	static public boolean importUserSymbolDicFile(ComponentActivity a, Uri inDir) {
+		ContentResolver cr = a.getContentResolver();
+
+		try {
+			final File dir = a.getExternalFilesDir("nicoWnnG");
+			if (null == dir) {
+				return false;
+			}
+
+			for (int i=0; i<USERSYMBOL_DIC_NAME.length; i++) {
+				for (int j=1; j<10; j++) {
+					final String dicName = String.format("%s_%d", USERSYMBOL_DIC_NAME[i], j);
+					final String dicFile = dicName + ".xml";
+					final Uri inFile = Uri.parse(inDir.toString() + "%2F" + dicFile);
+					DocumentFile d = DocumentFile.fromSingleUri(a, inFile);
+					if (d.exists()) {
+						final File file = new File(dir, dicFile);
+						final InputStream istream = cr.openInputStream(inFile);
+						final FileOutputStream ostream = new FileOutputStream(file);
+						byte[] buf = new byte[1024 * 16];
+						while (true) {
+							int size = istream.read(buf);
+							if (size < 0) break;
+							ostream.write(buf, 0, size);
+						}
+						istream.close();
+						ostream.close();
+					}
+				}
+			}
+
+			return true;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+
+	/*
+	 *
+	 */
+	static public boolean exportUserSymbolDicFile(ComponentActivity a, Uri outDir) {
+		ContentResolver cr = a.getContentResolver();
+
+		try {
+			final File dir = a.getExternalFilesDir("nicoWnnG");
+			if (null == dir) {
+				return false;
+			}
+
+			for (int i=0; i<USERSYMBOL_DIC_NAME.length; i++) {
+				for (int j=1; j<10; j++) {
+					final String dicName = String.format("%s_%d", USERSYMBOL_DIC_NAME[i], j);
+					final String dicFile = dicName + ".xml";
+					final File file = new File(dir, dicFile);
+					if (file.exists()) {
+						final FileInputStream istream = new FileInputStream(file);
+						final Uri outFile = Uri.parse(outDir.toString() + "%2F" + dicFile);
+						MyDocumentFile.createFileIfNotExist(a, outFile, "application/octet-stream");
+						final OutputStream ostream = cr.openOutputStream(outFile);
+						byte[] buf = new byte[1024 * 16];
+						while (true) {
+							int size = istream.read(buf);
+							if (size < 0) break;
+							ostream.write(buf, 0, size);
+						}
+						istream.close();
+						ostream.close();
+					}
+				}
+			}
+
+			return true;
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
 	}
 
 	/**

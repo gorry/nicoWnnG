@@ -32,7 +32,7 @@ import java.util.function.Consumer;
  * @author gorry
  *
  */
-public class MyDocumentTreeSelector {
+public class MyDocumentFileSelector {
 	private static final boolean RELEASE = true;//!BuildConfig.DEBUG;
 	private static final String TAG = "ActivityMain";
 	private static final boolean T = !RELEASE;
@@ -49,14 +49,14 @@ public class MyDocumentTreeSelector {
 	private ComponentActivity me;
 
 	//String startDir = "DCIM/Camera";  // replace "/", "%2F"
-	private String mInitialDirectory = "";
+	private String mInitialFile = "";
 	private Uri mInitialUri = null;
 	private BiConsumer<Integer, Uri> mSelected = null;
 	private Consumer<Integer> mUnselected = null;
 	private Boolean mWrite = false;
 	private ActivityResultLauncher<Intent> mLauncher;
 
-	public MyDocumentTreeSelector(ComponentActivity a) {
+	public MyDocumentFileSelector(ComponentActivity a) {
 		if (T) Log.v(TAG, M()+"@in: a="+a);
 
 		me = a;
@@ -98,12 +98,12 @@ public class MyDocumentTreeSelector {
 					Intent.FLAG_GRANT_READ_URI_PERMISSION | 
 					(mWrite ? Intent.FLAG_GRANT_WRITE_URI_PERMISSION : 0)
 				);
-				DocumentFile tree = DocumentFile.fromTreeUri(me, uri);
-				Uri treeUri = tree.getUri();
-				mInitialUri = treeUri;  // 次回の初期Uriとなる
-				if (T) Log.v(TAG, M()+"treeUri="+treeUri);
+				DocumentFile file = DocumentFile.fromSingleUri(me, uri);
+				Uri fileUri = file.getUri();
+				mInitialUri = fileUri;  // 次回の初期Uriとなる
+				if (T) Log.v(TAG, M()+"fileUri="+fileUri);
 				if (mSelected != null) {
-					mSelected.accept(resultCode, treeUri);
+					mSelected.accept(resultCode, fileUri);
 				}
 				if (T) Log.v(TAG, M()+"@out: selected");
 				return;
@@ -113,16 +113,16 @@ public class MyDocumentTreeSelector {
 		if (T) Log.v(TAG, M()+"@out");
 	}
 
-	public MyDocumentTreeSelector setInitialDirectory(String dir) {
-		if (T) Log.v(TAG, M()+"@in: dir="+dir);
+	public MyDocumentFileSelector setInitialFile(String file) {
+		if (T) Log.v(TAG, M()+"@in: file="+file);
 
-		mInitialDirectory = dir;
+		mInitialFile = file;
 
 		if (T) Log.v(TAG, M()+"@out");
 		return this;
 	}
 
-	public MyDocumentTreeSelector setInitialUri(Uri uri) {
+	public MyDocumentFileSelector setInitialUri(Uri uri) {
 		if (T) Log.v(TAG, M()+"@in: uri="+uri);
 
 		mInitialUri = uri;
@@ -138,7 +138,7 @@ public class MyDocumentTreeSelector {
 		return mInitialUri;
 	}
 
-	public MyDocumentTreeSelector setSelected(BiConsumer<Integer, Uri> c) {
+	public MyDocumentFileSelector setSelected(BiConsumer<Integer, Uri> c) {
 		if (T) Log.v(TAG, M()+"@in: c="+c);
 
 		mSelected = c;
@@ -147,7 +147,7 @@ public class MyDocumentTreeSelector {
 		return this;
 	}
 
-	public MyDocumentTreeSelector setUnselected(Consumer<Integer> c) {
+	public MyDocumentFileSelector setUnselected(Consumer<Integer> c) {
 		if (T) Log.v(TAG, M()+"@in: c="+c);
 
 		mUnselected = c;
@@ -156,7 +156,7 @@ public class MyDocumentTreeSelector {
 		return this;
 	}
 
-	public MyDocumentTreeSelector setWrite(Boolean b) {
+	public MyDocumentFileSelector setWrite(Boolean b) {
 		if (T) Log.v(TAG, M()+"@in: b="+b);
 
 		mWrite = b;
@@ -181,8 +181,8 @@ public class MyDocumentTreeSelector {
 				String scheme = uri.toString();
 				Log.d(TAG, "INITIAL_URI scheme: " + scheme);
 				scheme = scheme.replace("/root/", "/document/");
-				if (mInitialDirectory != null) {
-					scheme += "%3A" + mInitialDirectory;
+				if (mInitialFile != null) {
+					scheme += "%3A" + mInitialFile;
 				}
 				uri = Uri.parse(scheme);
 				intent.putExtra("android.provider.extra.INITIAL_URI", uri);

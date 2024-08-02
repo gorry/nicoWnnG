@@ -13,15 +13,15 @@ import android.util.AttributeSet;
  * @author gorry
  *
  */
-public class RestoreConfigDialog extends DialogPreference{
+public class ConfigBackupDialog extends DialogPreference{
 
-	public RestoreConfigDialog(Context context) {
+	public ConfigBackupDialog(Context context) {
 		super(context);
 	}
-	public RestoreConfigDialog(Context context, AttributeSet attrs, int defStyle) {
+	public ConfigBackupDialog(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 	}
-	public RestoreConfigDialog(Context context, AttributeSet attrs) {
+	public ConfigBackupDialog(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
 
