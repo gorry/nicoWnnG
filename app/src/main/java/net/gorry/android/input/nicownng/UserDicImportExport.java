@@ -22,6 +22,8 @@ import android.util.Log;
 
 import androidx.documentfile.provider.DocumentFile;
 
+import net.gorry.mydocument.MyDocumentFile;
+
 
 public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 	private final UserDictionaryToolsList mActivity;
@@ -173,7 +175,6 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 	 *
 	 */
 	private boolean importUserDic(final Uri inWordsFileName, final Uri inLearnFileName, final String outLearnFileName) {
-		NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();
 		ContentResolver cr = mActivity.getContentResolver();
 
 		// import learn dic
@@ -241,6 +242,7 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 				mDialogCount++;
 				// Log.d("load", count+": " + newword.stroke + " : "+ newword.candidate);
 			}
+			finWords.close();
 		} catch (final Exception e) {
 			return false;
 		} finally {
@@ -253,14 +255,14 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 	 *
 	 */
 	private boolean exportUserDic(final String inLearnFileName, final Uri outWordsFileName, final Uri outLearnFileName) {
-		NicoWnnGJAJP wnn = NicoWnnGJAJP.getInstance();
 		ContentResolver cr = mActivity.getContentResolver();
 
 		mResultString[0] = "false";
 		mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_failed);
 
 		try {
-			final OutputStream fout = cr.openOutputStream(outWordsFileName);
+			MyDocumentFile.createFileIfNotExist(mActivity, outWordsFileName, "application/octet-stream");
+			final OutputStream fout = cr.openOutputStream(outWordsFileName, "wt");
 			// output XML header
 			final String header = new String("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
 			final String top    = new String("<wordlist>\n");
@@ -276,11 +278,9 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 				final String outstring = new String("  <dicword stroke=\"" + getword.stroke + "\">\"" + getword.candidate + "\"</dicword>\n");
 				fout.write(outstring.getBytes());
 			}
-			fout.close();
 			fout.write(end.getBytes());
+			fout.close();
 		} catch (final Exception e) {
-			mResultString[0] = "false";
-			mResultString[1] = mActivity.getString(R.string.dialog_export_dic_message_failed);
 			return false;
 		} finally {
 		}
@@ -288,6 +288,7 @@ public class UserDicImportExport extends AsyncTask<String, String, String[]>{
 		// export learn dic
 		try {
 			final FileInputStream istream = new FileInputStream(inLearnFileName);
+			MyDocumentFile.createFileIfNotExist(mActivity, outLearnFileName, "application/octet-stream");
 			final OutputStream ostream = cr.openOutputStream(outLearnFileName);
 			byte[] buf = new byte[1024*16];
 			while (true) {

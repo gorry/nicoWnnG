@@ -1515,7 +1515,7 @@ public class DefaultSoftKeyboard implements InputViewManager, KeyboardView.OnKey
 		createKeyboards();
 
 		final String skin = pref.getString("keyboard_skin", mWnn.getResources().getString(R.string.keyboard_skin_id_default));
-		final int id = mWnn.getResources().getIdentifier(skin, "layout", "net.gorry.android.input.nicownng");
+		final int id = mWnn.getResources().getIdentifier(skin, "layout", NicoWnnG.PACKAGE_NAME);
 
 		mKeyboardViewLayoutId = id;
 		mKeyboardView = (MyKeyboardView) mWnn.getLayoutInflater().inflate(id, null);

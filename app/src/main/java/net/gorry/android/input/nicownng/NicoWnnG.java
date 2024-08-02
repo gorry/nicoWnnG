@@ -44,6 +44,8 @@ import android.view.inputmethod.InputConnection;
  * @author Copyright (C) 2009 OMRON SOFTWARE CO., LTD.  All Rights Reserved.
  */
 public class NicoWnnG extends InputMethodService {
+	public static final String PACKAGE_NAME = "net.gorry.android.input.nicownng";
+
 	//private static final String GETACTION_INTERCEPT = "net.gorry.android.input.nicownng.ACTION_INTERCEPT";
 	//private static final String INPUTCONNECTION_KEY = "inputconnection_key";
 	private static final String ACTION_INTERCEPT = "com.adamrocker.android.simeji.ACTION_INTERCEPT";
@@ -55,8 +57,8 @@ public class NicoWnnG extends InputMethodService {
 	// dic.setup
 	public static final String writableDicJAJPBaseName = "writableJAJP.dic";
 	public static final String writableDicENBaseName   = "writableEN.dic";
-	public static final String outerUserDicENBaseName = "UserDicEN.xml";
 	public static final String outerUserDicJAJPBaseName = "UserDicJAJP.xml";
+	public static final String outerUserDicENBaseName = "UserDicEN.xml";
 
 //	public String writableJAJPDic = new String("/data/data/net.gorry.android.input.nicownng/databases/writableJAJP.dic");
 //	public String writableENDic   = new String("/data/data/net.gorry.android.input.nicownng/databases/writableEN.dic");

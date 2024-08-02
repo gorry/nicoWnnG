@@ -16,6 +16,7 @@
 
 package net.gorry.android.input.nicownng.JAJP;
 
+import net.gorry.android.input.nicownng.NicoWnnG;
 import net.gorry.android.input.nicownng.NicoWnnGEvent;
 import net.gorry.android.input.nicownng.NicoWnnGJAJP;
 import net.gorry.android.input.nicownng.UserDictionaryToolsEdit;
@@ -51,8 +52,9 @@ public class UserDictionaryToolsEditJAJP extends UserDictionaryToolsEdit {
 	 * Initialize the parameters
 	 */
 	public void initialize() {
-		mListViewName = "net.gorry.android.input.nicownng.JAJP.UserDictionaryToolsListJAJP";
-		mPackageName  = "net.gorry.android.input.nicownng";
+		mPackageName  = NicoWnnG.PACKAGE_NAME;
+        mListViewName = mPackageName+".JAJP.UserDictionaryToolsListJAJP";
+
 	}
 
 	/** @see net.gorry.android.input.nicownng.UserDictionaryToolsEdit#sendEventToIME */

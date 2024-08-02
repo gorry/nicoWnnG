@@ -19,6 +19,13 @@
               android:paddingTop="5sp"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/user_dictionary_tools_header"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dip"
+        />
     <HorizontalScrollView
         android:id="@+id/user_dictionary_tools_scroll"
         android:layout_width="fill_parent" 
@@ -121,20 +128,21 @@
         android:padding="1dip"
         android:layout_gravity="left"
         >
-    <TextView
+
+        <TextView
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="0dip"
             android:layout_marginTop="1dip"
             android:layout_marginRight="1dip"
-            android:layout_marginLeft="0dip"
             android:layout_marginBottom="1dip"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:focusable="false"
             android:text="@string/user_dictionary_title_read"
-            android:textSize="20dip"
-            android:textColor="?android:attr/textColorTertiary"
-            android:background="#FFFFFF"
-            android:focusable="false"/>
-    <TextView
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textSize="20dip" />
+        <TextView
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -144,8 +152,8 @@
             android:layout_marginBottom="1dip"
             android:text="@string/user_dictionary_title_candidate"
             android:textSize="20dip"
-            android:textColor="?android:attr/textColorTertiary"
-            android:background="#FFFFFF"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:background="@android:color/background_light"
             android:focusable="false"/>
     </LinearLayout>
     <LinearLayout

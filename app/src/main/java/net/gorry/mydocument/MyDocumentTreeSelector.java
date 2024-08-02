@@ -1,7 +1,7 @@
 /**
  * 
  */
-package net.gorry.android.input.nicownng;
+package net.gorry.mydocument;
 
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -33,7 +33,7 @@ import java.util.function.Consumer;
  *
  */
 public class MyDocumentTreeSelector {
-	private static final boolean RELEASE = !BuildConfig.DEBUG;
+	private static final boolean RELEASE = true;//!BuildConfig.DEBUG;
 	private static final String TAG = "ActivityMain";
 	private static final boolean T = !RELEASE;
 	private static final boolean V = !RELEASE;

@@ -20,6 +20,13 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 >
+    <LinearLayout
+        android:id="@+id/user_dictionary_tools_edit_header"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="1dip"
+        />
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"

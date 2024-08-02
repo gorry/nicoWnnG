@@ -30,6 +30,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -114,7 +115,7 @@ public abstract class UserDictionaryToolsEdit extends Activity implements View.O
 		super.onCreate(savedInstanceState);
 
 		/* create view from XML layout */
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		// requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.user_dictionary_tools_edit);
 
 		/* get widgets */
@@ -163,8 +164,9 @@ public abstract class UserDictionaryToolsEdit extends Activity implements View.O
 			return;
 		}
 
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
-				R.layout.user_dictionary_tools_edit_header);
+		LinearLayout header = (LinearLayout)findViewById(R.id.user_dictionary_tools_edit_header);
+		header.removeAllViews();
+		getLayoutInflater().inflate(R.layout.user_dictionary_tools_edit_header, header);
 
 		/* set control buttons */
 		setAddButtonControl();

@@ -27,6 +27,7 @@ import net.gorry.android.input.nicownng.UserDictionaryToolsList;
 import net.gorry.android.input.nicownng.WnnWord;
 import android.view.View;
 import android.view.Window;
+import android.widget.LinearLayout;
 
 /**
  * The user dictionary tool class for Japanese IME.
@@ -38,18 +39,19 @@ public class UserDictionaryToolsListJAJP extends UserDictionaryToolsList {
 	 * Constructor
 	 */
 	public UserDictionaryToolsListJAJP() {
-		mListViewName = "net.gorry.android.input.nicownng.JAJP.UserDictionaryToolsListJAJP";
-		mEditViewName = "net.gorry.android.input.nicownng.JAJP.UserDictionaryToolsEditJAJP";
-		mOuterUserDicBaseName = mOuterUserDicBaseName;
-		mWritableDicBaseName = NicoWnnGJAJP.getInstance().writableDicJAJPBaseName;
+		mPackageName  = NicoWnnG.PACKAGE_NAME;
+		mListViewName = mPackageName+".JAJP.UserDictionaryToolsListJAJP";
+		mEditViewName = mPackageName+".JAJP.UserDictionaryToolsEditJAJP";
+		mOuterUserDicBaseName = NicoWnnG.outerUserDicJAJPBaseName;
+		mWritableDicBaseName = NicoWnnG.writableDicJAJPBaseName;
 		mWritableDicFileName = NicoWnnGJAJP.getInstance().writableDicJAJPFileName;
-		mPackageName  = "net.gorry.android.input.nicownng";
 	}
 
 	/** @see net.gorry.android.input.nicownng.UserDictionaryToolsList#headerCreate */
 	@Override protected void headerCreate() {
-		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,
-				R.layout.user_dictionary_tools_list_header_ja);
+		LinearLayout header = (LinearLayout)findViewById(R.id.user_dictionary_tools_header);
+		header.removeAllViews();
+		getLayoutInflater().inflate(R.layout.user_dictionary_tools_list_header_ja, header);
 	}
 
 	/** @see net.gorry.android.input.nicownng.UserDictionaryToolsList#createUserDictionaryToolsEdit */

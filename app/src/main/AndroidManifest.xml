@@ -41,14 +41,13 @@
 	<application
 		android:icon="@mipmap/ic_launcher"
 		android:label="nicoWnnG"
-		android:theme="@style/AppTheme"
+		android:theme="@style/Theme.AppCompat"
 		>
 
 		<service
 			android:name=".NicoWnnGJAJP"
 			android:label="nicoWnnG IME"
 			android:permission="android.permission.BIND_INPUT_METHOD"
-			android:id="@+id/nicownng_japanese"
 			android:exported="true"
 			>
 			<intent-filter>
@@ -89,24 +88,24 @@
 		</activity>
 		<activity
 			android:name="net.gorry.android.input.nicownng.JAJP.UserDictionaryToolsListJAJP"
-			android:theme="@android:style/Theme"
+			android:theme="@style/Theme.AppCompat.NoActionBar"
 			android:exported="true"
 			/>
 		<activity
 			android:name="net.gorry.android.input.nicownng.JAJP.UserDictionaryToolsEditJAJP"
 			android:label="@string/user_dictionary_edit_words"
-			android:theme="@android:style/Theme"
+			android:theme="@style/Theme.AppCompat.NoActionBar"
 			android:exported="true"
 			/>
 		<activity
 			android:name="net.gorry.android.input.nicownng.EN.UserDictionaryToolsListEN"
-			android:theme="@android:style/Theme"
+			android:theme="@style/Theme.AppCompat.NoActionBar"
 			android:exported="true"
 			/>
 		<activity
 			android:name="net.gorry.android.input.nicownng.EN.UserDictionaryToolsEditEN"
 			android:label="@string/user_dictionary_edit_words"
-			android:theme="@android:style/Theme"
+			android:theme="@style/Theme.AppCompat.NoActionBar"
 			android:exported="true"
 			/>
 		<activity

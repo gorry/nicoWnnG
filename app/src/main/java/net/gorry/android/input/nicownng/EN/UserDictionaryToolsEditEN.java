@@ -49,8 +49,8 @@ public class UserDictionaryToolsEditEN extends UserDictionaryToolsEdit {
      * Initialize the parameters
      */
     public void initialize() {
-        mListViewName = "net.gorry.android.input.nicownng.EN.UserDictionaryToolsListEN";
-        mPackageName  = "net.gorry.android.input.nicownng";
+		mPackageName  = NicoWnnG.PACKAGE_NAME;
+        mListViewName = mPackageName+".EN.UserDictionaryToolsListEN";
     }
 
     /** @see net.gorry.android.input.nicownng.UserDictionaryToolsEdit#sendEventToIME */

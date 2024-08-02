@@ -1,7 +1,7 @@
 /**
  * 
  */
-package net.gorry.android.input.nicownng;
+package net.gorry.mydocument;
 
 import android.content.Context;
 import android.net.Uri;
