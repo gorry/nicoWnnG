@@ -1,0 +1,1 @@
+-keep class net.gorry.android.input.nicownng.**
