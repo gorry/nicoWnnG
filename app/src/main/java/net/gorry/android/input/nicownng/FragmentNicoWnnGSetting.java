@@ -18,6 +18,7 @@ package net.gorry.android.input.nicownng;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -41,7 +42,6 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 	private static final String DIALOG_FRAGMENT_TAG = "net.gorry.android.input.nicownng.FragmentNicoWnnGSetting";
 
 	private Context me;
-	private ActivityNicoWnnGSetting mParentActivity;
 
 	SharedPreferences mPref;
 	PreferenceScreen mpsNicoWnnGMenu;
@@ -55,9 +55,19 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 	private Preference mPreferenceHelp = null;
 	private Preference mKeycodeTest = null;
 
+	private boolean mIsLandscape;
 
-	public FragmentNicoWnnGSetting(ActivityNicoWnnGSetting a) {
-		mParentActivity = a;
+	public static FragmentNicoWnnGSetting newInstance(String key) {
+
+		FragmentNicoWnnGSetting fragment = new FragmentNicoWnnGSetting();
+		Bundle b = new Bundle(1);
+		b.putString(PreferenceFragmentCompat.ARG_PREFERENCE_ROOT, key);
+		fragment.setArguments(b);
+		return fragment;
+
+	}
+
+	public FragmentNicoWnnGSetting() {
 	}
 
 	@Override
@@ -118,11 +128,13 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 		}
 		NicoWnnGJAJP.getInstance().initializeEasySetting();
 		NicoWnnGJAJP.getInstance().convertOldPreferces();
+		int orientation = getResources().getConfiguration().orientation;
+		mIsLandscape = (orientation == Configuration.ORIENTATION_LANDSCAPE);
 
 		mPref = PreferenceManager.getDefaultSharedPreferences(me);
 		mDifferent_pl = mPref.getBoolean("different_pl", true);
 
-		copyInPreferences(mParentActivity.isLandscape(), mPref);
+		copyInPreferences(mIsLandscape, mPref);
 
 		if (NicoWnnGJAJP.getInstance() == null) {
 			new NicoWnnGJAJP(me);
@@ -132,7 +144,7 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 		setPreferencesFromResource(R.xml.nicownng_pref_ja, rootKey);
 		mpsNicoWnnGMenu = (PreferenceScreen)findPreference("nicownng_menu");
 		if (mDifferent_pl) {
-			mpsNicoWnnGMenu.setSummary(getString(mParentActivity.isLandscape() ? R.string.preference_nicownng_menu_summary_ja_landscape : R.string.preference_nicownng_menu_summary_ja_portrait));
+			mpsNicoWnnGMenu.setSummary(getString(mIsLandscape ? R.string.preference_nicownng_menu_summary_ja_landscape : R.string.preference_nicownng_menu_summary_ja_portrait));
 		} else {
 			mpsNicoWnnGMenu.setSummary("");
 		}
@@ -149,17 +161,23 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 		mKeycodeTest.setEnabled(true);
 		mKeycodeTest.setOnPreferenceClickListener(onPreferenceClickListener);
 
+	}
+
+	public void onCreatePreferences_Keyboard_12key(PreferenceScreen prefScreen) {
+		// 12キーのフリックモードの制限
+		// 自前でprefScreenを取ったり、FragmentからのfindPreference()だと失敗する
+		mlNicoFlickMode = (ListPreference)prefScreen.findPreference("nicoflick_mode");
+		mlNicoFlickMode.setOnPreferenceChangeListener(onPreferenceChangeListener);
+		mlInputMode12key = (ListPreference)prefScreen.findPreference("input_mode");
+		mlInputMode12key.setOnPreferenceChangeListener(onPreferenceChangeListener);
+	}
+
+	public void onCreatePreferences_Keyboard_OnHardKey(PreferenceScreen prefScreen) {
 		// onhardkey
-		mcpChangeHardkey =(CheckBoxPreference)findPreference("change_onhardkey");
+		// 自前でprefScreenを取ったり、FragmentからのfindPreference()だと失敗する
+		mcpChangeHardkey =(CheckBoxPreference)prefScreen.findPreference("change_onhardkey");
 		setPreferenceEnabled_onhardkey();
 		mcpChangeHardkey.setOnPreferenceChangeListener(onPreferenceChangeListener);
-
-		// 12キーのフリックモードの制限
-		mlNicoFlickMode = (ListPreference)findPreference("nicoflick_mode");
-		mlNicoFlickMode.setOnPreferenceChangeListener(onPreferenceChangeListener);
-		mlInputMode12key = (ListPreference)findPreference("input_mode");
-		mlInputMode12key.setOnPreferenceChangeListener(onPreferenceChangeListener);
-
 	}
 
 
@@ -191,7 +209,7 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 			if (p == mcpDifferentPl) {
 				mDifferent_pl = (Boolean)value;
 				if (mDifferent_pl) {
-					mpsNicoWnnGMenu.setSummary(getString(mParentActivity.isLandscape() ? R.string.preference_nicownng_menu_summary_ja_landscape : R.string.preference_nicownng_menu_summary_ja_portrait));
+					mpsNicoWnnGMenu.setSummary(getString(mIsLandscape ? R.string.preference_nicownng_menu_summary_ja_landscape : R.string.preference_nicownng_menu_summary_ja_portrait));
 				} else {
 					mpsNicoWnnGMenu.setSummary("");
 				}
@@ -256,7 +274,7 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 
 		mDifferent_pl = mPref.getBoolean("different_pl", true);
 		if (mDifferent_pl) {
-			copyOutPreferences(mParentActivity.isLandscape(), mPref);
+			copyOutPreferences(mIsLandscape, mPref);
 		} else {
 			copyOutPreferences(true, mPref);
 			copyOutPreferences(false, mPref);

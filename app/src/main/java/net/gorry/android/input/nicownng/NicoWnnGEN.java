@@ -25,7 +25,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Handler;
 import android.os.Message;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.text.InputType;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;

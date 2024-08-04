@@ -20,14 +20,18 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
 
 import net.gorry.mydocument.MyDocumentFileSelector;
 import net.gorry.mydocument.MyDocumentTreeSelector;
 
-public class ActivityNicoWnnGSetting extends AppCompatActivity {
+public class ActivityNicoWnnGSetting extends AppCompatActivity implements PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
 
 
 	public static ActivityNicoWnnGSetting me;
@@ -36,7 +40,6 @@ public class ActivityNicoWnnGSetting extends AppCompatActivity {
 	}
 
 	private FragmentNicoWnnGSetting mFragment;
-	private boolean mIsLandscape;
 	private MyDocumentTreeSelector mMyDocumentTreeSelector;
 	private MyDocumentFileSelector mMyDocumentFileSelector;
 
@@ -47,14 +50,15 @@ public class ActivityNicoWnnGSetting extends AppCompatActivity {
 
 		mMyDocumentTreeSelector = new MyDocumentTreeSelector(this);
 		mMyDocumentFileSelector = new MyDocumentFileSelector(this);
-		mIsLandscape = (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
 
 		setContentView(R.layout.activity_setting);
 		if (savedInstanceState == null) {
-			mFragment = new FragmentNicoWnnGSetting(me);
+			mFragment = new FragmentNicoWnnGSetting();
+			// mFragment.setParentActivity(me);
 			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-			transaction.replace(R.id.fragment_setting, mFragment);
-			transaction.commit();
+			transaction
+				.replace(R.id.fragment_setting, mFragment)
+				.commit();
 		}
 	}
 
@@ -66,16 +70,43 @@ public class ActivityNicoWnnGSetting extends AppCompatActivity {
 		mFragment.copyOutPreferences(sw, pref);
 	}
 
-	public boolean isLandscape() {
-		return mIsLandscape;
-	}
-
 	public MyDocumentTreeSelector getMyDocumentTreeSelector() {
 		return mMyDocumentTreeSelector;
 	}
 
 	public MyDocumentFileSelector getMyDocumentFileSelector() {
 		return mMyDocumentFileSelector;
+	}
+
+	@Override
+	public boolean onSupportNavigateUp() {
+		if (getSupportFragmentManager().popBackStackImmediate()) {
+			return true;
+		}
+		return super.onSupportNavigateUp();
+	}
+
+
+	@Override
+	public boolean onPreferenceStartFragment(@NonNull PreferenceFragmentCompat caller, @NonNull Preference pref) {
+		Bundle args = pref.getExtras();
+		Fragment fragment = getSupportFragmentManager().getFragmentFactory().instantiate(
+				getClassLoader(),
+				pref.getFragment()
+		);
+		fragment.setArguments(args);
+		fragment.setTargetFragment(caller, 0);
+		// Replace the existing Fragment with the new Fragment
+		getSupportFragmentManager()
+				.beginTransaction()
+				.replace(R.id.fragment_setting, fragment)
+				.addToBackStack(null)
+				.commit();
+		return true;
+	}
+
+	public FragmentNicoWnnGSetting getFragment() {
+		return mFragment;
 	}
 
 }

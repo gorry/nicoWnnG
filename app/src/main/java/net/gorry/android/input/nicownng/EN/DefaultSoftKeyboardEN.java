@@ -23,7 +23,7 @@ import net.gorry.android.input.nicownng.NicoWnnGEvent;
 import net.gorry.android.input.nicownng.R;
 import android.content.SharedPreferences;
 import android.inputmethodservice.Keyboard;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.text.InputType;
 import android.view.KeyEvent;
 import android.view.View;

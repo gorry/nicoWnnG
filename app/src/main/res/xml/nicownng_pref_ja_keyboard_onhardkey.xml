@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright (C) 2008,2009  OMRON SOFTWARE Co., Ltd.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+<PreferenceScreen
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	>
+					<CheckBoxPreference
+						app:key="change_onhardkey"
+						app:title="@string/preference_nicownng_change_onhardkey_title"
+						app:summary="@string/preference_nicownng_change_onhardkey_summary"
+						app:defaultValue="false"
+						/>
+					<CheckBoxPreference
+						app:key="change_kana_12key_onhardkey"
+						app:title="@string/preference_nicownng_change_kana_12key"
+						app:summary="@string/preference_nicownng_change_kana_12key_summary_ja"
+						app:defaultValue="false"
+						/>
+					<CheckBoxPreference
+						app:key="change_noalpha_qwerty_onhardkey"
+						app:title="@string/preference_nicownng_change_noalpha_qwerty"
+						app:summary="@string/preference_nicownng_change_noalpha_summary_ja"
+						app:defaultValue="false"
+						/>
+					<CheckBoxPreference
+						app:key="change_alphanum_12key_onhardkey"
+						app:title="@string/preference_nicownng_change_alphanum_12key"
+						app:summary="@string/preference_nicownng_change_alphanum_12key_summary_ja"
+						app:defaultValue="false"
+						/>
+					<CheckBoxPreference
+						app:key="change_nonumber_qwerty_onhardkey"
+						app:title="@string/preference_nicownng_change_nonumber_qwerty"
+						app:summary="@string/preference_nicownng_change_nonumber_summary_ja"
+						app:defaultValue="false"
+						/>
+					<CheckBoxPreference
+						app:key="change_num_12key_onhardkey"
+						app:title="@string/preference_nicownng_change_num_12key"
+						app:summary="@string/preference_nicownng_change_num_12key_summary_ja"
+						app:defaultValue="false"
+						/>
+					<ListPreference
+						app:key="input_mode_start_onhardkey"
+						app:title="@string/preference_input_mode_start_title"
+						app:summary="@string/preference_input_mode_start_summary"
+						app:entries="@array/input_mode_start_entries"
+						app:entryValues="@array/input_mode_start_values"
+						app:defaultValue="0"
+						/>
+					<ListPreference
+						app:key="input_mode_next_onhardkey"
+						app:title="@string/preference_input_mode_next_title"
+						app:summary="@string/preference_input_mode_next_summary"
+						app:entries="@array/input_mode_next_entries"
+						app:entryValues="@array/input_mode_next_values"
+						app:defaultValue="0"
+						/>
+</PreferenceScreen>

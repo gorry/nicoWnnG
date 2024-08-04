@@ -39,7 +39,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.text.InputType;
 import android.util.DisplayMetrics;
 import android.util.FloatMath;

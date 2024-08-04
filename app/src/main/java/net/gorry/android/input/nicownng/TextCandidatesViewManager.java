@@ -29,7 +29,7 @@ import android.media.SoundPool;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Vibrator;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;

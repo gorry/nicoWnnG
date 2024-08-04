@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright (C) 2008,2009  OMRON SOFTWARE Co., Ltd.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+<PreferenceScreen
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	>
+					<ListPreference
+						app:key="qwerty_kana_mode3"
+						app:title="@string/preference_qwerty_kana_mode_title"
+						app:summary="@string/preference_qwerty_kana_mode_summary"
+						app:entries="@array/qwerty_kana_mode_entries"
+						app:entryValues="@array/qwerty_kana_mode_values"
+						app:defaultValue="4"
+						/>
+					<PreferenceCategory
+						app:title="@string/preference_category_qwerty_display">
+						<CheckBoxPreference
+							app:key="use_qwerty_subten"
+							app:title="@string/preference_use_qwerty_subten_title"
+							app:summary="@string/preference_use_qwerty_subten_summary"
+							app:defaultValue="false"
+							/>
+						<ListPreference
+							app:key="subten_qwerty_mode"
+							app:title="@string/preference_subten_qwerty_mode_title"
+							app:summary="@string/preference_subten_qwerty_mode_summary"
+							app:entries="@array/preference_subten_qwerty_mode_entries"
+							app:entryValues="@array/preference_subten_qwerty_mode_values"
+							app:defaultValue="0"
+							/>
+						<CheckBoxPreference
+							app:key="qwerty_matrix_mode"
+							app:title="@string/preference_qwerty_matrix_mode"
+							app:summary="@string/preference_qwerty_matrix_summary_ja"
+							app:defaultValue="false"
+							/>
+						<CheckBoxPreference
+							app:key="qwerty_swap_shift_alt"
+							app:title="@string/preference_qwerty_swap_shift_alt"
+							app:summary="@string/preference_qwerty_swap_shift_alt_summary_ja"
+							app:defaultValue="true"
+							/>
+						<CheckBoxPreference
+							app:key="qwerty_swap_minienter"
+							app:title="@string/preference_qwerty_swap_minienter"
+							app:summary="@string/preference_qwerty_swap_minienter_summary_ja"
+							app:defaultValue="false"
+							/>
+					</PreferenceCategory>
+					<PreferenceCategory
+						app:title="@string/preference_category_qwerty_input">
+						<ListPreference
+							app:key="shiftkey_style"
+							app:title="@string/preference_shiftkey_style_title"
+							app:summary="@string/preference_shiftkey_style_summary"
+							app:entries="@array/shiftkey_style_entries"
+							app:entryValues="@array/shiftkey_style_values"
+							app:defaultValue="0"
+							/>
+						<CheckBoxPreference
+							app:key="english_predict_qwerty"
+							app:title="@string/preference_nicownng_qwerty_english_predict_title"
+							app:summary="@string/preference_nicownng_qwerty_english_predict_summary"
+							app:defaultValue="true"
+							/>
+						<CheckBoxPreference
+							app:key="qwerty_space_zen"
+							app:title="@string/preference_nicownng_qwerty_space_zen"
+							app:summary="@string/preference_nicownng_qwerty_space_zen_summary_ja"
+							app:defaultValue="true"
+							/>
+						<CheckBoxPreference
+							app:key="symbol_addsymbolemoji_qwerty"
+							app:title="@string/preference_symbol_addsymbolemoji_title"
+							app:summary="@string/preference_symbol_addsymbolemoji_summary"
+							app:defaultValue="true"
+							/>
+						<ListPreference
+							app:key="convert_keymap_type"
+							app:title="@string/preference_convert_keymap_type_title"
+							app:summary="@string/preference_convert_keymap_type_summary"
+							app:entries="@array/convert_keymap_type_entries"
+							app:entryValues="@array/convert_keymap_type_values"
+							app:defaultValue="0"
+							/>
+						<CheckBoxPreference
+							app:key="use_zenkaku_to_moji"
+							app:title="@string/preference_use_zenkaku_to_moji_title"
+							app:summary="@string/preference_use_zenkaku_to_moji_summary"
+							app:defaultValue="true"
+							/>
+					</PreferenceCategory>
+</PreferenceScreen>

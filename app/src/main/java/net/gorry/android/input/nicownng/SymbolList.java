@@ -36,7 +36,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
 import android.net.Uri;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 

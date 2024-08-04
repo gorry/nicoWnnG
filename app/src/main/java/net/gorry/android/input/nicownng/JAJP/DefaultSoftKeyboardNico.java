@@ -32,7 +32,7 @@ import net.gorry.android.input.nicownng.R;
 import android.content.SharedPreferences;
 import android.inputmethodservice.Keyboard;
 import android.os.Build;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.text.InputType;
 import android.util.Log;
 import android.view.KeyEvent;
