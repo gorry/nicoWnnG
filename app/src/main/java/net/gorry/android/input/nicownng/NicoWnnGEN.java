@@ -442,6 +442,8 @@ public class NicoWnnGEN extends NicoWnnG {
 
 	/** @see net.gorry.android.input.nicownng.NicoWnnG#onEvaluateInputViewShown */
 	@Override public boolean onEvaluateInputViewShown() {
+		super.onEvaluateInputViewShown();
+
 		return true;
 	}
 

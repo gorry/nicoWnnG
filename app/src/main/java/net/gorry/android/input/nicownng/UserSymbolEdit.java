@@ -56,15 +56,15 @@ public class UserSymbolEdit extends Activity implements View.OnClickListener {
 		mIsLandscape = (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
 		if (mIsLandscape) {
 			if (Build.VERSION.SDK_INT >= 9) {
-				// setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
-				setRequestedOrientation(6);
+				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+				// setRequestedOrientation(6);
 			} else {
 				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 			}
 		} else {
 			if (Build.VERSION.SDK_INT >= 9) {
-				// setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
-				setRequestedOrientation(7);
+				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+				// setRequestedOrientation(7);
 			} else {
 				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 			}

@@ -36,6 +36,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
+import androidx.appcompat.widget.AppCompatButton;
+
 /**
  *
  * IMEモード選択ポップアップ
@@ -106,7 +108,7 @@ public class MyPopupInputImeMode {
 			
 			for (int x=0; x<w; x++) {
 				int i = y*w+x;
-				mButton[i] = new Button(me) {
+				mButton[i] = new AppCompatButton(me) {
 					@Override
 					protected void onSizeChanged(final int w, final int h, final int oldw, final int oldh) {
 						super.onSizeChanged(w, h, oldw, oldh);

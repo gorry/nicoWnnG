@@ -18,6 +18,7 @@ package net.gorry.android.input.nicownng;
 
 import java.util.StringTokenizer;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -1055,7 +1056,8 @@ public class NicoWnnG extends InputMethodService {
 
 	private final MushroomReceiver mReceiver = new MushroomReceiver();
 
-	public void registerMushroomReceiver() {
+	@SuppressLint("UnspecifiedRegisterReceiverFlag")
+    public void registerMushroomReceiver() {
 		final IntentFilter filter = new IntentFilter(Mushroom.ACTION);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 			registerReceiver(mReceiver, filter, Context.RECEIVER_EXPORTED);

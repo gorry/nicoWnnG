@@ -20,12 +20,14 @@ import android.view.View;
 import android.content.Context;
 import android.widget.TextView;
 
+import androidx.appcompat.widget.AppCompatTextView;
+
 /**
  * The view class of the stroke and the candidate.
  *
  * @author Copyright (C) 2008, OMRON SOFTWARE CO., LTD.  All Rights Reserved.
  */
-public class UserDictionaryToolsListFocus extends TextView {
+public class UserDictionaryToolsListFocus extends AppCompatTextView {
     /** the information of the pair of view */
     private TextView mPairView = null;
 

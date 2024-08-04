@@ -3,6 +3,7 @@
  */
 package net.gorry.android.input.nicownng;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -162,7 +163,8 @@ public class KeyCodeTest extends Activity implements View.OnClickListener {
 		}
 	}
 
-	private void myRegisterReceiver() { 
+	@SuppressLint("UnspecifiedRegisterReceiverFlag")
+    private void myRegisterReceiver() {
 		if (mReceiver == null) {
 			mReceiver = new MyBroadcastReceiver();
 			mIntentFilter = new IntentFilter();
