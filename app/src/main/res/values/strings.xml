@@ -115,14 +115,14 @@
 
 	<string name="preference_config_menu">Backup/Restore</string>
 	<string name="preference_config_backup_title">Export Configuration</string>
-	<string name="preference_config_backup_summary">Write All Settings to External-Memory</string>
+	<string name="preference_config_backup_summary">Write All Settings to External Folder</string>
 	<string name="dialog_config_backup_message">Write all settings to File.\nPlease specify destination in the next dialog.\nIf you haven\'t created destination yet, we recommend creating "nicoWnnG" folder at the root folder and specifying that.</string>
 	<string name="dialog_config_backup_message_api28">Write all settings to File at:\nDocuments/nicoWnnG/</string>
 	<string name="toast_config_backup_success">Complete writing.</string>
 	<string name="toast_config_backup_failed">Export Configuration Failed.</string>
 
 	<string name="preference_config_restore_title">Import Configuration</string>
-	<string name="preference_config_restore_summary">Restore All Settings from External-Memory</string>
+	<string name="preference_config_restore_summary">Restore All Settings from External Folder</string>
 	<string name="dialog_config_restore_message">Restore all settings from File.\nPlease specify destination in the next dialog.</string>
 	<string name="dialog_config_restore_message_api28">Restore all settings from File at:\nDocuments/nicoWnnG/</string>
 	<string name="toast_config_restore_success">Importing Configuration.</string>
@@ -452,6 +452,14 @@
 
   <string name="preference_nicownng_fullscreen">Fullscreen</string>
   <string name="preference_nicownng_fullscreen_summary_ja">The soft keyboard occupy the full screen</string>
+
+    <string name="preference_key_userkeysound_title">Use Import key sound</string>
+    <string name="preference_key_userkeysound_summary">Check it if you want to use key click sound that importing from file.</string>
+    <string name="preference_nicownng_import_userkeysound_title">Import Key Sound</string>
+    <string name="preference_nicownng_import_userkeysound_summary">Import OGG file for key click sound.</string>
+    <string name="dialog_nicownng_import_userkeysound_message">Import OGG file for key click sound.\nPlease specify a file in the next dialog.</string>
+    <string name="preference_nicownng_import_userkeysound_success">Success Import.</string>
+    <string name="preference_nicownng_import_userkeysound_failed">Failed Import.</string>
 
    <!-- IME dependency -->
   <!-- OpenWnn English -->

@@ -93,6 +93,8 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 			f = UserSymbolImportDialogFragment.newInstance(preference.getKey());
 		} else if (preference instanceof UserSymbolExportDialog) {
 			f = UserSymbolExportDialogFragment.newInstance(preference.getKey());
+		} else if (preference instanceof UserKeySoundImportDialog) {
+			f = UserKeySoundImportDialogFragment.newInstance(preference.getKey());
 		} else {
 			super.onDisplayPreferenceDialog(preference);
 		}

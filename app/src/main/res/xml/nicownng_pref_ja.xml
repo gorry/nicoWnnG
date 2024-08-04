@@ -490,6 +490,19 @@
 			app:defaultValue="1"
 			/>
 		<CheckBoxPreference
+			app:key="key_userkeysound"
+			app:title="@string/preference_key_userkeysound_title"
+			app:summary="@string/preference_key_userkeysound_summary"
+			/>
+		<net.gorry.android.input.nicownng.UserKeySoundImportDialog
+			android:key="import_userkeysound"
+			android:title="@string/preference_nicownng_import_userkeysound_title"
+			android:summary="@string/preference_nicownng_import_userkeysound_summary"
+			android:dialogMessage="@string/dialog_nicownng_import_userkeysound_message"
+			android:positiveButtonText="@string/dialog_button_ok"
+			android:negativeButtonText="@string/dialog_button_cancel"
+			/>
+		<CheckBoxPreference
 			app:key="key_vibration"
 			app:title="@string/preference_key_vibration_title"
 			app:summary="@string/preference_key_vibration_summary"
