@@ -14,7 +14,7 @@ android {
         minSdkVersion 24
         targetSdk 34
         versionCode 202408191
-        versionName "2024.0819.1.1305"
+        versionName "2024.0819.2.1305"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             ndkBuild {
