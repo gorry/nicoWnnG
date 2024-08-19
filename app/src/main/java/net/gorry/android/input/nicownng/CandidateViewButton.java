@@ -28,7 +28,8 @@ import androidx.appcompat.widget.AppCompatButton;
  * The button for the candidate-view
  * @author Copyright (C) 2009, OMRON SOFTWARE CO., LTD.  All Rights Reserved.
  */
-public class CandidateViewButton extends AppCompatButton {
+//public class CandidateViewButton extends AppCompatButton {
+public class CandidateViewButton extends Button {
 
     /** The state of up */
     private int[] mUpState;
