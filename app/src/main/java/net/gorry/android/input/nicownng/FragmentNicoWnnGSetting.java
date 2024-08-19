@@ -176,30 +176,30 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 		// onhardkey
 		// 自前でprefScreenを取ったり、FragmentからのfindPreference()だと失敗する
 		mcpChangeHardkey =(CheckBoxPreference)prefScreen.findPreference("change_onhardkey");
-		setPreferenceEnabled_onhardkey();
+		setPreferenceEnabled_onhardkey(prefScreen);
 		mcpChangeHardkey.setOnPreferenceChangeListener(onPreferenceChangeListener);
 	}
 
 
-	private void setPreferenceEnabled_onhardkey() {
+	private void setPreferenceEnabled_onhardkey(PreferenceScreen prefScreen) {
 		Preference p;
 		boolean sw;
 
 		sw = mcpChangeHardkey.isChecked();
 		
-		p = findPreference("change_kana_12key_onhardkey");
+		p = prefScreen.findPreference("change_kana_12key_onhardkey");
 		p.setEnabled(sw);
-		p = findPreference("change_noalpha_qwerty_onhardkey");
+		p = prefScreen.findPreference("change_noalpha_qwerty_onhardkey");
 		p.setEnabled(sw);
-		p = findPreference("change_alphanum_12key_onhardkey");
+		p = prefScreen.findPreference("change_alphanum_12key_onhardkey");
 		p.setEnabled(sw);
-		p = findPreference("change_nonumber_qwerty_onhardkey");
+		p = prefScreen.findPreference("change_nonumber_qwerty_onhardkey");
 		p.setEnabled(sw);
-		p = findPreference("change_num_12key_onhardkey");
+		p = prefScreen.findPreference("change_num_12key_onhardkey");
 		p.setEnabled(sw);
-		p = findPreference("input_mode_start_onhardkey");
+		p = prefScreen.findPreference("input_mode_start_onhardkey");
 		p.setEnabled(sw);
-		p = findPreference("input_mode_next_onhardkey");
+		p = prefScreen.findPreference("input_mode_next_onhardkey");
 		p.setEnabled(sw);
 	}
 
@@ -216,7 +216,8 @@ public class FragmentNicoWnnGSetting extends PreferenceFragmentCompat {
 			}
 			else if (p == mcpChangeHardkey) {
 				mcpChangeHardkey.setChecked((Boolean)value);
-				setPreferenceEnabled_onhardkey();
+				PreferenceScreen prefScreen = (PreferenceScreen) p.getParent();
+				setPreferenceEnabled_onhardkey(prefScreen);
 			}
 			else if (p == mlNicoFlickMode) {
 				ListPreference lp = mlInputMode12key;
