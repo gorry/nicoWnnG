@@ -1,108 +1,55 @@
--------------------------------------------------------------------------------
-                              OpenWnn Japnese README
+◇ nicoWnnGとは
+========================================================================
 
-                                   Version 1.3.1
-                  
-     (C) Copyright OMRON SOFTWARE Co., Ltd. 2008,2009 All Rights Reserved.
--------------------------------------------------------------------------------
+nicoWnnG IMEは、Android OS上で動作する日本語入力IMEです。以下の特長を持っています。
 
-1. About OpenWnn
+・OpenWnn/nicoWnnベース
+オープンソースソフトウェアであるOpenWnn/nicoWnnをベースとしています。
 
-    OpenWnn is a IME(Input Method Editor) package which
-    works on Android's IMF(Input Method Framework).  This version
-    contains Japanese IME.
+・数字入りソフトフルキーボード
+nicoWnnGは、アルファベットだけでなく数字や各種記号も含めた全60キーのフルキーボードで入力することができます。横画面モードでの入力や、GALAXY Tabのような大型機種での使用を想定しています。
+配列は、画面サイズを最大限に活用できる格子状の「直交型QWERTY配列」と、入力しやすい一般的な形状の「斜交型QWERTY配列」から好きなほうを選ぶことができます。
 
-2. Contents
+・JISかな・五十音かな配列
+かな入力モードでは、QWERTY配列をそのまま利用したローマ字入力だけでなく、JISかな配列・五十音かな配列のキーボードを選ぶこともできます。
 
-    This package includes the following items.
+・２タッチ入力
+従来あった「ベル入力」モードに加え、より実機に近づけた「２タッチ入力」モードを追加しています。
 
-    o Document
-        . Apache license paper              (text)
-        . This README                       (text)
-        . Change history                    (text)
-        . Java docs of the IME              (HTML)
+・マッシュルーム対応
+Simejiで培われたプラグイン「マッシュルーム」に対応し、より多くの文字入力サポートを受けることができます。
 
-    o Building environment
-        . Building control file             (XML, makefile, shell script)
-        . IME native library source code    (C)
-        . IME resource                      (XML, PNG)
-        . IME source code                   (Java)
+・柔軟なコンフィグレーション
+キーボードや変換候補表示部分の表示高の変更、文字種キーを押したときのトグルの内容などを変更することができます。
 
-3. Dictionary Libraries
 
-  [libWnnEngDic.so: English dictionary]
-      Index 0: English dictionary for normal prediction (high priority)
-      Index 1: English dictionary for normal prediction (middle priority)
-      Index 2: English dictionary for normal prediction (low priority)
-      Index 3: English dictionary for relative prediction #1
-      Index 4: English dictionary for relative prediction #2
 
-  [libWnnJpnDic.so: Japanese dictionary]
-      Index 0: Japanese dictionary for normal prediction (high priority)
-      Index 1: Japanese dictionary for normal prediction (low priority)
-      Index 2: Japanese dictionary for relative prediction #1
-      Index 3: Japanese dictionary for relative prediction #2
-      Index 4: Japanese dictionary for clause conversion (single Kanji)
-      Index 5: Japanese dictionary for clause conversion (basic words)
-      Index 6: Japanese dictionary for clause conversion (ancillary words)
 
-4. File constitution 
+◇ プライバシーポリシー
+========================================================================
 
-    NOTICE                                    Apache license paper
-    README.txt                                This README
-    ChangeLog.txt                             Change history
+nicoWnnG IMEは、ユーザー情報を入力できません。
+nicoWnnG IMEは、ネットワークにアクセスしないため、ユーザー情報を収集することができません。
+これらが正しいことの保証は、公開されたソースコードにアクセスすることで確認できます。アクセス方法は、「ライセンス」をご覧ください。
 
-    doc/
-      *.html                                  Java docs of the IME
 
-    Android.mk                                Building control file
-    AndroidManifest.xml                       |
 
-    libs/                                     IME native library source code (C language)
-        Android.mk                            |
-        libwnnDictionary/                     |
-            Android.mk                        |
-            *.c                               |
-            *.h                               |
-            engine/                           |
-                *.c                           |
-            include/                          |
-                *.h                           |
-        libwnnEngDic/                         |
-            Android.mk                        |
-            *.c                               |
-        libwnnJpnDic/                         |
-            Android.mk                        |
-            *.c                               |
 
-    res/                                      IME resource (XML, PNG)
-        drawable/                             |
-            *.xml                             |
-            *.png                             |
-        drawable-ja/                          |
-            *.png                             |
-        layout/                               |
-            *.xml                             |
-        raw/                                  |
-            type.ogg                          |
-        values/                               |
-            *.xml                             |
-        values-ja/                            |
-            *.xml                             |
-        values-zh-rCN                         |
-            *.xml                             |
-        xml/                                  |
-            *.xml                             |
+◇ ライセンス
+========================================================================
 
-    src/                                      IME source code (Java)
-        jp/                                   |
-            co/                               |
-                omronsoft/                    |
-                    openwnn/                  |
-                        *.java                |
-                        EN/                   |
-                            *.java            |
-                        JAJP/                 |
-                            *.java            |
+nicoWnnG IMEは、オムロン ソフトウェア(株)/hiroshica/後藤 浩昭（GORRY）の著作物です。
 
--------------------------------------------------------------------------------
+nicoWnnG IMEは、「Apache License Version 2.0」で配布されます。このライセンスに基づいての使用・再配布が許可されます。
+
+Apache License Version 2.0」のライセンス条文は、以下からお読みいただけます。
+http://www.apache.org/licenses/LICENSE-2.0.txt（オリジナル） 
+http://sourceforge.jp/projects/opensource/wiki/licenses%2FApache_License_2.0（日本語参考訳）
+
+nicoWnnG IMEは、以下URLを配布先とします。利便性などのためにこれ以外のURLで配布することがありますが、以下が最も正式なものであり、完全な最新のパッケージを得ることができます。
+http://GORRY.hauN.org/android/nicownng/ 
+
+
+
+
+[EOF]
