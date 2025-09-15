@@ -22,4 +22,5 @@
    android:layout_height="wrap_content"
    android:keyBackground="@drawable/keybg_simple_def"
    android:background="@drawable/keybg_simple_bg"
+   android:fitsSystemWindows="true"
 />

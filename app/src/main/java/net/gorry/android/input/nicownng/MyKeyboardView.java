@@ -541,4 +541,12 @@ public class MyKeyboardView extends KeyboardView {
 		}
 	}
 
+	@Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (Build.VERSION.SDK_INT >= 20) {
+            requestApplyInsets();
+        }
+    }
+
 }

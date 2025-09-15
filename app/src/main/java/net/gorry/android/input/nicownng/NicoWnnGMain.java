@@ -45,12 +45,12 @@ public class NicoWnnGMain extends Activity {
 		NicoWnnGJAJP.getInstance().initializeEasySetting();
 		NicoWnnGJAJP.getInstance().convertOldPreferces();
 
-		final WebView webView = new WebView(this);
+		setContentView(R.layout.nicownng_main);
+		final WebView webView = (WebView)findViewById(R.id.nicownng_main_webview);
 		webView.getSettings().setJavaScriptEnabled(true);
 		final Js2Java js2Java = new Js2Java(this);
 		webView.addJavascriptInterface(js2Java, "android");
 		webView.loadUrl("file:///android_asset/openwnn_main.html");
-		setContentView(webView);
 
 		final SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
 		final SharedPreferences.Editor editor = pref.edit();

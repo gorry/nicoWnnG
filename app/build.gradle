@@ -5,16 +5,16 @@ plugins {
 android {
     namespace 'net.gorry.android.input.nicownng'
 
-    compileSdk 34
-    ndkVersion "26.3.11579264"
+    compileSdk 36
+    // ndkVersion "26.3.11579264"
     // buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "net.gorry.android.input.nicownng"
         minSdkVersion 24
-        targetSdk 34
-        versionCode 202408192
-        versionName "2024.0819.2.1305"
+        targetSdk 36
+        versionCode 202509151
+        versionName "2025.0915.1.1305"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             ndkBuild {

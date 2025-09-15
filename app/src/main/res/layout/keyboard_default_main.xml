@@ -20,5 +20,6 @@
               android:layout_height="wrap_content"
 	      android:fadingEdge="vertical"
 	      android:fadingEdgeLength="2dip"
+          android:fitsSystemWindows="true"
           >
 </LinearLayout>
