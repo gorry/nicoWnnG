@@ -13,12 +13,12 @@ android {
         applicationId "net.gorry.android.input.nicownng"
         minSdkVersion 24
         targetSdk 36
-        versionCode 202509151
-        versionName "2025.0915.1.1305"
+        versionCode 202509152
+        versionName "2025.0915.2.1305"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             ndkBuild {
-                cppFlags ''
+                 arguments.add("APP_LDFLAGS+=-Wl,-z,max-page-size=65536")
             }
         }
         ndk {

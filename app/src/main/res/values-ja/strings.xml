@@ -462,14 +462,14 @@
 
   <!-- IME dependency -->
     <!-- OpenWnn English -->
-    <string name="nicownng_english_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2024.0915.1\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
+    <string name="nicownng_english_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2025.0915.2\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
     <string name="nicownng_english">nicoWnnG English</string>
     <string name="nicownng_english_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnEngDic.so</string>
     <string name="nicownng_english_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableEN.dic</string>
     <string name="en_word_separators">.,;:!?</string>
 
     <!-- OpenWnn Japanese -->
-    <string name="nicownng_japanese_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2024.0915.1\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
+    <string name="nicownng_japanese_copyright">OpenWnn Ver.1.3.1/NicoWnn Ver.1.3.0/NicoWnnG Ver.2025.0915.2\nオムロン ソフトウェア(株)/hiroshica/GORRY</string>
     <string name="nicownng_japanese">nicoWnnG IME</string>
     <string name="openwnn_japanese_system_dictionary">/data/data/net.gorry.android.input.nicownng/lib/libWnnJpnDic.so</string>
     <string name="nicownng_japanese_writable_dictionary">/data/data/net.gorry.android.input.nicownng/writableJAJP.dic</string>
